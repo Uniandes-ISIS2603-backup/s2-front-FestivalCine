@@ -6,6 +6,7 @@ import { FuncionListComponent } from './funcion-list/funcion-list.component';
   imports: [
     CommonModule
   ],
-  declarations: [FuncionListComponent]
+  declarations: [FuncionListComponent],
+  exports:[FuncionListComponent]
 })
 export class FuncionModule { }

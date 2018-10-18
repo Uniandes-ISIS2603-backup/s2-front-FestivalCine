@@ -6,6 +6,7 @@ import { TeatroListComponent } from './teatro-list/teatro-list.component';
   imports: [
     CommonModule
   ],
-  declarations: [TeatroListComponent]
+  declarations: [TeatroListComponent],
+  exports:[TeatroListComponent]
 })
 export class TeatroModule { }

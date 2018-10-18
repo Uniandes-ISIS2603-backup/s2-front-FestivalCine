@@ -6,7 +6,8 @@ import { UsuarioListComponent } from './usuario-list/usuario-list.component';
   imports: [
     CommonModule
   ],
-  declarations: [UsuarioListComponent]
+  declarations: [UsuarioListComponent],
+  exports:[UsuarioListComponent]
 })
 export class UsuarioModule { }    
 

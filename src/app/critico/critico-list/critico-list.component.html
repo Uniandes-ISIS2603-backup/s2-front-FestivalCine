@@ -1,3 +1,32 @@
-<p>
-  critico-list works!
-</p>
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Identificación</th>
+                    <th>Celular</th>
+                    <th>Email</th>
+                    <th>NickName</th>
+                    <th>Puntaje</th>
+                    <th>Credencial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let critico of criticos">
+                    <td>{{critico.nombres}}</td>
+                    <td>{{critico.apellidos}}</td>
+                    <td>{{critico.identificacion}}</td>
+                    <td>{{critico.celular}}</td>
+                    <td>{{critico.email}}</td>
+                    <td>{{critico.nickName}}</td>
+                    <td>{{critico.puntaje}}</td>
+                    <td>{{critico.credencial}}</td>
+                    
+
+                  
+                </tr>
+            </tbody>
+        </table>
+    </div>
