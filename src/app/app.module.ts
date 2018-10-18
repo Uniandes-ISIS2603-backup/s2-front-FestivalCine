@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { FuncionModule } from './funcion/funcion.module';
 import { TeatroModule } from './teatro/teatro.module';
+import {CriticoModule} from './critico/critico.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TeatroModule } from './teatro/teatro.module';
     BrowserModule,
     UsuarioModule,
     FuncionModule,
-    TeatroModule
+    TeatroModule,
+    CriticoModule
      
   ],
   providers: [],
