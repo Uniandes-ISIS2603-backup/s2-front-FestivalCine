@@ -3,12 +3,22 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-<app-critico-list></app-critico-list>
-<app-funcion-list></app-funcion-list>
-<app-teatro-list></app-teatro-list>
-<app-usuario-list></app-usuario-list>
-
 </div>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a id="booksTag" class="nav-link" routerLink="/criticos/list">Criticos</a>
+    </li>
+    <li class="nav-item">
+        <a id="authorsTag" class="nav-link" routerLink="/funciones/list">Funciones</a>
+    </li>
+    <li class="nav-item">
+        <a id="editorialTag" class="nav-link" routerLink="/teatros/list">Teatros</a>
+    </li>
+    <li class="nav-item">
+        <a id="editorialTag" class="nav-link" routerLink="/usuarios/list">Usuarios</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>
