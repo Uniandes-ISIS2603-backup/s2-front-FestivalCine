@@ -8,4 +8,5 @@ import { UsuarioListComponent } from './usuario-list/usuario-list.component';
   ],
   declarations: [UsuarioListComponent]
 })
-export class UsuarioModule { } 
+export class UsuarioModule { }    
+
