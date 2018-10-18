@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UsuarioModule } from './usuario/usuario.module';
 import { FuncionModule } from './funcion/funcion.module';
+import { TeatroModule } from './teatro/teatro.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { FuncionModule } from './funcion/funcion.module';
   imports: [
     BrowserModule,
     UsuarioModule,
-    FuncionModule
+    FuncionModule,
+    TeatroModule
      
   ],
   providers: [],
