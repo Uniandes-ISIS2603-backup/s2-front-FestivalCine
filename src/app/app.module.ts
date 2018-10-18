@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from '../app/app-routing';
 
 import { AppComponent } from './app.component';
 import { UsuarioModule } from './usuario/usuario.module';
@@ -13,6 +15,8 @@ import {CriticoModule} from './critico/critico.module';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
     UsuarioModule,
     FuncionModule,
     TeatroModule,
