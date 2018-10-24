@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="col-md-2">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Reservas Name</th> 
+                     <th>Abono</th> 
+                     <th>Descuento</th>
+                     <th>PrecioTotal</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let reserva of reservas">
+                    <td>{{reserva.id}}</td>   
+                    <td>{{reserva.abono}}</td>  
+                     <td>{{reserva.descuento}}</td>  
+                      <td>{{reserva.precioTotal}}</td>  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+

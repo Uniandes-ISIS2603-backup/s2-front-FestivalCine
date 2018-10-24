@@ -6,6 +6,7 @@ import {CriticoListComponent} from '../app/critico/critico-list/critico-list.com
 import {FuncionListComponent} from '../app/funcion/funcion-list/funcion-list.component';
 import {TeatroListComponent} from '../app/teatro/teatro-list/teatro-list.component';
 import {UsuarioListComponent} from '../app/usuario/usuario-list/usuario-list.component';
+import {ReservaListComponent} from '../app/reserva/reserva-list/reserva-list.component';
 
 const routes: Routes = [
     {
@@ -43,7 +44,17 @@ const routes: Routes = [
                 component:UsuarioListComponent
             }
         ]
+    },
+    {
+        path: 'reservas',
+        children: [
+            {
+                path: 'list',
+                component:ReservaListComponent
+            }
+        ]
     }
+ 
 ];
 @NgModule({
     imports: [

@@ -5,6 +5,7 @@ import {AppRoutingModule} from '../app/app-routing';
 
 import { AppComponent } from './app.component';
 import { UsuarioModule } from './usuario/usuario.module';
+import {ReservaModule} from './reserva/reserva.module';
 import { FuncionModule } from './funcion/funcion.module';
 import { TeatroModule } from './teatro/teatro.module';
 import {CriticoModule} from './critico/critico.module';
@@ -18,6 +19,7 @@ import {CriticoModule} from './critico/critico.module';
     AppRoutingModule,
     HttpClientModule,
     UsuarioModule,
+    ReservaModule,
     FuncionModule,
     TeatroModule,
     CriticoModule

@@ -1,0 +1,10 @@
+[{"id":98,"abono":false,"descuento":18,"precioTotal":"$7.25"},
+{"id":30,"abono":true,"descuento":49,"precioTotal":"$6.86"},
+{"id":86,"abono":false,"descuento":36,"precioTotal":"$5.71"},
+{"id":88,"abono":false,"descuento":39,"precioTotal":"$2.68"},
+{"id":63,"abono":true,"descuento":32,"precioTotal":"$9.12"},
+{"id":48,"abono":false,"descuento":48,"precioTotal":"$0.74"},
+{"id":26,"abono":true,"descuento":90,"precioTotal":"$2.10"},
+{"id":78,"abono":true,"descuento":93,"precioTotal":"$5.96"},
+{"id":46,"abono":false,"descuento":12,"precioTotal":"$8.07"},
+{"id":83,"abono":true,"descuento":48,"precioTotal":"$0.73"}]

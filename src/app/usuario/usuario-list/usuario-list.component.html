@@ -4,14 +4,27 @@
             <thead class ="thead-dark">
                 <tr>
                     <th> 
-                        Nombres de usuario 
+                        Email de los usuarios                         
                     </th>
+                    <th> 
+                       Nombres                         
+                    </th>
+                    <th> 
+                       Apellidos                       
+                    </th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let usuario of usuarios">
                     <td>
-                        {{usuario.nombres}}
+                        {{usuario.email}}
+                    </td>
+                    <td>
+                    {{usuario.nombres}}
+                    </td>
+                    <td>
+                        {{usuario.apellidos}}
                     </td>
                 </tr>
             </tbody>
