@@ -1,11 +1,13 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Reserva } from './reserva';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
-const API_URL = "../../assets/";
-const reservas = 'reservas.json';
+import { Reserva } from './reserva';
+import { environment } from '../../environments/environment';
+
+const API_URL = environment.apiURL;
+const reservas = '/reservas';
 
 /**
 * The service provider for everything related to editorials
