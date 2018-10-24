@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Injectable } from '@angular/core';
  
 @Injectable()
-export class HttpErrorInterceptor implements HttpInterceptor {
+export class HttpErrorInterceptor implements HttpInterceptor { 
     
     constructor (private toastrService: ToastrService){ }
     
