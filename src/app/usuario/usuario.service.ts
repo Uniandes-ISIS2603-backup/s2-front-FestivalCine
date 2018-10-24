@@ -1,10 +1,12 @@
 import{Injectable} from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from './usuario';
 import { Observable } from 'rxjs';
 
-const API_URL = "../../assets/";
-const usuarios = 'usuarios.json';
+import { Usuario } from './usuario';
+import { environment } from '../../environments/environment';
+
+const API_URL = environment.apiURL;
+const usuarios = '/usuarios';
 
 /**
  * El que provee servicios para todo lo de usuarios
