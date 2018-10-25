@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Pelicula } from '../pelicula';
+import {PeliculaService } from '../pelicula.service';
 @Component({
   selector: 'app-pelicula-list',
   templateUrl: './pelicula-list.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeliculaListComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private peliculaService: PeliculaService) { }
+peliculas:Pelicula[];
+getPeliculas():void
+ {
+      this.peliculaService.getPeliculas().subscribe(peliculas => this.peliculas =peliculas);
+  }
   ngOnInit() {
+   this.getPeliculas();
   }
 
 }
