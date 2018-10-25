@@ -14,6 +14,8 @@ import {ReservaModule} from './reserva/reserva.module';
 import { FuncionModule } from './funcion/funcion.module';
 import { TeatroModule } from './teatro/teatro.module';
 import {CriticoModule} from './critico/critico.module';
+import {PeliculaModule} from './pelicula/pelicula.module';
+
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import {CriticoModule} from './critico/critico.module';
     ReservaModule,
     FuncionModule,
     TeatroModule,
-    CriticoModule
+    CriticoModule,
+    PeliculaModule
      
   ],
   providers: [],
