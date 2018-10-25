@@ -4,6 +4,7 @@ import { PeliculaListComponent } from './pelicula-list/pelicula-list.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { PeliculaService } from './pelicula.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -12,6 +13,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule
   ],
   declarations: [PeliculaListComponent],
+   providers: [PeliculaService],
   exports:[PeliculaListComponent]
 })
 export class PeliculaModule { }
