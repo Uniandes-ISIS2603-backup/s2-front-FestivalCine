@@ -1,13 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+
 import {Funcion} from './funcion';
+import {FuncionDetail} from './funcion-detail';
 
 const API_URL = "../../assets/";
-const funciones = '/funciones.json';
+const funciones = '/salas.json';
 
 /**
-* The service provider for everything related to funciones
+* The service provider for everything related to salas
 */
 
 @Injectable()
@@ -20,11 +22,19 @@ export class FuncionService {
     constructor(private http: HttpClient) {}
 
     /**
-    * Returns the Observable object containing the list of funciones retrieved from the API
-    * @returns The list of funciones in real time
+    * Returns the Observable object containing the list of salas retrieved from the API
+    * @returns The list of salas in real time
     */
     getFunciones(): Observable<Funcion[]> {
         return this.http.get<Funcion[]>(API_URL + funciones);
+    }
+    
+    /**
+    * Returns the Observable object containing the funcion retrieved from the API
+    * @returns The funcion
+    */
+    getFuncionDetail(funcionId): Observable<FuncionDetail> {
+        return this.http.get<FuncionDetail>(API_URL + funciones + '/' + funcionId);
     }
 }
 

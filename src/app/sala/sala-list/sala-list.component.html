@@ -3,13 +3,13 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id Funcion</th> 
+                    <th>Id Sala</th> 
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let funcion of funciones">
+                <tr *ngFor = "let sala of salas">
                     <td style="cursor: pointer;">
-                        <dd routerLink="/funciones/{{funcion.id}}">{{funcion.id}}</dd>
+                        <dd routerLink="/salas/{{sala.id}}">{{sala.id}}</dd>
                     </td>
                 </tr>
             </tbody>
