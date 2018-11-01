@@ -4,26 +4,25 @@ import {APP_BASE_HREF} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {AppModule} from '../../app.module';
 
-import { TeatroListComponent } from './teatro-list.component';
-import { Teatro } from '../teatro';
-import { TeatroService } from '../teatro.service';
+import { FestivalListComponent } from './festival-list.component';
+import {Festival} from '../festival';
+import {FestivalService} from '../festival.service';
 
-describe('TeatroListComponent', () => {
-  let component: TeatroListComponent;
-  let fixture: ComponentFixture<TeatroListComponent>;
-    const teatros: Teatro[] = require('../../../assets/teatro.json') 
-
+describe('FestivalListComponent', () => {
+  let component: FestivalListComponent;
+  let fixture: ComponentFixture<FestivalListComponent>;
+    const festivales: Festival[] = require('../../../assets/festival.json')
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppRoutingModule, HttpClientModule, AppModule],
-      declarations: [ TeatroListComponent ],
-        providers: [{provide: APP_BASE_HREF, useValue: ''}, TeatroService]
+      declarations: [ FestivalListComponent ],
+       providers: [{provide: APP_BASE_HREF, useValue: ''}, FestivalService]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TeatroListComponent);
+    fixture = TestBed.createComponent(FestivalListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

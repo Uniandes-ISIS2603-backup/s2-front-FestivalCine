@@ -13,6 +13,8 @@ import {SillaDetailComponent} from '../app/silla/silla-detail/silla-detail.compo
 import {PeliculaListComponent} from '../app/pelicula/pelicula-list/pelicula-list.component';
 import{SalaListComponent} from '../app/sala/sala-list/sala-list.component';
 import{SalaDetailComponent} from '../app/sala/sala-detail/sala-detail.component';
+import {FestivalListComponent} from '../app/festival/festival-list/festival-list.component';
+
 const routes: Routes = [
     {
         path: 'criticos',
@@ -108,6 +110,16 @@ const routes: Routes = [
             }
         ]
     },
+    
+            {
+        path:'festivales',
+        children:[
+            {
+                path:'list',
+                component:FestivalListComponent
+            }
+        ]
+    }
     
  
 ];

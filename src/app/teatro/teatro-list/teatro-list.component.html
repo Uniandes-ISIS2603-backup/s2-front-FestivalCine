@@ -1,3 +1,19 @@
-<p>
-  teatro-list works!
-</p>
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombres</th>
+                    <th>Direccion</th>
+                    <th>Numero Salas Festival</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let teatro of teatros">
+                    <td><button type="button" class="btn btn-outline-dark">{{teatro.nombre}}</button></td>
+                    <td>{{teatro.direccion}}</td>
+                    <td>{{teatro.numSalasFest}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
