@@ -1,4 +1,4 @@
-export interface Sala {
+export class Sala {
     /**
      * Id de la función
      */ 
