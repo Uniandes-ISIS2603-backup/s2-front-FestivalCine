@@ -1,7 +1,7 @@
 /**
  * Esta clase representa un usuario del festival del cine
  */
- export interface Usuario
+ export class Usuario
  {
     /**
      * Id del usuario
