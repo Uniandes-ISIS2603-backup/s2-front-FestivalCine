@@ -5,8 +5,9 @@ import {HttpClient} from '@angular/common/http';
 import {Funcion} from './funcion';
 import {FuncionDetail} from './funcion-detail';
 
-const API_URL = "../../assets/";
-const funciones = '/salas.json';
+import { environment } from '../../environments/environment';
+const API_URL = environment.apiURL;
+const funciones = '/funciones';
 
 /**
 * The service provider for everything related to salas

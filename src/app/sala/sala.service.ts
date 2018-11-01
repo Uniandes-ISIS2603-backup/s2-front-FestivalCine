@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Sala} from './sala';
 
-const API_URL = "../../assets/";
-const salas = '/salas.json';
+import {Sala} from './sala';
+import {SalaDetail} from './sala-detail';
+import { environment } from '../../environments/environment';
+const API_URL = environment.apiURL;
+const salas = '/salas';
 
 /**
 * The service provider for everything related to salas
@@ -25,5 +27,13 @@ export class SalaService {
     */
     getSalas(): Observable<Sala[]> {
         return this.http.get<Sala[]>(API_URL + salas);
+    }
+    
+    /**
+    * Returns the Observable object containing the sala retrieved from the API
+    * @returns The sala
+    */
+    getSalaDetail(salaId): Observable<SalaDetail> {
+        return this.http.get<SalaDetail>(API_URL + salas + '/' + salaId);
     }
 }
