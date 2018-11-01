@@ -58,7 +58,7 @@ const routes: Routes = [
                 component:UsuarioListComponent
             },
             {
-                path: 'id',
+                path: ':id',
                 component:UsuarioDetailComponent
             }
             
