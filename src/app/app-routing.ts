@@ -71,6 +71,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:PeliculaListComponent
+            },
+            {
+                path:'id',
+                component:PeliculaDetailComponent
             }
         ]
     },
