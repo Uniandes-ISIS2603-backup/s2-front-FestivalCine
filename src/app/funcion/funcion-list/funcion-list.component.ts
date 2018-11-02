@@ -16,20 +16,19 @@ export class FuncionListComponent implements OnInit {
     constructor(private funcionService: FuncionService) {}
 
     /**
-     * The list of funciones which belong to the Festival
+     * The list of salas which belong to the Festival
      */
     funciones: Funcion[];
 
     /**
-     * Asks the service to update the list of funciones
+     * Asks the service to update the list of salas
      */
     getFunciones(): void {
-        this.funcionService.getFunciones()
-            .subscribe(funciones => this.funciones = funciones);
+        this.funcionService.getFunciones().subscribe(funciones => this.funciones = funciones);
     }
 
     /**
-     * This will initialize the component by retrieving the list of funciones from the service
+     * This will initialize the component by retrieving the list of salas from the service
      * This method will be called when the component is created
      */
     ngOnInit() {

@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 
 import { FuncionListComponent } from './funcion-list/funcion-list.component';
 import {FuncionService} from './funcion.service';
+import { FuncionDetailComponent } from './funcion-detail/funcion-detail.component';
 
 @NgModule(
 {
@@ -15,7 +16,8 @@ import {FuncionService} from './funcion.service';
     BrowserModule,
     HttpClientModule
   ],
-  declarations: [FuncionListComponent],
-  providers: [FuncionService]
+  declarations: [FuncionListComponent, FuncionDetailComponent],
+  providers: [FuncionService],
+  exports: [FuncionListComponent]
 })
 export class FuncionModule { }

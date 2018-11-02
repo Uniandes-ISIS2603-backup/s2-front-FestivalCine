@@ -3,18 +3,16 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id Funcion</th> 
-                    <th>Precio Base</th> 
-                    <th>Hora Inicio</th> 
-                    <th>Hora Fin</th> 
+                    <th>Id Funcion</th>
+                    <th>Hora Funcion</th> 
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let funcion of funciones">
-                    <td>{{funcion.id}}</td>
-                    <td>{{funcion.precioBase}}</td>
-                    <td>{{funcion.horaInicio}}</td>
-                    <td>{{funcion.horaFin}}</td>
+                    <!--<<td style="cursor: pointer;" routerLink="/funciones/{{funcion.id}}">{{funcion.id}}
+                    </td>-->
+                 <td>{{funcion.id}}</td>
+                 <td>{{funcion.horaInicio}}</td>
                 </tr>
             </tbody>
         </table>

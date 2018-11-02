@@ -4,28 +4,27 @@
             <thead class ="thead-dark">
                 <tr>
                     <th> 
-                        Email de los usuarios                         
+                       Id                        
                     </th>
                     <th> 
                        Nombres                         
                     </th>
                     <th> 
-                       Apellidos                       
+                       Apellidos                        
                     </th>
-                    
+                    <th> 
+                       Email                       
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let usuario of usuarios">
-                    <td>
-                        {{usuario.email}}
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}"> {{usuario.id}} </dd>
                     </td>
-                    <td>
-                    {{usuario.nombres}}
-                    </td>
-                    <td>
-                        {{usuario.apellidos}}
-                    </td>
+                    <td> {{usuario.nombres}}</td>
+                    <td>{{usuario.apellidos}} </td>
+                    <td> {{usuario.email}} </td>
                 </tr>
             </tbody>
         </table>

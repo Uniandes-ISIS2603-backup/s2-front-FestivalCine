@@ -1,22 +1,21 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
-import {Funcion} from './funcion';
-import {FuncionDetail} from './funcion-detail';
-
+import {Sala} from './sala';
+import {SalaDetail} from './sala-detail';
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
-const funciones = '/funciones';
+const salas = '/salas';
 
 /**
 * The service provider for everything related to salas
 */
 
 @Injectable()
-export class FuncionService {
+export class SalaService {
 
-   /**
+  /**
     * Constructor of the service
     * @param http The HttpClient - This is necessary in order to perform requests
     */
@@ -26,16 +25,15 @@ export class FuncionService {
     * Returns the Observable object containing the list of salas retrieved from the API
     * @returns The list of salas in real time
     */
-    getFunciones(): Observable<Funcion[]> {
-        return this.http.get<Funcion[]>(API_URL + funciones);
+    getSalas(): Observable<Sala[]> {
+        return this.http.get<Sala[]>(API_URL + salas);
     }
     
     /**
-    * Returns the Observable object containing the funcion retrieved from the API
-    * @returns The funcion
+    * Returns the Observable object containing the sala retrieved from the API
+    * @returns The sala
     */
-    getFuncionDetail(funcionId): Observable<FuncionDetail> {
-        return this.http.get<FuncionDetail>(API_URL + funciones + '/' + funcionId);
+    getSalaDetail(salaId): Observable<SalaDetail> {
+        return this.http.get<SalaDetail>(API_URL + salas + '/' + salaId);
     }
 }
-

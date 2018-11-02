@@ -1,4 +1,4 @@
-export interface Funcion {
+export class Funcion {
     
     /**
      * Id de la función

@@ -16,7 +16,8 @@ import { TeatroModule } from './teatro/teatro.module';
 import {CriticoModule} from './critico/critico.module';
 import {PeliculaModule} from './pelicula/pelicula.module';
 import {SillaModule} from './silla/silla.module';
-
+import {SalaModule} from './sala/sala.module';
+import {FestivalModule} from './festival/festival.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import {SillaModule} from './silla/silla.module';
     TeatroModule,
     CriticoModule,
     PeliculaModule,
-    SillaModule
+    SillaModule,
+    SalaModule,
+    FestivalModule
      
   ],
   providers: [],
