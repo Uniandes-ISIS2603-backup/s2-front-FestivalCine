@@ -1,26 +1,14 @@
-<div class="panel panel-default"> 
-    <div>
-        <div class="border margin">
-            <p class="h3 p-3">{{reservaDetail.name}}</p> 
-            <div class="row">
-                <div class="col">
-                    <div class="thumb">
-                        
-                    </div>
-                </div>
-                <div class="col">
-                    <dl>  
-                        <hr>
-                        <dt> Funciones </dt>                      
-                        <div *ngFor = "let reserva of reservaDetail.funciones">
-                            <dd class="caption" routerLink="/funciones/{{funcion.id}}">{{funcion.name}}</dd>
-                        </div>
-                        <hr>
-                        <dt> Id</dt>
-                        <dd>{{reservaDetail.id}}</dd>
-                    </dl>
-                </div>
-            </div>
+<div class="col-md-12">
+    <div class="container-fluid">   
+        <p class="h4 p-3">ID: {{reservaDetail.id}}</p>
+        <br>
+        <div class="row border margin">
+            <p class="h4 p-3">Funciones: </p>
+            <!-- <app-reserva-list [reservas] ="usuarioDetail.reservas"></app-reserva-list> -->
+        </div>
+        <div class="row border margin">
+            <p class="h4 p-3">Calificaciones: </p>
+            <!-- <app-reserva-list [reservas] ="usuarioDetail.reservas"></app-reserva-list> -->
         </div>
     </div>
 </div>

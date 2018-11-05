@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+
 import { Reserva } from '../reserva';
 import { ReservaService } from '../reserva.service';
 
@@ -21,7 +24,7 @@ export class ReservaListComponent implements OnInit {
     /**
      * The list of editorials which belong to the BookStore
      */
-    reservas: Reserva[];
+    @Input() reservas: Reserva[];
 
     /**
      * Asks the service to update the list of editorials
