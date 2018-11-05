@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear un usuario</h2>
+        <br>
+        <form name="usuario" (ngSubmit)="f.form.valid && createUsuario()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="usuarioNombres"><b>Nombres</b></label>
+                <input type="text" name="usuarioNombres" class="form-control" id="usuarioNombres" [(ngModel)]="usuario.nombres"
+                    #usuarioNombres="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioNombres.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el nombre del usuario!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioApellidos"><b>Apellidos</b></label>
+                <input type="text" name="usuarioApellidos" class="form-control" id="usuarioApellidos" [(ngModel)]="usuario.apellidos"
+                    #usuarioApellidos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioApellidos.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el apellido del usuario!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioIdentificacion"><b>Documento de identificación</b></label>
+                <input type="text" name="usuarioIdentificacion" class="form-control" id="usuarioIdentificacion" [(ngModel)]="usuario.identificacion"
+                    #usuarioIdentificacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioIdentificacion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta la identificación del usuario!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioCelular"><b>Celular</b></label>
+                <input type="text" name="usuarioCelular" class="form-control" id="usuarioCelular" [(ngModel)]="usuario.celular"
+                    #usuarioCelular="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioCelular.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el celular del usuario!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioEmail"><b>Email</b></label>
+                <input type="text" name="usuarioEmail" class="form-control" id="usuarioEmail" [(ngModel)]="usuario.email"
+                    #usuarioEmail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioEmail.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el email del usuario!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioTipoPersona"><b>Tipo de persona</b></label>
+                <input type="text" name="usuarioTipoPersona" class="form-control" id="usuarioTipoPersona" [(ngModel)]="usuario.tipoPersona"
+                    #usuarioTipoPersona="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioTipoPersona.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el tipo de persona del usuario!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuarioPassword"><b>Password</b></label>
+                <input type="text" name="usuarioPassword" class="form-control" id="usuarioPassword" [(ngModel)]="usuario.password"
+                    #usuarioPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioPassword.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta la contraseña del usuario!</div>
+                </div>
+            </div>
+            
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

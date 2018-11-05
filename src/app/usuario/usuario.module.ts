@@ -10,6 +10,7 @@ import { AppRoutingModule } from '../app-routing';
 import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.component';
 
 import { ReservaModule } from '../reserva/reserva.module';
+import { UsuarioCreateComponent } from './usuario-create/usuario-create.component';
 //import { CalificacionModule } from '../calificacion/calificacion.module';
 
 @NgModule
@@ -24,7 +25,7 @@ import { ReservaModule } from '../reserva/reserva.module';
         FormsModule,
         ReservaModule
     ],
-    declarations: [UsuarioListComponent, UsuarioDetailComponent],
+    declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent],
     providers: [UsuarioService],
     exports:[UsuarioListComponent]
   }
