@@ -8,6 +8,7 @@ import {FuncionDetailComponent} from '../app/funcion/funcion-detail/funcion-deta
 import {TeatroListComponent} from '../app/teatro/teatro-list/teatro-list.component';
 import {UsuarioListComponent} from '../app/usuario/usuario-list/usuario-list.component';
 import {UsuarioDetailComponent} from '../app/usuario/usuario-detail/usuario-detail.component';
+import { UsuarioCreateComponent } from '../app/usuario/usuario-create/usuario-create.component';
 import {ReservaListComponent} from '../app/reserva/reserva-list/reserva-list.component';
 import {ReservaDetailComponent} from '../app/reserva/reserva-detail/reserva-detail.component';
 import{SillaListComponent} from '../app/silla/silla-list/silla-list.component'
@@ -57,6 +58,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:UsuarioListComponent
+            },
+            {
+                path: 'add',
+                component: UsuarioCreateComponent
             },
             {
                 path: ':id',

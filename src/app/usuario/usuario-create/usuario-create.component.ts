@@ -9,7 +9,8 @@ import { Usuario } from '../usuario';
 @Component({
   selector: 'app-usuario-create',
   templateUrl: './usuario-create.component.html',
-  styleUrls: ['./usuario-create.component.css']
+  styleUrls: ['./usuario-create.component.css'],
+  providers: [UsuarioService]
 })
 export class UsuarioCreateComponent implements OnInit {
 
