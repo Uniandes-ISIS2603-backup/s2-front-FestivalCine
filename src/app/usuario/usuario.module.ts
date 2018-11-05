@@ -10,6 +10,7 @@ import { AppRoutingModule } from '../app-routing';
 import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.component';
 
 import { ReservaModule } from '../reserva/reserva.module';
+//import { CalificacionModule } from '../calificacion/calificacion.module';
 
 @NgModule
 (
