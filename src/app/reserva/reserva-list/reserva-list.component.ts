@@ -1,12 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+//import 'rxjs/add/operator/filter';
 
 
 import { Reserva } from '../reserva';
 import { ReservaService } from '../reserva.service';
 
 /**
- * The component for the list of editorials in the BookStore
+ * The component for the list of reservas 
  */
 @Component({
     selector: 'list-reserva',
@@ -17,12 +18,11 @@ export class ReservaListComponent implements OnInit {
 
     /**
      * Constructor for the component
-     * @param editorialService The author's services provider
      */
     constructor(private reservaService: ReservaService) { }
     
     /**
-     * The list of editorials which belong to the BookStore
+     * The list of reservas
      */
     @Input() reservas: Reserva[];
 

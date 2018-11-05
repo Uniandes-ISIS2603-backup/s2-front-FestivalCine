@@ -1,3 +1,4 @@
+<h2 align = "center"> <font color="#66CCCC"> ¡Estas son nuestras reservas! </font> </h2>
 <div class="container-fluid">
     <div class="col-md-2">
         <table class="table table-striped">
@@ -10,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let reserva of reservas">
+                <tr align ="center" *ngFor = "let reserva of reservas">
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/reservas/{{reserva.id}}"> {{reserva.id}} </dd>
                     </td>   

@@ -1,13 +1,16 @@
 <div class="col-md-12">
     <div class="container-fluid">   
-        <p class="h4 p-3">ID: {{reservaDetail.id}}</p>
+        <h2><font color="#CC0033">Id de la reserva: </font> {{reservaDetail.id}}</h2>
         <br>
+        <h5> <font color="#CC0033">Información de la reserva:</font></h5>
+        <b>Descuento aplicado: </b>{{reservaDetail.descuento}}% <br/>    
+        <b>Total a pagar: </b> {{reservaDetail.precioTotal}}.000 COP <br/> 
         <div class="row border margin">
-            <p class="h4 p-3">Funciones: </p>
+            <h5>Funciones: </h5>
             <!-- <app-reserva-list [reservas] ="usuarioDetail.reservas"></app-reserva-list> -->
         </div>
         <div class="row border margin">
-            <p class="h4 p-3">Calificaciones: </p>
+            <h5>Calificaciones: </h5>
             <!-- <app-reserva-list [reservas] ="usuarioDetail.reservas"></app-reserva-list> -->
         </div>
     </div>

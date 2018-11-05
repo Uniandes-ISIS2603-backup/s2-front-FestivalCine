@@ -1,8 +1,9 @@
+<h2 align = "center"> <font color="#66CCCC"> ¡Estos son nuestros usuarios! </font> </h2>
 <div class ="container-fluid">
-    <div class ="col-md-2">
-        <table class ="table table - striped">
+    <div style="text-align:center;" class ="col-md-2">
+        <table align = "center" class ="table table - striped">
             <thead class ="thead-dark">
-                <tr>
+                <tr align="center">
                     <th> 
                        Id                        
                     </th>
@@ -18,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let usuario of usuarios">
+                <tr align ="center" *ngFor = "let usuario of usuarios">
                     <td style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}"> {{usuario.id}} </dd>
                     </td>
