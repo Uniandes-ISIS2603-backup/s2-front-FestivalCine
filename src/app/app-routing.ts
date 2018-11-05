@@ -11,6 +11,7 @@ import {UsuarioDetailComponent} from '../app/usuario/usuario-detail/usuario-deta
 import { UsuarioCreateComponent } from '../app/usuario/usuario-create/usuario-create.component';
 import {ReservaListComponent} from '../app/reserva/reserva-list/reserva-list.component';
 import {ReservaDetailComponent} from '../app/reserva/reserva-detail/reserva-detail.component';
+import { ReservaCreateComponent } from '../app/reserva/reserva-create/reserva-create.component';
 import{SillaListComponent} from '../app/silla/silla-list/silla-list.component'
 import {SillaDetailComponent} from '../app/silla/silla-detail/silla-detail.component';
 import {PeliculaListComponent} from '../app/pelicula/pelicula-list/pelicula-list.component';
@@ -85,6 +86,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:ReservaListComponent
+            },
+            {
+                path: 'add',
+                component: ReservaCreateComponent
             },
             {
                 path: ':id',

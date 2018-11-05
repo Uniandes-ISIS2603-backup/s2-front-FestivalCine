@@ -2,7 +2,9 @@
     <div class="col-3"></div>
     <div class="col-6">
         <br>
-        <h2 class="text-center">Crear un usuario</h2>
+        <img class= "center-block" src="http://bepensahosting.com/cepeca%20chafa/media/bienvenido.png"
+             width="300"
+            height="100"><br/>
         <br>
         <form name="usuario" (ngSubmit)="f.form.valid && createUsuario()" #f="ngForm" novalidate>
             <div class="form-group">
@@ -65,7 +67,7 @@
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+                <button type="button" class="btn btn-danger" routerLink="/usuarios/list">Cancel</button>
             </div>
         </form>
     </div>

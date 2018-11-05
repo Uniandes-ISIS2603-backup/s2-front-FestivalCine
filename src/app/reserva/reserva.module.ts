@@ -11,6 +11,7 @@ import { ReservaDetailComponent } from './reserva-detail/reserva-detail.componen
 
 import { FuncionModule } from '../funcion/funcion.module';
 import { SillaModule } from '../silla/silla.module';
+import { ReservaCreateComponent } from './reserva-create/reserva-create.component';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { SillaModule } from '../silla/silla.module';
     FuncionModule,
     SillaModule
   ],
-  declarations: [ReservaListComponent, ReservaDetailComponent],
+  declarations: [ReservaListComponent, ReservaDetailComponent, ReservaCreateComponent],
   providers: [ReservaService],
   exports:[ReservaListComponent]
 })
