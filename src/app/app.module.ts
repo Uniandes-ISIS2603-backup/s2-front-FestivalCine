@@ -21,6 +21,7 @@ import {PeliculaModule} from './pelicula/pelicula.module';
 import {SillaModule} from './silla/silla.module';
 import {SalaModule} from './sala/sala.module';
 import {FestivalModule} from './festival/festival.module';
+import {CalificacionModule} from './calificacion/calificacion.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {FestivalModule} from './festival/festival.module';
     SillaModule,
     SalaModule,
     FestivalModule,
+    CalificacionModule
     
      
   ],

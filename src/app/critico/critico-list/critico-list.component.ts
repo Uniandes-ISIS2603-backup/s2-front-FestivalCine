@@ -25,12 +25,14 @@ export class CriticoListComponent implements OnInit {
   
   getCriticos(): void
   {
-      this.criticoService.getCriticos().subscribe(criticos => this.criticos = criticos);
+      this.criticoService.getCriticos()
+      .subscribe(criticos => this.criticos = criticos);
   }
   
   getCriticoDetail(): void
   {
-      this.criticoService.getCriticoDetail(this.critico_id).subscribe(selectedCritico => {this.selectedCritico = selectedCritico});
+      this.criticoService.getCriticoDetail(this.critico_id)
+      .subscribe(selectedCritico => {this.selectedCritico = selectedCritico});
   }
   ngOnInit() {
       this.getCriticos();

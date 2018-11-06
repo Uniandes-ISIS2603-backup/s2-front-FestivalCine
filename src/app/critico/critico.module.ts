@@ -8,7 +8,7 @@ import { AppRoutingModule } from '../app-routing';
 import { CriticoListComponent } from './critico-list/critico-list.component';
 import { CriticoService } from './critico.service';
 import { CriticoDetailComponent } from './critico-detail/critico-detail.component';
-
+import { CriticoCreateComponent } from './critico-create/critico-create.component';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { CriticoDetailComponent } from './critico-detail/critico-detail.componen
     HttpClientModule,
     FormsModule
   ],
-  declarations: [CriticoListComponent, CriticoDetailComponent],
+  declarations: [CriticoListComponent, CriticoDetailComponent, CriticoCreateComponent],
   providers: [CriticoService],
     exports: [CriticoListComponent, CriticoDetailComponent]
 })

@@ -21,7 +21,8 @@ export class CriticoDetailComponent implements OnInit {
   critico_id : number;
   
   getCritico(): void {
-      this.criticoService.getCriticoDetail(this.critico_id).subscribe(critico => {this.critico = critico});
+      this.criticoService.getCriticoDetail(this.critico_id)
+      .subscribe(critico => {this.critico = critico});
       
   }
 
