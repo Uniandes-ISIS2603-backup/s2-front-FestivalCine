@@ -10,4 +10,8 @@ export class UsuarioDetail extends Usuario
      * 
      */
     reservas: Reserva[];
+    
+    /**
+     * Ojo, falta calificaciones
+     */
 }
