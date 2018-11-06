@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CriticoListComponent } from './critico-list.component';
+import { SalaCreateComponent } from './sala-create.component';
 
-describe('CriticoListComponent', () => {
-  let component: CriticoListComponent;
-  let fixture: ComponentFixture<CriticoListComponent>;
+describe('SalaCreateComponent', () => {
+  let component: SalaCreateComponent;
+  let fixture: ComponentFixture<SalaCreateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CriticoListComponent ]
+      declarations: [ SalaCreateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CriticoListComponent);
+    fixture = TestBed.createComponent(SalaCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

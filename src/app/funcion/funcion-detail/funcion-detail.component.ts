@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 
 import { FuncionService } from '../funcion.service';
 import { Funcion } from '../funcion';
-import {FuncionDetail} from '../funcion-detail';
 
 @Component({
   selector: 'app-funcion-detail',
@@ -22,13 +21,10 @@ export class FuncionDetailComponent implements OnInit {
         private route: ActivatedRoute
  ){ }
  
- 
     /**
     * The funcion whose details we want to show
     */
-    funcionDetail: FuncionDetail;
-
-
+    funcionDetail: Funcion;
 
     /**
     * The funcion id retrieved from the address
@@ -36,7 +32,7 @@ export class FuncionDetailComponent implements OnInit {
    funcion_id: number;
 
     /**
-    * The method which retrieves the 
+    * The method which retrieves the detail of a función
     */
     getFuncionDetail(): void {
         this.funcionService.getFuncionDetail(this.funcion_id).subscribe(funcionDetail => {
@@ -48,7 +44,10 @@ export class FuncionDetailComponent implements OnInit {
     * We need to initialize the funcion so it is never considered as undefined
     */
     ngOnInit() {
-      this.funcion_id = +this.route.snapshot.paramMap.get('id');
-      this.getFuncionDetail();
+        this.funcion_id = +this.route.snapshot.paramMap.get('id');
+        if (this.funcion_id){
+        this.funcionDetail = new Funcion();
+        this.getFuncionDetail();
+        }
     }
 }

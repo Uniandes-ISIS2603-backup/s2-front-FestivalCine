@@ -3,9 +3,13 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Critico } from './critico';
+import {CriticoDetailComponent} from '../critico/critico-detail/critico-detail.component';
+import { environment } from '../../environments/environment';
 
-const API_URL = "../../assets/";
-const criticos = 'criticos.json';
+
+const API_URL = environment.apiURL;
+const criticos = '/criticos';
+
 
 /**
 * The service provider for everything related to editorials
@@ -22,6 +26,11 @@ export class CriticoService {
   
     getCriticos() : Observable<Critico[]> {
         return this.http.get<Critico[]>(API_URL + criticos);
+    }
+    
+    getCriticoDetail(criticoId): Observable<Critico>
+    {
+        return this.http.get<Critico>(API_URL + criticos + '/' + criticoId);
     }
     
 }
