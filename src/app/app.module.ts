@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +11,7 @@ import {AppRoutingModule} from '../app/app-routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpErrorInterceptor } from './interceptors/httperrorinterceptor.service';
 
 import { UsuarioModule } from './usuario/usuario.module';
 import {ReservaModule} from './reserva/reserva.module';
@@ -40,11 +41,22 @@ import {CalificacionModule} from './calificacion/calificacion.module';
     SillaModule,
     SalaModule,
     FestivalModule,
-    CalificacionModule
+    CalificacionModule,
+        ToastrModule.forRoot({
+            timeOut: 10000,
+            positionClass: 'toast-bottom-right',
+            preventDuplicates: true,
+        }),
+        BrowserAnimationsModule
+
     
      
   ],
-  providers: [],
+  providers: [{
+            provide: HTTP_INTERCEPTORS,
+            useClass: HttpErrorInterceptor,
+            multi: true
+        }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
