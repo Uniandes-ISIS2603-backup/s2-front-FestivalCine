@@ -1,0 +1,66 @@
+<!--<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una Función</h2>
+        <br>
+        <form name="funcion" (ngSubmit)="f.form.valid && createFuncion()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="funcionFecha"><b>Fecha</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && funcionFecha.invalid }">
+                    <input class="form-control" id="funcionFecha" name="funcionFecha" [(ngModel)]="funcion.fecha"
+                        ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #funcionFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && (funcionFecha.untouched || funcionFecha.invalid) }"
+                        required>
+                    <div class="invalid-feedback">
+                        <div>Falta la fecha de la función </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionHora"><b>Hora</b></label>
+                <input type="text" name="funcionHora" class="form-control" id="funcionHora" [(ngModel)]="funcion.hora"
+                        #funcionHora="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionHora.invalid }"required>          
+                <div class="invalid-feedback">
+                    <div>Falta la hora de la función</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionPrecioBase"><b>Precio Base</b></label>
+                <input type="text" name="funcionPrecioBase" class="form-control" id="funcionPrecioBase" [(ngModel)]="funcion.precioBase"
+                        #funcionPrecioBase="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionPrecioBase.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el precio base de la función</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionPelicula"><b>Pelicula</b></label>
+                    <select class="custom-select" name="funcionPelicula" id="funcionPelicula" [(ngModel)]="funcion.pelicula.id"
+                        #funcionPelicula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionPelicula.invalid }"
+                        required>
+                        <option [value]="pelicula.id" *ngFor="let pelicula of peliculas">{{pelicula.nombre}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta la película de la función</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionSala"><b>Sala</b></label>
+                    <select class="custom-select" name="funcionSala" id="funcionSala" [(ngModel)]="funcion.sala.id"
+                        #funcionSala="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionSala.invalid }"
+                        required>
+                        <option [value]="sala.id" *ngFor="let sala of salas">{{sala.numero}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta la sala de la función</div>
+                    </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelCreation()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
+-->

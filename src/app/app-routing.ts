@@ -18,7 +18,8 @@ import {PeliculaListComponent} from '../app/pelicula/pelicula-list/pelicula-list
 import{SalaListComponent} from '../app/sala/sala-list/sala-list.component';
 import{SalaDetailComponent} from '../app/sala/sala-detail/sala-detail.component';
 import {FestivalListComponent} from '../app/festival/festival-list/festival-list.component';
-
+import {SalaCreateComponent} from '../app/sala/sala-create/sala-create.component'
+import {FuncionCreateComponent} from '../app/funcion/funcion-create/funcion-create.component';
 const routes: Routes = [
     {
         path: 'criticos',
@@ -39,6 +40,10 @@ const routes: Routes = [
             {
                 path: 'id',
                 component:FuncionDetailComponent
+            },
+            {
+                path:'add',
+                component: FuncionCreateComponent
             }
             
         ]
@@ -129,6 +134,10 @@ const routes: Routes = [
             {
                 path: 'id',
                 component:SalaDetailComponent
+            },
+            {
+                path:'add',
+                component: SalaCreateComponent
             }
         ]
     },

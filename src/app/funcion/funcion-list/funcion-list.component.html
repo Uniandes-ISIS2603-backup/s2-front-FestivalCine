@@ -4,15 +4,14 @@
             <thead class="thead-dark">
                 <tr>
                     <th>Id Funcion</th>
-                    <th>Hora Funcion</th> 
+                    <th>Precio Base</th> 
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let funcion of funciones">
-                    <!--<<td style="cursor: pointer;" routerLink="/funciones/{{funcion.id}}">{{funcion.id}}
-                    </td>-->
-                 <td>{{funcion.id}}</td>
-                 <td>{{funcion.horaInicio}}</td>
+                <tr *ngFor = "let funcion of funciones" >
+                    <td style="cursor: pointer;">
+                        <!---><dd class="figure-caption" routerLink="/funciones/{{funcion.id}}">-->{{funcion.id}} </td> 
+                    <td> {{funcion.precioBase|currency}} </td>
                 </tr>
             </tbody>
         </table>
