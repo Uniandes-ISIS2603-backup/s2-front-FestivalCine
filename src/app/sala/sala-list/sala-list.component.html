@@ -1,9 +1,12 @@
 <div class="container-fluid">
     <div class="col">
+        <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()">Crear una nueva sala</button>
+        </div>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id Sala</th> 
                     <th>Numero Sala</th> 
                 </tr>
             </thead>
@@ -11,7 +14,6 @@
                 <tr *ngFor = "let sala of salas">
                     <!--<td style="cursor: pointer;" routerLink="/salas/{{sala.id}}">{{sala.id}}
                     </td>-->
-                 <td>{{sala.id}}</td>
                  <td>{{sala.numero}}</td>
                 </tr>
             </tbody>

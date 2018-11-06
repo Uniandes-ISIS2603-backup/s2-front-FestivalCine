@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
-import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
 import { FuncionService } from '../funcion.service';
 
 import { Funcion } from '../funcion';
