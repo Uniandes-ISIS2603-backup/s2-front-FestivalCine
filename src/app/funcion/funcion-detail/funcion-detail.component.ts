@@ -44,7 +44,10 @@ export class FuncionDetailComponent implements OnInit {
     * We need to initialize the funcion so it is never considered as undefined
     */
     ngOnInit() {
-      this.funcion_id = +this.route.snapshot.paramMap.get('id');
-      this.getFuncionDetail();
+        this.funcion_id = +this.route.snapshot.paramMap.get('id');
+        if (this.funcion_id){
+        this.funcionDetail = new Funcion();
+        this.getFuncionDetail();
+        }
     }
 }
