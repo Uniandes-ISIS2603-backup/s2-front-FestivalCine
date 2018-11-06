@@ -59,7 +59,7 @@ const routes: Routes = [
                 component:FuncionListComponent
             },      
             {
-                path: 'id',
+                path: ':id',
                 component:FuncionDetailComponent
             },
             {
@@ -153,7 +153,7 @@ const routes: Routes = [
                 component:SalaListComponent
             },
             {
-                path: 'id',
+                path: ':id',
                 component:SalaDetailComponent
             },
             {

@@ -1,8 +1,8 @@
 <div class="container-fluid">
     <div class="col">
             <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()">Crear una nueva función</button>
+                <button [ngClass]= "{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()"> Crear una nueva función </button>
             </div>
         <table class="table table-striped">
             <thead class="thead-dark">
@@ -12,21 +12,21 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let funcion of funciones"
-                        (click)="onSelected(funcion.id)">
-                        <td style="cursor: pointer;"> 
-                <dd>{{funcion.id}}</dd>
+                <tr *ngFor = "let funcion of funciones" >
+                <td style="cursor: pointer;"> 
+                 <dd class="figure-caption" routerLink="/funciones/{{funcion.id}}">
+                        {{funcion.id}}</dd>
                 </td>
                 <td> {{funcion.precioBase|currency}}</td>
                 </tr>
             </tbody>
         </table>
         <div class="col-8">
-            <!--<div *ngIf="selectedFuncion">
+            <div *ngIf="selectedFuncion">
                 <app-funcion-detail [funcionDetail]="selectedFuncion"></app-funcion-detail>
-            </div> -->
+            </div>
             <div *ngIf="showCreate">
-                <app-funcion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-funcion-create>
+                <app-funcion-create (cancel)="showHideCreate()" (create)= "ngOnInit()"></app-funcion-create>
             </div>
         </div>
     </div>

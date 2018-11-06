@@ -17,7 +17,6 @@ export class FuncionListComponent implements OnInit {
      * @param funcionService 
      */
     constructor(private funcionService: FuncionService) {}
-
     /**
      * The list of salas which belong to the Festival
      */

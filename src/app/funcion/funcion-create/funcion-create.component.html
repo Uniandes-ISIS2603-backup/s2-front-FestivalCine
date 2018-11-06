@@ -34,22 +34,22 @@
             </div>
             <div class="form-group">
                 <label for="funcionPelicula"><b>Pelicula</b></label>
-                    <select class="custom-select" name="funcionPelicula" id="funcionPelicula" [(ngModel)]="funcion.pelicula.id"
+                    <!--<select class="custom-select" name="funcionPelicula" id="funcionPelicula" [(ngModel)]= "funcion.pelicula.id"
                         #funcionPelicula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionPelicula.invalid }"
                         required>
                         <option [value]="pelicula.id" *ngFor="let pelicula of peliculas">{{pelicula.nombre}}</option>
-                    </select>
+                    </select>-->
                     <div class="invalid-feedback">
                         <div>Falta la película de la función</div>
                     </div>
             </div>
             <div class="form-group">
                 <label for="funcionSala"><b>Sala</b></label>
-                    <select class="custom-select" name="funcionSala" id="funcionSala" [(ngModel)]="funcion.sala.id"
+                    <!--<select class="custom-select" name="funcionSala" id="funcionSala" [(ngModel)]="funcion.sala.id"
                         #funcionSala="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionSala.invalid }"
                         required>
                         <option [value]="sala.id" *ngFor="let sala of salas">{{sala.numero}}</option>
-                    </select>
+                    </select>-->
                     <div class="invalid-feedback">
                         <div>Falta la sala de la función</div>
                     </div>

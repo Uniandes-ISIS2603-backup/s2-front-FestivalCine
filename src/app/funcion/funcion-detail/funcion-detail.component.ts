@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { FuncionService } from '../funcion.service';
@@ -24,7 +24,7 @@ export class FuncionDetailComponent implements OnInit {
     /**
     * The funcion whose details we want to show
     */
-    funcionDetail: Funcion;
+    @Input() funcionDetail: Funcion;
 
     /**
     * The funcion id retrieved from the address

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { SalaService } from '../sala.service';
@@ -25,9 +25,9 @@ export class SalaDetailComponent implements OnInit {
     
     
    /**
-    * The editorial whose details we want to show
+    * The sala whose details we want to show
     */
-    salaDetail: SalaDetail;
+    @Input() salaDetail: SalaDetail;
 
     /**
     * The sala's id retrieved from the address
@@ -50,8 +50,10 @@ export class SalaDetailComponent implements OnInit {
     */
     ngOnInit() {
         this.sala_id = +this.route.snapshot.paramMap.get('id');
+        if (this.sala_id){
         this.salaDetail = new SalaDetail();
         this.getSalaDetail();
+        }
     }
 
 

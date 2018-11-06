@@ -8,6 +8,7 @@ import { FuncionListComponent } from './funcion-list/funcion-list.component';
 import {FuncionService} from './funcion.service';
 import { FuncionDetailComponent } from './funcion-detail/funcion-detail.component';
 import { FuncionCreateComponent } from './funcion-create/funcion-create.component';
+import {AppRoutingModule} from '../app-routing';
 
 @NgModule(
 {
@@ -16,7 +17,8 @@ import { FuncionCreateComponent } from './funcion-create/funcion-create.componen
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
   declarations: [FuncionListComponent, FuncionDetailComponent, FuncionCreateComponent],
   providers: [FuncionService],
