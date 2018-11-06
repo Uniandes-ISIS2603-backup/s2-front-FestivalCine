@@ -2,7 +2,7 @@
 * This class represents an editorial of the BookStore. 
 * It contains all the information relevant to the editorial.
 */
-export interface Critico {
+export class Critico {
     /**
     * The editorial's id
     */

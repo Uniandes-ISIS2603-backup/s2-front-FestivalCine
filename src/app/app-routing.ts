@@ -20,6 +20,7 @@ import{SalaDetailComponent} from '../app/sala/sala-detail/sala-detail.component'
 import {FestivalListComponent} from '../app/festival/festival-list/festival-list.component';
 import {SalaCreateComponent} from '../app/sala/sala-create/sala-create.component'
 import {FuncionCreateComponent} from '../app/funcion/funcion-create/funcion-create.component';
+import {CriticoDetailComponent} from '../app/critico/critico-detail/critico-detail.component';
 const routes: Routes = [
     {
         path: 'criticos',
@@ -27,6 +28,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:CriticoListComponent
+            },
+            {
+                path: ':id',
+                component: CriticoDetailComponent,
             }
         ]
     },

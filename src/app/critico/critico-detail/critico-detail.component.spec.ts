@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CriticoListComponent } from './critico-list.component';
+import { CriticoDetailComponent } from './critico-detail.component';
 
-describe('CriticoListComponent', () => {
-  let component: CriticoListComponent;
-  let fixture: ComponentFixture<CriticoListComponent>;
+describe('CriticoDetailComponent', () => {
+  let component: CriticoDetailComponent;
+  let fixture: ComponentFixture<CriticoDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CriticoListComponent ]
+      declarations: [ CriticoDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CriticoListComponent);
+    fixture = TestBed.createComponent(CriticoDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

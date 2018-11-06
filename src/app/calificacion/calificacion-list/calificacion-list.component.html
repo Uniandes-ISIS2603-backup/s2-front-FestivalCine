@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Puntaje</th>
+                    <th>Comentario</th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let cali of calificaciones">
+                    <td>{{cali.puntaje}}</td>
+                    <td>{{cali.comentario}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
