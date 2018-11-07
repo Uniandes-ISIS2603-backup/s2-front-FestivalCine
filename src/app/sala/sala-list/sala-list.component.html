@@ -1,8 +1,7 @@
 <div class="container-fluid">
     <div class="col">
         <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                    (click)="showHideCreate()"> Crear una nueva sala</button>
+            <button routerLink="/salas/add"> Crear nueva Sala</button>
         </div>
         <table class="table table-striped">
             <thead class="thead-dark">

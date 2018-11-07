@@ -16,7 +16,7 @@ export class SalaListComponent implements OnInit {
     constructor(private salaService: SalaService) {}
     
     /**
-     *  Shows or hides the funcion-create-component
+     *  Shows or hides the sala-create-component
     */
     showCreate: boolean;
     

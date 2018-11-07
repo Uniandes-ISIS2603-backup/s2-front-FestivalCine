@@ -22,8 +22,15 @@ export class FuncionListComponent implements OnInit {
    * La lista de funciones del festival de cine
    */
    funciones: Funcion[];
+   /**
+    * The id of the funcion that the user wants to view
+    */
    funcion_id: number;
    selectedFuncion : Funcion;
+   
+    /**
+    *  Shows or hides the funcion-create-component
+    */
    showCreate: boolean;
 
 
