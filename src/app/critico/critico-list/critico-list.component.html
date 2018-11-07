@@ -1,5 +1,7 @@
 <div class="container-fluid">
-    <div class="col-md-2">
+    <div class="col">
+        <div class="row justify-content-center align-self-center">
+            <button type="button" class="btn btn-primary" routerLink="/criticos/add">Nuevo critico</button>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -16,15 +18,15 @@
                         <dd class="figure-caption" routerLink="/criticos/{{critico.id}}">
                         {{critico.id}}</dd>
                     </td> 
-                    <td>
+                    <td  style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/criticos/{{critico.id}}">
                         {{critico.nombres}}</dd>
                     </td>
-                    <td>
+                    <td  style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/criticos/{{critico.id}}">
                         {{critico.apellidos}}</dd>
                     </td>
-                    <td>
+                    <td  style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/criticos/{{critico.id}}">
                         {{critico.identificacion}}</dd>
                     </td>

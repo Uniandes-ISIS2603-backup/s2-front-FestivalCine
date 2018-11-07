@@ -17,7 +17,7 @@ import { PeliculaService } from './pelicula.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  declarations: [PeliculaListComponent],
+  declarations: [PeliculaListComponent, PeliculaDetailComponent],
   providers: [PeliculaService],
   exports:[PeliculaListComponent]
 })

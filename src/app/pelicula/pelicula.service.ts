@@ -4,9 +4,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { Pelicula } from './pelicula';
 import { PeliculaDetail } from './pelicula-detail';
+import { environment } from '../../environments/environment';
 
-const API_URL = "../../assets/";
-const peliculas = 'peliculas.json';
+const API_URL = environment.apiURL;
+const peliculas = '/peliculas';
 
 /**
 * The service provider for everything related to editorials

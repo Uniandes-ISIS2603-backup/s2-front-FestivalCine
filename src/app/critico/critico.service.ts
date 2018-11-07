@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Critico } from './critico';
-import {CriticoDetailComponent} from '../critico/critico-detail/critico-detail.component';
 import { environment } from '../../environments/environment';
 
 
@@ -31,6 +30,11 @@ export class CriticoService {
     getCriticoDetail(criticoId): Observable<Critico>
     {
         return this.http.get<Critico>(API_URL + criticos + '/' + criticoId);
+    }
+    
+    createCritico(critico): Observable<Critico>
+    {
+        return this.http.post<Critico>(API_URL + criticos, critico);
     }
     
 }

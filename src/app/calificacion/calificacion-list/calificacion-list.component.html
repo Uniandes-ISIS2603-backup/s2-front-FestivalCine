@@ -1,5 +1,7 @@
 <div class="container-fluid">
-    <div class="table-responsive">
+    <div class="col">
+                <div class="row justify-content-center align-self-center">
+            <button type="button" class="btn btn-primary" routerLink="/calificaciones/add">Nueva calificacion</button>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -9,9 +11,9 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let cali of calificaciones">
-                    <td><dd class="figure-caption" routerLink="/calificaciones/{{cali.id}}">
+                    <td  style="cursor: pointer;"><dd class="figure-caption" routerLink="/calificaciones/{{cali.id}}">
                 {{cali.id}}</dd></td>
-                    <td><dd class="figure-caption" routerLink="/calificaciones/{{cali.id}}">
+                    <td  style="cursor: pointer;"><dd class="figure-caption" routerLink="/calificaciones/{{cali.id}}">
                 {{cali.puntaje}}</dd></td>
                 </tr>
             </tbody>

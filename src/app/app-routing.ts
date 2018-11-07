@@ -33,10 +33,12 @@ import {FestivalDetailComponent} from '../app/festival/festival-detail/festival-
 import {FestivalCreateComponent} from '../app/festival/festival-create/festival-create.component';
 import {TeatroDetailComponent} from '../app/teatro/teatro-detail/teatro-detail.component';
 import {TeatroCreateComponent} from '../app/teatro/teatro-create/teatro-create.component';
+import {CriticoCreateComponent} from '../app/critico/critico-create/critico-create.component';
+import {CalificacionCreateComponent} from '../app/calificacion/calificacion-create/calificacion-create.component';
 
 const routes: Routes = [
     {
-        path: 'criticos',
+         path: 'criticos',
         children: [
             {
                 path: 'list',
@@ -44,7 +46,11 @@ const routes: Routes = [
             },
             {
                 path: ':id',
-                component: CriticoDetailComponent,
+                component: CriticoDetailComponent
+            },
+            {
+                path: 'add',
+                component: CriticoCreateComponent
             }
         ]
     },
@@ -57,7 +63,11 @@ const routes: Routes = [
             },
             {
                 path: ':id',
-                component: CalificacionDetailComponent,
+                component: CalificacionDetailComponent
+            },
+            {
+                path: 'add',
+                component: CalificacionCreateComponent
             }
         ]
     },

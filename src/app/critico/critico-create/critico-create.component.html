@@ -1,3 +1,12 @@
-<p>
-  critico-create works!
-</p>
+<div>
+    <div class="col-6">
+        <form name="critico" (ngSubmit)="f.form.valid && createCritico()" #f="ngForm" novalidate>
+              <div class="form-group">
+                  <label for="criticoNombres"><b>Nombres</b></label>
+                  <input type="text" name="criticoNombres" class="form-control" id="criticoNombre" [(ngModel)]="critico.nombres" #criticoNombres="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoNombres.invalid }" required>
+                         <div class="invalid-feedback"><div> ¡Falta el nombre del critico!</div></div>
+            </div>
+        </form>
+              
+    </div>
+</div>
