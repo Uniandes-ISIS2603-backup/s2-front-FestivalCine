@@ -6,6 +6,7 @@ import {Sala} from './sala';
 import {SalaDetail} from './sala-detail';
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
+
 const salas = '/salas';
 
 /**

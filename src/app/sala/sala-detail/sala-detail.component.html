@@ -1,24 +1,6 @@
-<div class="panel-body">
-    <div class="border margin">
-        <p class="h3 p-3"> La sala con id {{funcionDetail.id}} tiene la siguiente información:  <p> 
-        <div class="row">
-            <div class="col">
-                <dl>     
-                    <dt>Fecha</dt>
-                    <dd>{{funcionDetail.fecha| date:'MM/dd/yyyy'}}</dd>
-                     <dt>Hora</dt>
-                    <dd>{{funcionDetail.hora}}</dd>
-                     <dt>Precio Base</dt>
-                    <dd>{{funcionDetail.precioBase|currency}}</dd>
-                </dl>
-            </div>
-
-        </div>
-    </div>
-</div>
 <div class="col-md-12">
     <div class="container-fluid">   
-        <p class="h4 p-3">Las sillas de la sala número: {{salaDetail.numero}} son: </p>
+        <p class="h4 p-3">Las sillas de la sala número {{salaDetail.numero}} son: </p>
         <br>
         <div class="row border margin">
             <p class="h4 p-3">Sillas de la sala: </p>
