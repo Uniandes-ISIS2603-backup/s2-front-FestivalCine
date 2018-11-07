@@ -6,6 +6,7 @@ import {Sala} from './sala';
 import {SalaDetail} from './sala-detail';
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
+
 const salas = '/salas';
 
 /**
@@ -35,5 +36,14 @@ export class SalaService {
     */
     getSalaDetail(salaId): Observable<SalaDetail> {
         return this.http.get<SalaDetail>(API_URL + salas + '/' + salaId);
+    }
+    
+   /**
+    * Creates a sala
+    * @param sala The new sala
+    * @returns The confirmation that the funcion was created
+    */
+    createSala(sala): Observable<Sala> {
+        return this.http.post<Sala>(API_URL + salas, sala);
     }
 }

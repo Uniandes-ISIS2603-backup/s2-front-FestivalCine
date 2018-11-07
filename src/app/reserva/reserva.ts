@@ -2,7 +2,7 @@
 * This class represents an editorial of the BookStore. 
 * It contains all the information relevant to the editorial.
 */
-export interface Reserva 
+export class Reserva 
     {
     /**
     * The editorial's id

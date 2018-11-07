@@ -7,7 +7,11 @@ import { Reserva } from '../reserva/reserva';
 export class UsuarioDetail extends Usuario 
 {
     /**
-     * The editorial's books
+     * 
      */
-    //reservas: Reserva[];
+    reservas: Reserva[];
+    
+    /**
+     * Ojo, falta calificaciones
+     */
 }

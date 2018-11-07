@@ -1,8 +1,9 @@
 <div class="container-fluid">
-    <div class="table-responsive">
+    <div class="col">
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Patrocinador</th>
                     <th>Duracion</th>
@@ -13,7 +14,11 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let festival of festivales">
-                    <td> <button type= "button" class= "btn btn-outline-dark">{{festival.nombre}}</button></td>
+                        <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/festivales/{{festival.id}}">
+                        {{festival.id}}</dd>
+                    </td> 
+                    <td> {{festival.nombre}}</td>
                     <td>{{festival.patrocinador}}</td>
                     <td>{{festival.duracion}}</td>
                     <td>{{festival.fechaInicio}}</td>

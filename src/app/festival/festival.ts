@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-export interface Festival{
+export class Festival{
 /**
  * 
  */
@@ -27,12 +27,12 @@ export interface Festival{
    /**
     * 
     */
-    fechaInicio: Date;
+    fechaInicio: string;
     
     /**
      * 
      */
-    fechaFin : Date;
+    fechaFin : string;
     
     /**
      * 

@@ -1,6 +1,6 @@
 export class Sala {
     /**
-     * Id de la función
+     * Id de la sala
      */ 
      id: number
      

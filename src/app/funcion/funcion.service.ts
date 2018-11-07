@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 
 import {Funcion} from './funcion';
-import {FuncionDetail} from './funcion-detail';
 
 import { environment } from '../../environments/environment';
 const API_URL = environment.apiURL;
@@ -34,8 +34,17 @@ export class FuncionService {
     * Returns the Observable object containing the funcion retrieved from the API
     * @returns The funcion
     */
-    getFuncionDetail(funcionId): Observable<FuncionDetail> {
-        return this.http.get<FuncionDetail>(API_URL + funciones + '/' + funcionId);
+    getFuncionDetail(funcionId): Observable<Funcion> {
+        return this.http.get<Funcion>(API_URL + funciones + '/' + funcionId);
+    }
+    
+   /**
+    * Creates a funcion
+    * @param funcion The new funcion
+    * @returns The confirmation that the funcion was created
+    */
+    createFuncion(funcion): Observable<Funcion> {
+        return this.http.post<Funcion>(API_URL + funciones, funcion);
     }
 }
 

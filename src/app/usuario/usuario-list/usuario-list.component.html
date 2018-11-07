@@ -1,33 +1,54 @@
+<img class= "center-block" src="https://static.squarespace.com/static/51b3dc8ee4b051b96ceb10de/51ce6099e4b0d911b4489b79/51ce618be4b0d911b4497a8b/1357174230007/1000w/qt_8.jpeg"
+             width="1600"
+            height="200">
+<h2 align = "center"> <font face="impact" color="#66CCCC"> ¡Estos son nuestros usuarios! </font> </h2>
+<p> ¿Eres nuevo? ¡Únete! <button routerLink="/usuarios/add">Add new usuario</button></p>
+
 <div class ="container-fluid">
-    <div class ="col-md-2">
-        <table class ="table table - striped">
+    <div style="text-align:center;" class ="col-md-2">
+        <table align = "center" class ="table table - striped">
             <thead class ="thead-dark">
-                <tr>
+                <tr align="center">
                     <th> 
-                       Id                        
+                       <font face="raro, courier" color="#CCFFCC">
+                       Id    
+                       </font>
                     </th>
                     <th> 
-                       Nombres                         
+                      <font face="raro, courier" color="#CCFFCC">
+                       Nombres 
+                       </font>
                     </th>
                     <th> 
-                       Apellidos                        
+                       <font face="raro, courier" color="#CCFFCC">
+                       Apellidos     
+                       </font>
                     </th>
                     <th> 
-                       Email                       
+                       <font face="raro, courier" color="#CCFFCC">
+                       Email  
+                       </font>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let usuario of usuarios">
+                <tr align ="center" *ngFor = "let usuario of usuarios"
+                    (click)="onSelected(usuario.id)">
                     <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}"> {{usuario.id}} </dd>
+            <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}"> <font face="raro, courier"> {{usuario.id}} </font></dd>
                     </td>
-                    <td> {{usuario.nombres}}</td>
-                    <td>{{usuario.apellidos}} </td>
-                    <td> {{usuario.email}} </td>
+                    <td> <font face="raro, courier"> {{usuario.nombres}} </font></td>
+                    <td> <font face="raro, courier">{{usuario.apellidos}}</font></td>
+                    <td> <font face="raro, courier">{{usuario.email}}</font> </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <div class="col-8">
+            <div *ngIf="selectedUsuario">
+                <app-usuario-detail [usuarioDetail]="selectedUsuario"></app-usuario-detail>
+            </div>
+    </div>
+ </div> 
                          
                         

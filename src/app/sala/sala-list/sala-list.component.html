@@ -1,18 +1,29 @@
 <div class="container-fluid">
     <div class="col">
+        <div class="row justify-content-center align-self-center">
+            <button routerLink="/salas/add"> Crear nueva Sala</button>
+        </div>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id Sala</th> 
+                    <th>Número Sala</th> 
+                    <th>Id Sala</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let sala of salas">
-                    <!--<td style="cursor: pointer;" routerLink="/salas/{{sala.id}}">{{sala.id}}
-                    </td>-->
-                 <td>{{sala.id}}</td>
+                <tr *ngFor = "let sala of salas" >
+                <td style="cursor: pointer;"> 
+                <dd class="figure-caption" routerLink="/salas/{{sala.id}}">
+                        {{sala.numero}}</dd>
+                </td>
+                <td> {{sala.id}} </td>
                 </tr>
             </tbody>
         </table>
+        <div class="col-8">
+            <div *ngIf="showCreate">
+                <app-sala-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-sala-create>
+            </div>
+        </div>
     </div>
 </div>

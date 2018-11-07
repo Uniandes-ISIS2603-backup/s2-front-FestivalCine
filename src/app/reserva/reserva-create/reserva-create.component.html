@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <img class= "center-block" src="https://lemongardenhostelsevilla.com/wp-content/uploads/2017/10/Reserva-ahora-verde-pantalla-grande-copy.png"
+             width="400"
+            height="150"><br/>
+        <br>
+        <form name="reserva" (ngSubmit)="f.form.valid && createReserva()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="reservaIdUsuario"><b>Id del usuario que hace la reserva</b></label>
+                <input type="text" name="reservaIdUsuario" class="form-control" id="reservaIdUsuario" [(ngModel)]="reserva.idUsuario"
+                    #reservaIdUsuario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaIdUsuario.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el id del usuario!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reservaAbono"><b>¿Abono?</b></label>
+                <input type="text" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono"
+                    #reservaAbono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaAbono.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Debe decirnos si desea el abono!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reservaDescuento"><b>Descuento aplicado</b></label>
+                <input type="text" name="reservaDescuento" class="form-control" id="reservaDescuento" [(ngModel)]="reserva.descuento"
+                    #reservaDescuento="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaDescuento.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Debe decirnos si hay descuento!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="reservaPrecioTotal"><b>Total a pagar</b></label>
+                <input type="text" name="reservaPrecioTotal" class="form-control" id="reservaPrecioTotal" [(ngModel)]="reserva.precioTotal"
+                    #reservaPrecioTotal="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaPrecioTotal.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el total a pagar!</div>
+                </div>
+            </div>     
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" routerLink="/reservas/list">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

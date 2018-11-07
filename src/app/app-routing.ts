@@ -8,13 +8,25 @@ import {FuncionDetailComponent} from '../app/funcion/funcion-detail/funcion-deta
 import {TeatroListComponent} from '../app/teatro/teatro-list/teatro-list.component';
 import {UsuarioListComponent} from '../app/usuario/usuario-list/usuario-list.component';
 import {UsuarioDetailComponent} from '../app/usuario/usuario-detail/usuario-detail.component';
+import { UsuarioCreateComponent } from '../app/usuario/usuario-create/usuario-create.component';
 import {ReservaListComponent} from '../app/reserva/reserva-list/reserva-list.component';
+import {ReservaDetailComponent} from '../app/reserva/reserva-detail/reserva-detail.component';
+import { ReservaCreateComponent } from '../app/reserva/reserva-create/reserva-create.component';
 import{SillaListComponent} from '../app/silla/silla-list/silla-list.component'
 import {SillaDetailComponent} from '../app/silla/silla-detail/silla-detail.component';
 import {PeliculaListComponent} from '../app/pelicula/pelicula-list/pelicula-list.component';
 import{SalaListComponent} from '../app/sala/sala-list/sala-list.component';
 import{SalaDetailComponent} from '../app/sala/sala-detail/sala-detail.component';
 import {FestivalListComponent} from '../app/festival/festival-list/festival-list.component';
+import {SalaCreateComponent} from '../app/sala/sala-create/sala-create.component'
+import {FuncionCreateComponent} from '../app/funcion/funcion-create/funcion-create.component';
+import {CriticoDetailComponent} from '../app/critico/critico-detail/critico-detail.component';
+import {CalificacionListComponent} from '../app/calificacion/calificacion-list/calificacion-list.component';
+import {CalificacionDetailComponent} from '../app/calificacion/calificacion-detail/calificacion-detail.component';
+import {FestivalDetailComponent} from '../app/festival/festival-detail/festival-detail.component';
+import {FestivalCreateComponent} from '../app/festival/festival-create/festival-create.component';
+import {TeatroDetailComponent} from '../app/teatro/teatro-detail/teatro-detail.component';
+import {TeatroCreateComponent} from '../app/teatro/teatro-create/teatro-create.component';
 
 const routes: Routes = [
     {
@@ -23,6 +35,23 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:CriticoListComponent
+            },
+            {
+                path: ':id',
+                component: CriticoDetailComponent,
+            }
+        ]
+    },
+    {
+        path: 'calificaciones',
+        children: [
+            {
+                path: 'list',
+                component: CalificacionListComponent
+            },
+            {
+                path: ':id',
+                component: CalificacionDetailComponent,
             }
         ]
     },
@@ -32,22 +61,33 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:FuncionListComponent
-            },      
+            },   
             {
-                path: 'id',
+                path:'add',
+                component: FuncionCreateComponent
+            },  
+            {
+                path: ':id',
                 component:FuncionDetailComponent
-            }
-            
+            }        
         ]
     },
+
     {
-        path: 'teatros',
+	path: 'teatros',
         children: [
             {
                 path: 'list',
                 component:TeatroListComponent
-            }
-        ]
+            },
+            {
+                path:':id',
+                component:TeatroDetailComponent
+            },
+            {
+                path:'add',
+                component:TeatroCreateComponent
+            }  ]
     },
     {
         path: 'usuarios',
@@ -56,6 +96,10 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:UsuarioListComponent
+            },
+            {
+                path: 'add',
+                component: UsuarioCreateComponent
             },
             {
                 path: ':id',
@@ -79,6 +123,14 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:ReservaListComponent
+            },
+            {
+                path: 'add',
+                component: ReservaCreateComponent
+            },
+            {
+                path: ':id',
+                component:ReservaDetailComponent
             }
         ]
     },
@@ -116,20 +168,31 @@ const routes: Routes = [
                 component:SalaListComponent
             },
             {
-                path: 'id',
+                path:'add',
+                component: SalaCreateComponent
+            },
+            {
+                path: ':id',
                 component:SalaDetailComponent
             }
         ]
     },
-    
-            {
-        path:'festivales',
-        children:[
+    {
+    path:'festivales',
+    children:[
             {
                 path:'list',
                 component:FestivalListComponent
-            }
-        ]
+            },
+            {
+                path:':id',
+                component:FestivalDetailComponent
+            },
+            {
+                path:'add',
+                component:FestivalCreateComponent
+            }  
+    ]
     }
     
  

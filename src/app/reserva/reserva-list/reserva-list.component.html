@@ -1,20 +1,25 @@
+
+<!--<h2 align = "center"> <font face = "impact" color="#66CCCC"> ¡Estas son nuestras reservas! </font> </h2>-->
+<p> ¿Con ánimos de reservar? <button routerLink="/reservas/add">¡Reservar!</button></p>
 <div class="container-fluid">
     <div class="col-md-2">
         <table class="table table-striped">
             <thead class="thead-dark">
-                <tr>
-                    <th>Reservas Name</th> 
-                     <th>Abono</th> 
-                     <th>Descuento</th>
-                     <th>PrecioTotal</th> 
+                <tr >
+                    <th><font face = "raro, courier"> Id </font></th> 
+                    <th><font face = "raro, courier">Abono</font></th> 
+                     <th><font face = "raro, courier">Descuento</font></th>
+                     <th><font face = "raro, courier">PrecioTotal</font></th> 
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor = "let reserva of reservas">
-                    <td>{{reserva.id}}</td>   
-                    <td>{{reserva.abono}}</td>  
-                     <td>{{reserva.descuento}}</td>  
-                      <td>{{reserva.precioTotal}}</td>  
+                <tr align ="center" *ngFor = "let reserva of reservas">
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/reservas/{{reserva.id}}"> <font face = "raro, courier">{{reserva.id}} </font></dd>
+                    </td>   
+                    <td><font face = "raro, courier">{{reserva.abono}}</font></td>  
+                     <td><font face = "raro, courier">{{reserva.descuento}}</font></td>  
+                      <td><font face = "raro, courier">{{reserva.precioTotal}}</font></td>  
                 </tr>
             </tbody>
         </table>

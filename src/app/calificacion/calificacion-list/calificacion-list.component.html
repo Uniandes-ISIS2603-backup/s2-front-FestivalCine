@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Puntaje</th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let cali of calificaciones">
+                    <td><dd class="figure-caption" routerLink="/calificaciones/{{cali.id}}">
+                {{cali.id}}</dd></td>
+                    <td><dd class="figure-caption" routerLink="/calificaciones/{{cali.id}}">
+                {{cali.puntaje}}</dd></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

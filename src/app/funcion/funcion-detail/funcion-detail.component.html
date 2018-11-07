@@ -1,3 +1,18 @@
-<p>
-  funcion-detail works!
-</p>
+<div class="panel-body">
+    <div class="border margin">
+        <p class="h3 p-3"> La función con id {{funcionDetail.id}} tiene la siguiente información:  <p> 
+        <div class="row">
+            <div class="col">
+                <dl>     
+                    <dt>Fecha</dt>
+                    <dd>{{funcionDetail.fecha| date:'MM/dd/yyyy'}}</dd>
+                     <dt>Hora</dt>
+                    <dd>{{funcionDetail.hora}}</dd>
+                     <dt>Precio Base</dt>
+                    <dd>{{funcionDetail.precioBase|currency}}</dd>
+                </dl>
+            </div>
+
+        </div>
+    </div>
+</div>

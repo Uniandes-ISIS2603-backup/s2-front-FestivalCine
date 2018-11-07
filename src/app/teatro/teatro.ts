@@ -1,4 +1,4 @@
-export interface Teatro{
+export class Teatro{
     
     /**
      *

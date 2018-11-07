@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {Funcion} from '../funcion';
+import { Component, OnInit,ViewContainerRef  } from '@angular/core';
+import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
+import { ToastrService } from 'ngx-toastr';
+import { Funcion } from '../funcion';
 import {FuncionService} from '../funcion.service';
+
+
 
 @Component({
   selector: 'app-funcion-list',
@@ -9,30 +13,61 @@ import {FuncionService} from '../funcion.service';
 })
 export class FuncionListComponent implements OnInit {
 
-    /**
-     * Constructor for the component
-     * @param funcionService 
-     */
-    constructor(private funcionService: FuncionService) {}
+  /**
+   * Contructor del componente
+   */
+  constructor( private funcionService: FuncionService ) { }
 
+  /**
+   * La lista de funciones del festival de cine
+   */
+   funciones: Funcion[];
+   /**
+    * The id of the funcion that the user wants to view
+    */
+   funcion_id: number;
+   selectedFuncion : Funcion;
+   
     /**
-     * The list of salas which belong to the Festival
-     */
-    funciones: Funcion[];
+    *  Shows or hides the funcion-create-component
+    */
+   showCreate: boolean;
 
-    /**
-     * Asks the service to update the list of salas
-     */
-    getFunciones(): void {
+
+onSelected(funcion_id: number):void {
+        this.showCreate = false;
+        this.funcion_id = funcion_id;
+  
+    this.getFuncionDetail();
+}   
+   
+showHideCreate(): void {
+     if (this.selectedFuncion) {
+               this.selectedFuncion = undefined;
+               this.funcion_id = undefined;
+        }
+        this.showCreate = !this.showCreate;
+    }
+    
+  /**
+   * Obtiene el servicio para actualizar la lista de funciones
+   */
+   getFunciones(): void {
         this.funcionService.getFunciones().subscribe(funciones => this.funciones = funciones);
     }
-
-    /**
-     * This will initialize the component by retrieving the list of salas from the service
-     * This method will be called when the component is created
-     */
-    ngOnInit() {
-        this.getFunciones();
+    
+   getFuncionDetail(): void {
+         this.funcionService.getFuncionDetail(this.funcion_id)
+            .subscribe(selectedFuncion => {
+                this.selectedFuncion = selectedFuncion
+            });
     }
+   
+  ngOnInit() {
+      this.showCreate = false;
+      this.selectedFuncion = undefined;
+      this.funcion_id = undefined;
+      this.getFunciones();
+  }
 
 }

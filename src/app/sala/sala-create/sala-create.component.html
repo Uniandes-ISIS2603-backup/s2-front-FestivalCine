@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <h2 class="text-center">Crear una Sala</h2>
+        <br>
+        <form name= "sala" (ngSubmit)="f.form.valid && createSala()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="salaNumero"><b>Numero de la sala</b></label>
+                <input type="text" name="salaNumero" class="form-control" id="salaNumero" [(ngModel)]="sala.numero"
+                        #salaNumero="ngModel" [ngClass]="{ 'is-invalid': f.submitted && salaNumero.invalid }"required>          
+                <div class="invalid-feedback">
+                    <div>Falta el número de la sala</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" routerLink="/salas/list">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

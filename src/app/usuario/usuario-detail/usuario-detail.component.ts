@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { UsuarioService } from '../usuario.service';
@@ -16,7 +16,7 @@ export class UsuarioDetailComponent implements OnInit {
     private usuarioService: UsuarioService,
     private route: ActivatedRoute) { }
 
-usuarioDetail: UsuarioDetail;
+@Input() usuarioDetail: UsuarioDetail;
  
 usuario_id: number;
 
