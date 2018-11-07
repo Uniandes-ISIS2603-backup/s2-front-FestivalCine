@@ -15,6 +15,12 @@ import { ReservaCreateComponent } from '../app/reserva/reserva-create/reserva-cr
 import{SillaListComponent} from '../app/silla/silla-list/silla-list.component'
 import {SillaDetailComponent} from '../app/silla/silla-detail/silla-detail.component';
 import {PeliculaListComponent} from '../app/pelicula/pelicula-list/pelicula-list.component';
+import {PeliculaDetailComponent} from '../app/pelicula/pelicula-detail/pelicula-detail.component';
+
+import {BandaAnuncioListComponent} from '../app/bandaanuncio/bandaanuncio-list/bandaanuncio-list.component';
+import {BandaAnuncioDetailComponent} from '../app/bandaanuncio/bandaanuncio-detail/bandaanuncio-detail.component';
+
+
 import{SalaListComponent} from '../app/sala/sala-list/sala-list.component';
 import{SalaDetailComponent} from '../app/sala/sala-detail/sala-detail.component';
 import {FestivalListComponent} from '../app/festival/festival-list/festival-list.component';
@@ -108,15 +114,7 @@ const routes: Routes = [
             
         ]
     },
-     {
-        path: 'peliculas',
-        children: [
-            {
-                path: 'list',
-                component:PeliculaListComponent
-            }
-        ]
-    },
+     
     {
         path: 'reservas',
         children: [
@@ -131,19 +129,6 @@ const routes: Routes = [
             {
                 path: ':id',
                 component:ReservaDetailComponent
-            }
-        ]
-    },
-    {
-        path: 'peliculas',
-        children: [
-            {
-                path: 'list',
-                component:PeliculaListComponent
-            },
-            {
-                path:'id',
-                component:PeliculaDetailComponent
             }
         ]
     },
@@ -174,6 +159,19 @@ const routes: Routes = [
             {
                 path: ':id',
                 component:SalaDetailComponent
+            }
+        ]
+    },
+            {
+        path: 'peliculas',
+        children: [
+            {
+                path: 'list',
+                component:PeliculaListComponent
+            },
+            {
+                path: ':id',
+                component:PeliculaDetailComponent
             }
         ]
     },
