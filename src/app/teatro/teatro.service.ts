@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Teatro } from './teatro';
+import {TeatroDetail} from './teatro-detail';
 
 const API_URL = "../../assets/";
 const teatros = 'teatros.json';
@@ -19,9 +20,19 @@ export class TeatroService {
     */
     constructor(private http: HttpClient) { }
     
-  
+     /**
+      * Crea un teatro
+      */
+      createTeatro(teatro): Observable<Teatro>
+      {
+          return this.http.post<Teatro>(API_URL + teatros, teatro);
+      }
+        
     getTeatros() : Observable<Teatro[]> {
         return this.http.get<Teatro[]>(API_URL + teatros);
     }
     
+    getTeatroDetail(teatroId): Observable<TeatroDetail> {
+        return this.http.get<TeatroDetail>(API_URL +teatros + '/' + teatroId);
+    }
 }
