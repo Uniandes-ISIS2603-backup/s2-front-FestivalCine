@@ -14,18 +14,18 @@ export class TeatroDetailComponent implements OnInit {
   constructor(private teatroService: TeatroService,
     private route: ActivatedRoute) { }
     
-    teatroDetail: TeatroDetail;
+    teatro: Teatro;
     teatro_id: number;
     
-    getTeatroDetail(): void
+    getTeatro(): void
     {
-        this.teatroService.getTeatroDetail(this.teatro_id).subscribe(teatroDetail => {this.teatroDetail = teatroDetail});
+        this.teatroService.getTeatroDetail(this.teatro_id).subscribe(teatro => {this.teatro = teatro});
     }
 
   ngOnInit() {
       this.teatro_id = +this.route.snapshot.paramMap.get('id');
-      this.teatroDetail = new TeatroDetail();
-      this.getTeatroDetail(); 
+      this.teatro = new Teatro();
+      this.getTeatro(); 
   }
 
 }

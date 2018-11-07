@@ -4,9 +4,9 @@ import { HttpClient } from '@angular/common/http';
 
 import { Teatro } from './teatro';
 import {TeatroDetail} from './teatro-detail';
-
-const API_URL = "../../assets/";
-const teatros = 'teatros.json';
+import { environment } from '../../environments/environment';
+const API_URL = environment.apiURL;
+const teatros ='/teatros';
 
 /**
 * The service provider for everything related to editorials

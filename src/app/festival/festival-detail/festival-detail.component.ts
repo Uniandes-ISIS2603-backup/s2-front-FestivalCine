@@ -19,7 +19,7 @@ export class FestivalDetailComponent implements OnInit {
    
     
     }
-    festival: Festival
+    festival: Festival;
     festival_id: number;
     
     getFestival(): void

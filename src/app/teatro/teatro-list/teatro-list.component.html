@@ -3,6 +3,7 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
+                    <th>ID</th>
                     <th>Nombres</th>
                     <th>Direccion</th>
                     <th>Numero Salas Festival</th>
@@ -10,7 +11,10 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let teatro of teatros">
-                    <td><button type="button" class="btn btn-outline-dark">{{teatro.nombre}}</button></td>
+                    <td style="cursor: pointer;">
+                    <dd class="figure-caption" routerLink="/teatros/{{teatro.id}}">
+                    <td>{{teatro.id}}</td>
+                    <td>{{teatro.nombre}}</td>
                     <td>{{teatro.direccion}}</td>
                     <td>{{teatro.numSalasFest}}</td>
                 </tr>
