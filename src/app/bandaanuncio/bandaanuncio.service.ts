@@ -2,17 +2,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-import { Pelicula } from './pelicula';
-import { PeliculaDetail } from './pelicula-detail';
+import { BandaAnuncio } from './bandaanuncio';
+import { BandaAnuncioDetail } from './bandaanuncio-detail';
 
 const API_URL = "../../assets/";
-const peliculas = 'peliculas.json';
+const bandaanuncios = 'bandaanuncios.json';
 
 /**
 * The service provider for everything related to editorials
 */
 @Injectable()
-export class PeliculaService {
+export class BandaAnuncioService {
     
     /**
     * Constructor of the service
@@ -23,21 +23,21 @@ export class PeliculaService {
      /**
       * 
       */
-      createPelicula(pelicula): Observable<Pelicula>
+      createBandaAnuncio(bandaanuncio): Observable<BandaAnuncio>
       {
-          return this.http.post<Pelicula>(API_URL + peliculas, pelicula);
+          return this.http.post<BandaAnuncio>(API_URL + bandaanuncios, bandaanuncio);
       }
         
-    getPeliculas() : Observable<Pelicula[]> {
-        return this.http.get<Pelicula[]>(API_URL + peliculas);
+    getBandaAnuncios() : Observable<BandaAnuncio[]> {
+        return this.http.get<BandaAnuncio[]>(API_URL + bandaanuncios);
     }
      /**
     * Returns the Observable object containing the usuario retrieved from the API
     * @returns The user
     */
-    getPeliculaDetail(peliculaId): Observable<PeliculaDetail> 
+    getBandaAnuncioDetail(bandaanuncioId): Observable<BandaAnuncioDetail> 
     {
-        return this.http.get<PeliculaDetail>(API_URL + peliculas + '/' + peliculaId);
+        return this.http.get<BandaAnuncioDetail>(API_URL + bandaanuncios + '/' + bandaanuncioId);
     }
     
    

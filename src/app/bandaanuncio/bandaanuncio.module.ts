@@ -4,9 +4,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from '../app-routing';
-import { PeliculaListComponent } from './pelicula-list/pelicula-list.component';
-import { PeliculaDetailComponent } from './pelicula-detail/pelicula-detail.component';
-import { PeliculaService } from './pelicula.service';
+import { BandaAnuncioListComponent } from './bandaanuncio-list/bandaanuncio-list.component';
+import { BandaAnuncioDetailComponent } from './bandaanuncio-detail/bandaanuncio-detail.component';
+import { BandaAnuncioService } from './bandaanuncio.service';
 
 
 @NgModule({
@@ -17,8 +17,8 @@ import { PeliculaService } from './pelicula.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  declarations: [PeliculaListComponent],
-  providers: [PeliculaService],
-  exports:[PeliculaListComponent]
+  declarations: [BandaAnuncioListComponent],
+  providers: [BandaAnuncioService],
+  exports:[BandaAnuncioListComponent]
 })
-export class PeliculaModule { }
+export class BandaAnuncioModule { }

@@ -1,23 +1,40 @@
-/**
-* This class represents an editorial of the BookStore. 
-* It contains all the information relevant to the editorial.
-*/
-export interface Pelicula {
-    /**
-    * The editorial's id
-    */
-    id: number;
-
-    /**
-    * The editorial's name
-    */
+export class Pelicula{
+    
+      /**
+     *
+     */
     nombre: string;
- 
-    duracion:number;
     
-    director:string;
+    /**
+     * 
+     */
+   director: string;
+       
+    /**
+     * 
+     */
+   creditos: string;
+   
+       
+    /**
+     * 
+     */
+   pais: string;
+
+        
+    /**
+     * 
+     */
+   duracion: number;
+   
+           
+    /**
+     * 
+     */
+   puntaje: number;
+   
     
-    pais:string;
     
-    credits:string;
+     
 }
+

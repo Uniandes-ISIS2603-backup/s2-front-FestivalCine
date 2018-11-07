@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Duracion</th>
+                   
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let bandaanuncio of bandaanuncios">
+                    <td><button type="button" class="btn btn-outline-dark">{{bandaanuncio.duracion}}</button></td>
+                    
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>

@@ -1,16 +1,27 @@
-
-<p class="h3 p-3">Pelicula: {{peliculaDetail.name}}</p>
-<p class="h3 p-3">{{peliculaDetail.name}}<p> 
-        <div class="row">
-            <div class="col-md-3">
-               
-            </div>
-            <div class="col-md-3">
-                <dl>     
-                    <dt>Creditos</dt>
-                    <dd>{{peliculaDetail.creditos}}</dd>
-                    <dt>Pais</dt>
-                    <dd>{{peliculaDetail.pais}}</dd>
-                </dl>
-            </div>           
+<div class="col-md-12">
+    <div class="container-fluid">   
+        <h2><font face="raro, courier" color="#3399CC"> <b> Pelicula: </b>  </font> <font face= "raro, courier">{{peliculaDetail.nombre}} }  </font></h2>
+        
+        <img src="https://is1-ssl.mzstatic.com/image/thumb/Video/d7/5c/d9/mzl.lniondsx.jpg/230x0w.jpg"
+             width="100"
+            height="100">
+        
+        <h5> <font face="raro, courier" color="#3399CC"> <b>Informacion: </b></font></h5>
+        
+        <br>
+        <div class="row border margin">
+            <h5><font face="raro, courier"> <b>Calificaciones: </b> </font></h5>
+            <list-calificaciones [calificaciones] = "peliculaDetail.calificaciones"></list-calificaciones>
         </div>
+        
+         <div class="row border margin">
+            <h5><font face="raro, courier"> <b>Criticos: </b> </font></h5>
+            <list-criticos [criticos] = "peliculaDetail.criticos"></list-criticos>
+        </div>
+       
+         <div class="row border margin">
+            <h5><font face="raro, courier"> <b>Funciones: </b> </font></h5>
+            <list-funciones [funciones] = "peliculaDetail.funciones"></list-funciones>
+        </div>
+    </div>
+</div>

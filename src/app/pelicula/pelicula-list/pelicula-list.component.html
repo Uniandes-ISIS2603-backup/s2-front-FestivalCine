@@ -1,26 +1,29 @@
-
 <div class="container-fluid">
     <div class="table-responsive">
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id</th>
                     <th>Nombre</th>
-                    <th>Duracion</th>
                     <th>Director</th>
-                    <th>Pais</th>
                     <th>Creditos</th>
+                    <th>Pais</th>
+                    <th>Duracion</th>
+                    <th>Puntaje</th>
+                    
                     
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let pelicula of peliculas">
-                    
-                     <td><button type="button" class="btn btn-outline-dark">{{critico.nombres}}</button></td>
-                 
-                    <td>{{pelicula.nombre}}</td>
-                    <td>{{pelicula.duracion}}</td>
+                    <td><button type="button" class="btn btn-outline-dark">{{pelicula.nombre}}</button></td>
                     <td>{{pelicula.director}}</td>
-                    <td>{{pelicula.pais}}</td>
                     <td>{{pelicula.creditos}}</td>
- </tr>
+                    <td>{{pelicula.pais}}</td>
+                    <td>{{pelicula.duracion}}</td>
+                    <td>{{pelicula.creditos}}</td>
+                    <td>{{pelicula.puntaje}}</td>
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>
