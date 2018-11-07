@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Pelicula } from './pelicula';
+import { PeliculaDetail } from './pelicula-detail/peliculaDetail';
+
 
 const API_URL = "../../assets/";
 const peliculas = 'peliculas.json';
@@ -22,6 +24,10 @@ export class PeliculaService {
   
     getPeliculas() : Observable<Pelicula[]> {
         return this.http.get<Pelicula[]>(API_URL + peliculas);
+    }
+    
+    getPeliculaDetail(PeliculaId): Observable<PeliculaDetail> {
+        return this.http.get<PeliculaDetail>(API_URL + peliculas + '/' + PeliculaId);
     }
     
 }
