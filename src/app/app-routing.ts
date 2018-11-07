@@ -57,16 +57,15 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:FuncionListComponent
-            },      
-            {
-                path: ':id',
-                component:FuncionDetailComponent
-            },
+            },   
             {
                 path:'add',
                 component: FuncionCreateComponent
-            }
-            
+            },  
+            {
+                path: ':id',
+                component:FuncionDetailComponent
+            }        
         ]
     },
     {
@@ -153,12 +152,12 @@ const routes: Routes = [
                 component:SalaListComponent
             },
             {
-                path: ':id',
-                component:SalaDetailComponent
-            },
-            {
                 path:'add',
                 component: SalaCreateComponent
+            },
+            {
+                path: ':id',
+                component:SalaDetailComponent
             }
         ]
     },
