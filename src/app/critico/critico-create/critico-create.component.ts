@@ -27,7 +27,8 @@ export class CriticoCreateComponent implements OnInit {
   createCritico(): Critico
   {
       this.criticoService.createCritico(this.critico)
-          .subscribe(() => {
+          .subscribe((critico) => {
+              this.critico = critico;
               this.create.emit();
               this.toastrService.success("El critico fue creado", "Creación de usuario");
       }, err => {
@@ -43,7 +44,7 @@ export class CriticoCreateComponent implements OnInit {
   }
   
   ngOnInit() 
-  {
+  {   console.log("create");
       this.critico = new Critico();
   }
 

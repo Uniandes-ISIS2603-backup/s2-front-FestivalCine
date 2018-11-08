@@ -45,12 +45,12 @@ const routes: Routes = [
                 component:CriticoListComponent
             },
             {
-                path: ':id',
-                component: CriticoDetailComponent
-            },
-            {
                 path: 'add',
                 component: CriticoCreateComponent
+            },
+            {
+                path: ':id',
+                component: CriticoDetailComponent
             }
         ]
     },
@@ -62,12 +62,12 @@ const routes: Routes = [
                 component: CalificacionListComponent
             },
             {
-                path: ':id',
-                component: CalificacionDetailComponent
-            },
-            {
                 path: 'add',
                 component: CalificacionCreateComponent
+            },
+            {
+                path: ':id',
+                component: CalificacionDetailComponent
             }
         ]
     },
