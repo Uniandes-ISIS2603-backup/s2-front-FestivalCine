@@ -1,6 +1,9 @@
 export class BandaAnuncio{
     
- 
+ /**
+ **
+ */
+ id: number;
         
     /**
      * 
