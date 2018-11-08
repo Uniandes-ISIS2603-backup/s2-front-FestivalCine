@@ -26,13 +26,16 @@ export class ReservaCreateComponent implements OnInit {
   
   createReserva(): Reserva 
    {
-        this.reservaService.createReserva(this.reserva)
-            .subscribe(() => {
-                this.create.emit();
-                this.toastrService.success("La reserva fue creada", "Creacion de reserva");
+        this.reservaService.createReserva(this.reserva).subscribe((reserva) => {this.reserva = reserva; 
+            this.create.emit();
+            this.toastrService.success("La reserva fue creada", "Creacion de reserva");
             }, err => {
                 this.toastrService.error(err, "Error");
             });
+        console.log(this.reserva.id);
+        console.log(this.reserva.abono); 
+      console.log(this.reserva.descuento);
+      console.log(this.reserva.precioTotal);
         return this.reserva;
    }
    

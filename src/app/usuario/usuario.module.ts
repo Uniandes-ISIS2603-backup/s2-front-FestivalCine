@@ -11,7 +11,7 @@ import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.componen
 
 import { ReservaModule } from '../reserva/reserva.module';
 import { UsuarioCreateComponent } from './usuario-create/usuario-create.component';
-//import { CalificacionModule } from '../calificacion/calificacion.module';
+import { CalificacionModule } from '../calificacion/calificacion.module';
 
 @NgModule
 (
@@ -23,7 +23,8 @@ import { UsuarioCreateComponent } from './usuario-create/usuario-create.componen
         HttpClientModule,
         CommonModule,
         FormsModule,
-        ReservaModule
+        ReservaModule,
+        CalificacionModule
     ],
     declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent],
     providers: [UsuarioService],

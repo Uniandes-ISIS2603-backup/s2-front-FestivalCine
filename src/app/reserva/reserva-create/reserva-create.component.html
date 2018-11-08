@@ -8,8 +8,9 @@
         <br>
         <form name="reserva" (ngSubmit)="f.form.valid && createReserva()" #f="ngForm" novalidate>
             <div class="form-group">
+                
                 <label for="reservaIdUsuario"><b>Id del usuario que hace la reserva</b></label>
-                <input type="text" name="reservaIdUsuario" class="form-control" id="reservaIdUsuario" [(ngModel)]="reserva.idUsuario"
+                <input type="text" name="reservaIdUsuario" class="form-control" id="reservaIdUsuario" [(ngModel)]="reserva.usuario.id"
                     #reservaIdUsuario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaIdUsuario.invalid }" required>
                 <div class="invalid-feedback">
                     <div>¡Falta el id del usuario!</div>
@@ -17,12 +18,14 @@
             </div>
             <div class="form-group">
                 <label for="reservaAbono"><b>¿Abono?</b></label>
-                <input type="text" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono"
+                <input type="checkbox" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono">              
+                <!--<input type="text" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono"
                     #reservaAbono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaAbono.invalid }" required>
                 <div class="invalid-feedback">
                     <div>¡Debe decirnos si desea el abono!</div>
-                </div>
+                </div>-->
             </div>
+   
             <div class="form-group">
                 <label for="reservaDescuento"><b>Descuento aplicado</b></label>
                 <input type="text" name="reservaDescuento" class="form-control" id="reservaDescuento" [(ngModel)]="reserva.descuento"

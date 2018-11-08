@@ -13,11 +13,12 @@
         <br>
         <div class="row border margin">
             <h5><font face="raro, courier"> <b>Reservas: </b> </font></h5>
+            <p> ¿Con ánimos de reservar? <button routerLink="{{usuarioDetail.id}}">¡Reservar!</button></p>
             <list-reserva [reservas] = "usuarioDetail.reservas"></list-reserva>
         </div>
         <div class="row border margin">
             <h5><font face="raro, courier"><b>Calificaciones:</b> </font></h5>
-            <!-- <app-reserva-list [reservas] ="usuarioDetail.reservas"></app-reserva-list> -->
+            <app-calificacion-list [calificaciones] ="usuarioDetail.calificaciones"></app-calificacion-list>
         </div>
     </div>
 </div>

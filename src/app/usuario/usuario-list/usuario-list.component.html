@@ -3,9 +3,9 @@
             height="200">
 <h2 align = "center"> <font face="impact" color="#66CCCC"> ¡Estos son nuestros usuarios! </font> </h2>
 <p> ¿Eres nuevo? ¡Únete! <button routerLink="/usuarios/add">Add new usuario</button></p>
-
+ 
 <div class ="container-fluid">
-    <div style="text-align:center;" class ="col-md-2">
+    <div style="text-align:center;" class ="col-md-2">     
         <table align = "center" class ="table table - striped">
             <thead class ="thead-dark">
                 <tr align="center">
@@ -43,12 +43,15 @@
                 </tr>
             </tbody>
         </table>
+ 
     </div>
     <div class="col-8">
             <div *ngIf="selectedUsuario">
                 <app-usuario-detail [usuarioDetail]="selectedUsuario"></app-usuario-detail>
             </div>
     </div>
+  
  </div> 
+ 
                          
                         

@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Calificacion} from '../calificacion';
 import {CalificacionService} from '../calificacion.service';
+
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-calificacion-list',
@@ -9,9 +11,13 @@ import {CalificacionService} from '../calificacion.service';
 })
 export class CalificacionListComponent implements OnInit {
 
-  constructor( private calificacionService: CalificacionService) { }
+  constructor( private calificacionService: CalificacionService,  private route: ActivatedRoute) { }
 
-  calificaciones: Calificacion[];
+  @Input() calificaciones: Calificacion[];
+  
+  
+  allcalificaciones:string = 'no';
+  
   calificacion_id: number;
   selectedCalificacion: Calificacion
   
@@ -34,8 +40,20 @@ export class CalificacionListComponent implements OnInit {
           .subscribe(selectedCalificacion => {this.selectedCalificacion = selectedCalificacion});
   }
 
-  ngOnInit() {
-      this.getCalificaciones();
+  ngOnInit() 
+      {
+       this.route.queryParams.filter(params => params.allcalificaciones).subscribe(params => {
+        console.log(params); 
+
+        this.allcalificaciones = params.allcalificaciones;
+        console.log(this.allcalificaciones); 
+      });
+      if (this.allcalificaciones == 'yes')
+      {
+         console.log("allcalificaciones");
+      
+       this.getCalificaciones();
+       }
   }
 
 }
