@@ -1,14 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {AppRoutingModule} from '../app-routing';
 import { SillaListComponent } from './silla-list/silla-list.component';
 import { SillaDetailComponent } from './silla-detail/silla-detail.component';
+import { SillaService } from './silla.service';
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+        FormsModule,
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
- 
   declarations: [SillaListComponent, SillaDetailComponent],
-   exports:[SillaListComponent,SillaDetailComponent]
+  providers: [SillaService],
+  exports:[SillaListComponent]
 })
 export class SillaModule { }

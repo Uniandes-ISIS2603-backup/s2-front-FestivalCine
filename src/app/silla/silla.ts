@@ -1,6 +1,10 @@
 export class Silla {
-    /**
-     * Id de la silla
-     */ 
-     id: number
+/**
+*
+*/
+disponible:boolean;
+
+tipo:boolean;
+
+numero:number;
 }
