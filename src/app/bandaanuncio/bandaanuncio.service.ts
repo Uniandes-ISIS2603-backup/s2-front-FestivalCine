@@ -6,7 +6,7 @@ import { BandaAnuncio } from './bandaanuncio';
 import { BandaAnuncioDetail } from './bandaanuncio-detail';
 
 const API_URL = "../../assets/";
-const bandaanuncios = 'bandaanuncios.json';
+const bandaanuncios = 'bandaanuncio';
 
 /**
 * The service provider for everything related to editorials

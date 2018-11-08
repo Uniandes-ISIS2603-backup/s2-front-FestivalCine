@@ -150,7 +150,7 @@ const routes: Routes = [
                 component:SillaListComponent
             },
             {
-                path:'id',
+                path:':id',
                 component:SillaDetailComponent
             }
         ]
