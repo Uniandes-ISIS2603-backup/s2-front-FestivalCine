@@ -16,7 +16,7 @@ import{SillaListComponent} from '../app/silla/silla-list/silla-list.component'
 import {SillaDetailComponent} from '../app/silla/silla-detail/silla-detail.component';
 import {PeliculaListComponent} from '../app/pelicula/pelicula-list/pelicula-list.component';
 import {PeliculaDetailComponent} from '../app/pelicula/pelicula-detail/pelicula-detail.component';
-
+import {PeliculaCreateComponent } from '../app/pelicula/pelicula-create/pelicula-create.component';
 import {BandaAnuncioListComponent} from '../app/bandaanuncio/bandaanuncio-list/bandaanuncio-list.component';
 import {BandaAnuncioDetailComponent} from '../app/bandaanuncio/bandaanuncio-detail/bandaanuncio-detail.component';
 
@@ -182,6 +182,10 @@ const routes: Routes = [
             {
                 path: ':id',
                 component:PeliculaDetailComponent
+            },
+             {
+                path: 'add',
+                component:PeliculaCreateComponent
             }
         ]
     },

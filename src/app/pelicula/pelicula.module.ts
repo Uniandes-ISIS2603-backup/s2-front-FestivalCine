@@ -7,7 +7,7 @@ import {AppRoutingModule} from '../app-routing';
 import { PeliculaListComponent } from './pelicula-list/pelicula-list.component';
 import { PeliculaDetailComponent } from './pelicula-detail/pelicula-detail.component';
 import { PeliculaService } from './pelicula.service';
-
+import { PeliculaCreateComponent } from './pelicula-create/pelicula-create.component';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { PeliculaService } from './pelicula.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  declarations: [PeliculaListComponent, PeliculaDetailComponent],
+  declarations: [PeliculaListComponent, PeliculaDetailComponent,PeliculaCreateComponent],
   providers: [PeliculaService],
   exports:[PeliculaListComponent]
 })
