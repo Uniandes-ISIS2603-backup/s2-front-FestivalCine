@@ -17,12 +17,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="funcionHora"><b>Hora</b></label>
-                <input type="text" name="funcionHora" class="form-control" id="funcionHora" [(ngModel)]="funcion.hora"
-                        #funcionHora="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionHora.invalid }"required>          
-                <div class="invalid-feedback">
-                    <div>Falta la hora de la función</div>
-                </div>
+                <label for="funcionHora"><b>Hora</b></label>       
+                <ngb-timepicker name="funcionHora" id="funcionHora" [(ngModel)]="funcion.hora" [seconds]="false"
+                    [hourStep]="hourStep" [minuteStep]="minuteStep"></ngb-timepicker>
             </div>
             <div class="form-group">
                 <label for="funcionPrecioBase"><b>Precio Base</b></label>

@@ -5,6 +5,8 @@ import { FuncionService } from '../funcion.service';
 import { PeliculaService} from '../../pelicula/pelicula.service'
 import { SalaService} from '../../sala/sala.service'
 import { CriticoService} from '../../critico/critico.service'
+import {NgbTimeStruct} from '@ng-bootstrap/ng-bootstrap';
+
 
 import { Funcion } from '../funcion';
 import {Pelicula} from '../../pelicula/pelicula';
@@ -18,7 +20,6 @@ import {Critico} from '../../critico/critico';
   providers : [DatePipe]
 })
 export class FuncionCreateComponent implements OnInit {
-
   /**
     * Constructor for the component
     * @param funcionService The funcion's services provider
@@ -67,7 +68,12 @@ export class FuncionCreateComponent implements OnInit {
     */
     @Output() create = new EventEmitter();
     
-    
+    /**
+     * Para el time picker
+     */
+    hourStep = 1;
+    minuteStep = 30;
+     
     /**
     * Retrieves the list of peliculas in the FestivalFe
     */
