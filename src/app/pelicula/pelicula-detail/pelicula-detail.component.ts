@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { PeliculaService } from '../pelicula.service';
-import { Pelicula} from '../pelicula';
-import { PeliculaDetail } from '../pelicula-detail';
+import {PeliculaService} from '../pelicula.service';
+import {Pelicula} from '../pelicula';
+
 
 @Component({
   selector: 'app-pelicula-detail',
@@ -13,23 +13,23 @@ import { PeliculaDetail } from '../pelicula-detail';
 export class PeliculaDetailComponent implements OnInit {
 
   constructor(
-    private peliculaService: PeliculaService,
-    private route: ActivatedRoute) { }
+  private peliculaService: PeliculaService,
+  private route: ActivatedRoute) {   }
+  
+  pelicula:Pelicula;
+  
+  pelicula_id : number;
+  
+  getPelicula(): void {
+      this.peliculaService.getPeliculaDetail(this.pelicula_id)
+      .subscribe(pelicula => {this.pelicula = pelicula});
+      
+  }
 
-@Input() peliculaDetail: PeliculaDetail;
- 
-pelicula_id: number;
-
-getPeliculaDetail(): void 
-{
-    this.peliculaService.getPeliculaDetail(this.pelicula_id).subscribe(peliculaDetail => {this.peliculaDetail = peliculaDetail});
-}
-
-ngOnInit() 
-{
-    this.pelicula_id = +this.route.snapshot.paramMap.get('id');
-    this.peliculaDetail = new PeliculaDetail();
-    this.getPeliculaDetail();
-}
+  ngOnInit() {
+      this.pelicula_id = +this.route.snapshot.paramMap.get('id');
+      this.pelicula = new Pelicula();
+      this.getPelicula();
+  }
 
 }

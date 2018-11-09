@@ -3,6 +3,7 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
+                    <th>Id</th>
                     <th>Nombre</th>
                     <th>Director</th>
                     <th>Creditos</th>
@@ -15,12 +16,16 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let pelicula of peliculas">
-                    <td><button type="button" class="btn btn-outline-dark">{{pelicula.nombre}}</button></td>
+                    <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/peliculas/{{pelicula.id}}">
+                        {{pelicula.id}}</dd>
+                    </td> 
+                    <td>{{pelicula.nombre}}</td>
                     <td>{{pelicula.director}}</td>
                     <td>{{pelicula.creditos}}</td>
                     <td>{{pelicula.pais}}</td>
                     <td>{{pelicula.duracion}}</td>
-                    <td>{{pelicula.creditos}}</td>
+                  
                     <td>{{pelicula.puntaje}}</td>
                 
                 </tr>
