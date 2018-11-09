@@ -1,16 +1,19 @@
 <div class="col-md-12">
-    <div class="container-fluid">
-        <h1>{{critico.nombres}} {{critico.apellidos}}</h1>
-        <h5> Critico número: {{critico.id}}</h5>
-        <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
-             width="100"
-            height="100">
-        <h5>  <b>Información del critico: </b></h5>
-        <b>Identificación: </b> {{critico.identificacion}} <br/>
-        <b>Teléfono: </b> {{critico.celular}} <br/>
-        <b>Email: </b>{{critico.email}} <br/> 
-        <b>NickName: </b>{{critico.nickName}} <br/>
-         <b>Puntaje: </b>{{critico.puntaje}} <p class="clasificacion">
+    <br/>
+        <div class="card text-center">
+  <div class="card-header">
+   <h1>{{critico.nombres}} {{critico.apellidos}}</h1>
+  </div>
+  <div class="card-body" >
+      <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
+             width="200"
+            height="200"><br/><br/>
+      <b>{{critico.puntaje}}</b>
+      <div class="stars-outer">
+          <div class="stars-inner"></div>
+        </div>
+
+      <p class="clasificacion"> 
             <input id="radio1" type="radio" name="estrellas" value="5"><!--
     --><label for="radio1"><font size="6">★</font></label><!--
     --><input id="radio2" type="radio" name="estrellas" value="4"><!--
@@ -21,12 +24,66 @@
     --><label for="radio4"><font size="6">★</font></label><!--
     --><input id="radio5" type="radio" name="estrellas" value="1"><!--
     --><label for="radio5"><font size="6">★</font></label>
-  </p><br/> 
-
-         
-          <b>Credencial: </b>{{critico.credencial}} <br/> 
-          
-        <br>
+  </p>
+    <h4 class="card-title">Información</h4>
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>Identificación: </b></p> 
+      </div>
+        <div class="col-lg-2">
+            <p  align="left">{{critico.identificacion}}</p> 
+      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
     </div>
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>Teléfono: </b></p>
+      </div>
+        <div class="col-lg-2">
+            <p  align="left">{{critico.celular}}</p>
+      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>Email: </b></p> 
+      </div>
+        <div class="col-lg-2">
+            <p  align="left">{{critico.email}}</p>
+      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>NickName: </b></p>
+      </div>
+        <div class="col-lg-2">
+            <p  align="left">{{critico.nickName}}</p>
+      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+    </div><hr>
+    <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+     <div class="row" >
+      <div class="col-lg-4">
+        <h1>Peliculas</h1> 
+        <p>Peliculas que el critico tiene permitido criticar.</p>
+      </div>
+      <div class="col-lg-4">
+        <h1>Calificaciones</h1> 
+        <p>Calificaciones del critico.</p>
+        <app-calificacion-list></app-calificacion-list>
+      </div>
+      <div class="col-lg-4">
+        <h1>Funciones</h1> 
+        <p>Funciones que vá a criticar.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    Critico No. {{critico.id}}
+  </div>
+</div>
+
 </div>
 

@@ -34,7 +34,6 @@ export class CriticoCreateComponent implements OnInit {
       }, err => {
           this.toastrService.error(err, "Error");
       });
-      
       return this.critico;
   }
   

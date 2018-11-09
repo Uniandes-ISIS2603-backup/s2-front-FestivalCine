@@ -9,6 +9,7 @@ import { CriticoListComponent } from './critico-list/critico-list.component';
 import { CriticoService } from './critico.service';
 import { CriticoDetailComponent } from './critico-detail/critico-detail.component';
 import { CriticoCreateComponent } from './critico-create/critico-create.component';
+import {CalificacionModule} from '../calificacion/calificacion.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { CriticoCreateComponent } from './critico-create/critico-create.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CalificacionModule
   ],
   declarations: [CriticoListComponent, CriticoDetailComponent, CriticoCreateComponent],
   providers: [CriticoService],

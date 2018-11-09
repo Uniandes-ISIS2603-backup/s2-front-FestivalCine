@@ -179,13 +179,13 @@ const routes: Routes = [
                 path: 'list',
                 component:PeliculaListComponent
             },
-            {
-                path: ':id',
-                component:PeliculaDetailComponent
-            },
              {
                 path: 'add',
                 component:PeliculaCreateComponent
+            },
+            {
+                path: ':id',
+                component:PeliculaDetailComponent
             }
         ]
     },
