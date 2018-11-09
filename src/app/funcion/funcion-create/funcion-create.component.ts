@@ -2,8 +2,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { FuncionService } from '../funcion.service';
+import { PeliculaService} from '../../pelicula/pelicula.service'
+import { SalaService} from '../../sala/sala.service'
+import { CriticoService} from '../../critico/critico.service'
 
 import { Funcion } from '../funcion';
+import {Pelicula} from '../../pelicula/pelicula';
+import {Sala} from '../../sala/sala';
+import {Critico} from '../../critico/critico';
 
 @Component({
   selector: 'app-funcion-create',
@@ -21,6 +27,9 @@ export class FuncionCreateComponent implements OnInit {
     constructor(
         private dp : DatePipe,
         private funcionService: FuncionService,
+        private peliculaService: PeliculaService,
+        private salaService: SalaService,
+        private criticoService: CriticoService,
         private toastrService: ToastrService
     ) { }
     
@@ -29,6 +38,22 @@ export class FuncionCreateComponent implements OnInit {
     */
     
     funcion: Funcion;
+    
+    /**
+    * The list of all the peliculas in the Festival
+    */
+    peliculas: Pelicula[];
+
+    /**
+    * The list of all the salas in the Festival
+    */
+    salas: Sala[];
+
+    /**
+    * The list of all the Criticos in the Festival
+    */
+    criticos: Critico[];
+    
     
    /**
     * The output which tells the parent component
@@ -41,6 +66,44 @@ export class FuncionCreateComponent implements OnInit {
     * that the user created a new funcion
     */
     @Output() create = new EventEmitter();
+    
+    
+    /**
+    * Retrieves the list of peliculas in the FestivalFe
+    */
+    getPeliculas(): void {
+        this.peliculaService.getPeliculas()
+            .subscribe(peliculas => {
+                this.peliculas = peliculas;
+            }, err => {
+                this.toastrService.error(err, 'Error');
+            });
+    }
+    
+   /**
+    * Retrieves the list of salas in the Festival
+    */
+    getSalas(): void {
+        this.salaService.getSalas()
+            .subscribe(salas => {
+                this.salas = salas;
+            }, err => {
+                this.toastrService.error(err, 'Error');
+            });
+    }
+    
+   /**
+    * Retrieves the list of criticos in the Festival
+    */
+    getCriticos(): void {
+        this.criticoService.getCriticos()
+            .subscribe(criticos => {
+                this.criticos =  criticos ;
+            }, err => {
+                this.toastrService.error(err, 'Error');
+            });
+    }
+    
 
     /**
     * Creates a funcion
@@ -73,6 +136,14 @@ export class FuncionCreateComponent implements OnInit {
     */
     ngOnInit() {
         this.funcion = new Funcion();
+        this.funcion.pelicula = new Pelicula();
+        this.getPeliculas();
+        
+        this.funcion.sala = new Sala();
+        this.getSalas();
+        
+        this.funcion.critico = new Critico();
+        this.getCriticos();
     }
 
 }
