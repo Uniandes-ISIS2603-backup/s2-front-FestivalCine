@@ -4,6 +4,7 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
+                    <th>Id</th>
                     <th>Numero</th>
                     <th>Tipo</th>
                     <th>Disponible</th>
@@ -12,7 +13,10 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let silla of sillas">
-                    <td><button type="button" class="btn btn-outline-dark">{{silla.numero}}</button></td>
+                   <td style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/sillas/{{silla.id}}">
+                        {{silla.id}}</dd>
+                    <td>{{silla.numero}}</td>
                     <td>{{silla.tipo}}</td>
                     <td>{{silla.disponible}}</td>
                     
