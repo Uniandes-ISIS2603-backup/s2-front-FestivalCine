@@ -7,25 +7,27 @@
             height="150"><br/>
         <br>
         <form name="reserva" (ngSubmit)="f.form.valid && createReserva()" #f="ngForm" novalidate>
-            <div class="form-group">
-                
-                <label for="reservaIdUsuario"><b>Id del usuario que hace la reserva</b></label>
-                <input type="text" name="reservaIdUsuario" class="form-control" id="reservaIdUsuario" [(ngModel)]="reserva.usuario.id"
-                    #reservaIdUsuario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaIdUsuario.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>¡Falta el id del usuario!</div>
-                </div>
-            </div>
+            <!--<div class="form-group">
+                <label for="reservaUsuario"><b>Id del usuario</b><br/>
+                </label>
+                <input type="text" value = {{usuarioDetail.id}} readonly="readonly" [(ngModel)]="reserva.usuario.id"> {{usuarioDetail.id}}             
+            </div>-->
             <div class="form-group">
                 <label for="reservaAbono"><b>¿Abono?</b></label>
                 <input type="checkbox" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono">              
-                <!--<input type="text" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono"
-                    #reservaAbono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaAbono.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>¡Debe decirnos si desea el abono!</div>
-                </div>-->
             </div>
-   
+            <!--<div class="form-group">
+                    <label for="reservaFuncion"><b>Función</b></label>
+                    <select class="custom-select" name="reservaFuncion" id="reservaFuncion" [(ngModel)]="reserva.funciones"
+                        #reservaFuncion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaFuncion.invalid }"
+                        required>
+                        <option [value]="funcion.id" *ngFor="let funcion of funciones">{{funcion.id}}</option>
+                        <option> Opcion de prueba</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>The book's editorial is missing</div>
+                    </div>
+            </div>-->           
             <div class="form-group">
                 <label for="reservaDescuento"><b>Descuento aplicado</b></label>
                 <input type="text" name="reservaDescuento" class="form-control" id="reservaDescuento" [(ngModel)]="reserva.descuento"
@@ -41,7 +43,8 @@
                 <div class="invalid-feedback">
                     <div>¡Falta el total a pagar!</div>
                 </div>
-            </div>     
+            </div>
+            
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>

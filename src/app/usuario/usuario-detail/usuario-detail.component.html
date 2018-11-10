@@ -1,24 +1,67 @@
 <div class="col-md-12">
-    <div class="container-fluid">   
-        <h2><font face="raro, courier" color="#3399CC"> <b> Usuario: </b>  </font> <font face= "raro, courier">{{usuarioDetail.nombres}} {{usuarioDetail.apellidos}}  </font></h2>
-        
+     <br/>
+    <div class="card text-center">
+    <div class="card-header">
+         <h1>{{usuarioDetail.nombres}} {{usuarioDetail.apellidos}}</h1>
+    </div>
+     
+    <div class="container-fluid">          
         <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
              width="100"
             height="100">
+        <h4 class="card-title"><font color="#3399CC"> <b> Información </b></font></h4>
         
-        <h5> <font face="raro, courier" color="#3399CC"> <b>Información del usuario: </b></font></h5>
-        <font face="raro, courier"> <b>Email: </b>{{usuarioDetail.email}} <br/> </font>   
-        <font face="raro, courier"><b>Teléfono: </b> {{usuarioDetail.celular}} <br/> </font>
-        <font face="raro, courier"><b>Identificación: </b> {{usuarioDetail.identificacion}} <br/> </font>
-        <br>
-        <div class="row border margin">
-            <h5><font face="raro, courier"> <b>Reservas: </b> </font></h5>
-            <p> ¿Con ánimos de reservar? <button routerLink="{{usuarioDetail.id}}">¡Reservar!</button></p>
-            <list-reserva [reservas] = "usuarioDetail.reservas"></list-reserva>
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>Identificación: </b></p> 
         </div>
-        <div class="row border margin">
-            <h5><font face="raro, courier"><b>Calificaciones:</b> </font></h5>
-            <app-calificacion-list [calificaciones] ="usuarioDetail.calificaciones"></app-calificacion-list>
-        </div>
+        <div class="col-lg-2">
+            <p  align="left">{{usuarioDetail.id}}</p> 
+        </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
     </div>
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>Email: </b></p> 
+        </div>
+        <div class="col-lg-2">
+            <p  align="left">{{usuarioDetail.email}}</p> 
+        </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>Teléfono: </b></p> 
+        </div>
+        <div class="col-lg-2">
+            <p  align="left">{{usuarioDetail.celular}}</p> 
+        </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+    </div> 
+    <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>No. Identificacion: </b></p> 
+        </div>
+        <div class="col-lg-2">
+            <p  align="left">{{usuarioDetail.identificacion}}</p> 
+        </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+    </div> 
+ 
+    <div class="row" >
+      <div class="col-lg-5">
+        <h1>Reservas</h1> 
+        <p>Reservas del usuario</p>
+        <p> ¿Con ánimos de reservar? <button [routerLink]="['reservas/add', usuarioDetail.id]">¡Reservar!</button></p>
+        <list-reserva [reservas] = "usuarioDetail.reservas"></list-reserva>
+      </div>
+      <div class="col-lg-5">
+        <h1>Calificaciones</h1> 
+        <p>Calificaciones que ha hecho el usuario.</p>
+        <app-calificacion-list [calificaciones] ="usuarioDetail.calificaciones"></app-calificacion-list>
+      </div>
+    </div>
+        <br>
+    </div>
+</div>
 </div>

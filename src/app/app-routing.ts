@@ -119,6 +119,13 @@ const routes: Routes = [
             },
             {
                 path: ':id',
+                children:
+                [
+                    {
+                        path: 'reservas/add',
+                        component: ReservaCreateComponent
+                    }
+                ],
                 component:UsuarioDetailComponent
             }
             
