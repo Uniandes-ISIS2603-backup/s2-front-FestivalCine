@@ -52,7 +52,8 @@
       <div class="col-lg-5">
         <h1>Reservas</h1> 
         <p>Reservas del usuario</p>
-        <p> ¿Con ánimos de reservar? <button [routerLink]="['reservas/add', usuarioDetail.id]">¡Reservar!</button></p>
+        <p> ¿Con ánimos de reservar? <button [routerLink]="['reservas/add']">¡Reservar!</button></p>
+        <router-outlet></router-outlet>
         <list-reserva [reservas] = "usuarioDetail.reservas"></list-reserva>
       </div>
       <div class="col-lg-5">

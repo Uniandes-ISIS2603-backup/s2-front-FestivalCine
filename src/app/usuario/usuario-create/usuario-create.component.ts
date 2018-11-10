@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
 
-import { UsuarioService } from '../Usuario.service';
+import { UsuarioService } from '../usuario.service';
 
 import { Usuario } from '../usuario';
 

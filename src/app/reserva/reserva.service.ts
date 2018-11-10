@@ -32,12 +32,12 @@ export class ReservaService {
     * @returns The user
     */
     getReservaDetail(reservaId): Observable<ReservaDetail> 
-    {
+    {console.log(API_URL + reservas+ '/' + reservaId);
         return this.http.get<ReservaDetail>(API_URL + reservas + '/' + reservaId);
     }
     
-    createReserva(reservaId): Observable<Reserva> 
-    {
-        return this.http.post<Reserva>(API_URL + reservas, reservas);
+    createReserva(reserva): Observable<Reserva> 
+    {   console.log(API_URL + reservas);
+        return this.http.post<Reserva>(API_URL + reservas, reserva);
     }
 }

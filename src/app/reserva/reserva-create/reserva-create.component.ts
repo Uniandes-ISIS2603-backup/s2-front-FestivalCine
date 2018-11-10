@@ -2,10 +2,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
 
-import { ReservaService } from '../Reserva.service';
+import { ReservaService } from '../reserva.service';
 
 import { Reserva } from '../reserva';
-
+import { Usuario } from '../../usuario/usuario';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
@@ -23,8 +23,8 @@ export class ReservaCreateComponent implements OnInit {
   private route: ActivatedRoute) { }
   
   reserva: Reserva;
-  idUsuario: number;
- 
+  usuario: Usuario;
+  
   
   @Output() cancel = new EventEmitter();
   
@@ -51,8 +51,12 @@ export class ReservaCreateComponent implements OnInit {
   
   ngOnInit() 
   {
-      this.reservaService = this.route.params.subscribe(params => {this.idUsuario= +params['idUsuario'];
+      console.log("create reserva");
+      this.usuario = new Usuario();
+      
+      this.route.params.subscribe(params => {this.usuario.id = +params['id']});
       this.reserva = new Reserva();
+      this.reserva.usuario = this.usuario;
   }
 
 }

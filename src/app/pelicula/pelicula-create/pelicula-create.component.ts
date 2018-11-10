@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ToastrService } from 'ngx-toastr';
 
-import { PeliculaService } from '../Pelicula.service';
+import { PeliculaService } from '../pelicula.service';
 
 import { Pelicula } from '../pelicula';
 
