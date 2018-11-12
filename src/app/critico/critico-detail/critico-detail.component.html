@@ -1,5 +1,5 @@
+
 <div class="col-md-12">
-    <br/>
         <div class="card text-center">
   <div class="card-header">
    <h1>{{critico.nombres}} {{critico.apellidos}}</h1>
@@ -8,23 +8,11 @@
       <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
              width="200"
             height="200"><br/><br/>
-      <b>{{critico.puntaje}}</b>
-      <div class="stars-outer">
+      <b>{{critico.puntaje}}</b><br/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <div class="stars-outer" >
           <div class="stars-inner"></div>
         </div>
-
-      <p class="clasificacion"> 
-            <input id="radio1" type="radio" name="estrellas" value="5"><!--
-    --><label for="radio1"><font size="6">★</font></label><!--
-    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-    --><label for="radio2"><font size="6">★</font></label><!--
-    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-    --><label for="radio3"><font size="6">★</font></label><!--
-    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-    --><label for="radio4"><font size="6">★</font></label><!--
-    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-    --><label for="radio5"><font size="6">★</font></label>
-  </p>
     <h4 class="card-title">Información</h4>
     <div class="row">
         <div class="col-lg-2"></div><div class="col-lg-2"></div>
@@ -61,6 +49,14 @@
         <div class="col-lg-2">
             <p  align="left">{{critico.nickName}}</p>
       </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+    </div> <div class="row">
+        <div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <p  align="right"><b>Credencial: </b></p>
+      </div>
+        <div class="col-lg-2">
+            <p  align="left">{{critico.credencial}}</p>
+      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
     </div><hr>
     <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>-->
@@ -68,15 +64,18 @@
       <div class="col-lg-4">
         <h1>Peliculas</h1> 
         <p>Peliculas que el critico tiene permitido criticar.</p>
+        <app-pelicula-list></app-pelicula-list>
       </div>
       <div class="col-lg-4">
         <h1>Calificaciones</h1> 
         <p>Calificaciones del critico.</p>
-        <app-calificacion-list></app-calificacion-list>
+        <app-calificacion-list [calificaciones]= "critico.calificaciones"
+            ></app-calificacion-list>
       </div>
       <div class="col-lg-4">
         <h1>Funciones</h1> 
         <p>Funciones que vá a criticar.</p>
+        <app-funcion-list [funciones]="critico.funciones"></app-funcion-list>
       </div>
     </div>
   </div>

@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import {CriticoService} from '../critico.service';
 import {Critico} from '../critico';
 
-
 @Component({
   selector: 'app-critico-detail',
   templateUrl: './critico-detail.component.html',
@@ -18,11 +17,14 @@ export class CriticoDetailComponent implements OnInit {
   
   critico:Critico;
   
+  starRating:number;
+  
   critico_id : number;
   
   getCritico(): void {
       this.criticoService.getCriticoDetail(this.critico_id)
       .subscribe(critico => {this.critico = critico});
+      
       
   }
 
@@ -31,5 +33,12 @@ export class CriticoDetailComponent implements OnInit {
       this.critico = new Critico();
       this.getCritico();
   }
+  
+  getStars():void
+      {
+      var variable = this.critico.puntaje;
+      console.log(this.critico);
+      this.starRating = Math.floor((+this.critico.puntaje*100)/5);
+      } 
 
 }

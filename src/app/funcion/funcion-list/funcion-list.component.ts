@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewContainerRef  } from '@angular/core';
+import { Component, OnInit,ViewContainerRef, Input  } from '@angular/core';
 import { ModalDialogService, SimpleModalComponent } from 'ngx-modal-dialog';
 import { ToastrService } from 'ngx-toastr';
 import { Funcion } from '../funcion';
@@ -21,7 +21,7 @@ export class FuncionListComponent implements OnInit {
   /**
    * La lista de funciones del festival de cine
    */
-   funciones: Funcion[];
+   @Input() funciones: Funcion[];
    /**
     * The id of the funcion that the user wants to view
     */
