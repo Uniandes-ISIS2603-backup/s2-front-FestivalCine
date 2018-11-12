@@ -13,6 +13,17 @@
                     <div>Falta el número de la sala</div>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="salaTeatro"><b>Teatro</b></label>
+                    <select class="custom-select" name="salaTeatro" id="salaTeatro" [(ngModel)]="sala.teatro.id"
+                        #salaTeatro="ngModel" [ngClass]="{ 'is-invalid': f.submitted && salaTeatro.invalid }"
+                        required>
+                        <option [value]="teatro.id" *ngFor="let teatro of teatros">{{teatro.nombre}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta el teatro al cual pertenece la sala</div>
+                    </div>
+            </div>
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>
                 <div class="divider"></div>

@@ -142,6 +142,7 @@ export class FuncionCreateComponent implements OnInit {
     */
     ngOnInit() {
         this.funcion = new Funcion();
+        
         this.funcion.pelicula = new Pelicula();
         this.getPeliculas();
         

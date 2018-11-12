@@ -1,3 +1,4 @@
+import {Teatro} from "../teatro/teatro";
 export class Sala {
     /**
      * Id de la sala
@@ -8,4 +9,9 @@ export class Sala {
      * Numero de la sala
      */ 
      numero: number;
+     
+     /**
+      * Teatro de la sala
+      */
+      teatro: Teatro
 }

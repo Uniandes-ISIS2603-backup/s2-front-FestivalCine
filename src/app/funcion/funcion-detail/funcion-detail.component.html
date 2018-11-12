@@ -1,18 +1,30 @@
-<div class="panel-body">
-    <div class="border margin">
-        <p class="h3 p-3"> La función con id {{funcionDetail.id}} tiene la siguiente información:  <p> 
-        <div class="row">
-            <div class="col">
-                <dl>     
-                    <dt>Fecha</dt>
-                    <dd>{{funcionDetail.fecha| date:'MM/dd/yyyy'}}</dd>
-                     <dt>Hora</dt>
-                    <dd>{{funcionDetail.hora}}</dd>
-                     <dt>Precio Base</dt>
-                    <dd>{{funcionDetail.precioBase|currency}}</dd>
-                </dl>
-            </div>
-
-        </div>
+<div class="col-md-12">
+     <br/>
+    <div class="card text-center">
+    <div class="card-header">
+         <h1> Función de la película {{funcionDetail.pelicula.nombre}}</h1>
     </div>
-</div>
+    <div class="container-fluid">          
+        <h4 class="card-title"><font color="#3399CC"> <b> Información </b></font></h4>
+    <div class="column" align="center">
+        <div class="col-lg-2">
+            <p  align="left"><b>Fecha: {{funcionDetail.fecha| date:'MM/dd/yyyy'}}</b></p> 
+        </div> 
+        <div class="col-lg-2">
+            <p  align="left"><b>Hora: {{funcionDetail.hora}}</b></p> 
+        </div>
+       
+        <div class="col-lg-2">
+            <p  align="left"><b>Precio Base: {{funcionDetail.precioBase|currency}} </b></p> 
+        </div>
+
+        <div class="col-lg-2">
+            <p  align="left"><b>Sala: {{funcionDetail.sala.numero}} </b></p> 
+        </div>
+
+        <div class="col-lg-2">
+            <p  align="left"><b>Teatro: {{funcionDetail.teatro.nombre}}</b></p> 
+        </div>
+</div>    
+</div>  
+</div>  

@@ -46,7 +46,7 @@ export class SalaDetailComponent implements OnInit {
 
     /**
     * The method which initializes the component
-    * We need to initialize the editorial so it is never considered as undefined
+    * We need to initialize the sala so it is never considered as undefined
     */
     ngOnInit() {
         this.sala_id = +this.route.snapshot.paramMap.get('id');

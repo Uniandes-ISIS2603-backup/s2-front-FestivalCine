@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Silla } from '../silla';
 import { SillaService } from '../silla.service';
 
@@ -14,7 +14,7 @@ export class SillaListComponent implements OnInit {
 
   constructor(private sillaService: SillaService) { }
   
- sillas: Silla[];
+ @Input() sillas: Silla[];
   
   getSillas(): void
   {
