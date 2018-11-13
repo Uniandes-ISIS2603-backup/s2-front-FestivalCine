@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap  } from '@angular/router';
 
 import { UsuarioService } from '../usuario.service';
 import { Usuario} from '../usuario';
@@ -14,7 +14,8 @@ export class UsuarioDetailComponent implements OnInit {
 
   constructor(
     private usuarioService: UsuarioService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+     private router: Router) { }
 
 @Input() usuarioDetail: UsuarioDetail;
  
@@ -25,9 +26,11 @@ getUsuarioDetail(): void
     this.usuarioService.getUsuarioDetail(this.usuario_id).subscribe(usuarioDetail => {this.usuarioDetail = usuarioDetail});
 }
 
+
 ngOnInit() 
 {
-    this.usuario_id = +this.route.snapshot.paramMap.get('id');
+    this.route.params.subscribe(params => {
+    this.usuario_id = +this.route.snapshot.paramMap.get('id')});
     this.usuarioDetail = new UsuarioDetail();
     this.getUsuarioDetail();
 }

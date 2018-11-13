@@ -6,7 +6,7 @@ import { ReservaService } from '../reserva.service';
 
 import { Reserva } from '../reserva';
 import { Usuario } from '../../usuario/usuario';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/filter';
 
 @Component({
@@ -35,8 +35,6 @@ export class ReservaCreateComponent implements OnInit {
         this.reservaService.createReserva(this.reserva).subscribe((reserva) => {this.reserva = reserva; 
             this.create.emit();
             this.toastrService.success("La reserva fue creada", "Creacion de reserva");
-            }, err => {
-                this.toastrService.error(err, "Error");
             });
       console.log(this.reserva.usuario);
       console.log(this.reserva.abono); 
@@ -50,13 +48,17 @@ export class ReservaCreateComponent implements OnInit {
     }
   
   ngOnInit() 
-  {
+  {   
       console.log("create reserva");
+     
       this.usuario = new Usuario();
-      
-      this.route.params.subscribe(params => {this.usuario.id = +params['id']});
+      this.route.params.subscribe(params => {
+                  this.usuario.id = +this.route.snapshot.parent.paramMap.get('id')});
+                  
+      console.log(this.usuario.id);
       this.reserva = new Reserva();
       this.reserva.usuario = this.usuario;
+     
   }
 
 }
