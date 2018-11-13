@@ -1,22 +1,13 @@
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
-        <br>
-        <img class= "center-block" src="https://lemongardenhostelsevilla.com/wp-content/uploads/2017/10/Reserva-ahora-verde-pantalla-grande-copy.png"
-             width="400"
-            height="150"><br/>
-        <br>
+        
         <form name="reserva" (ngSubmit)="f.form.valid && createReserva()" #f="ngForm" novalidate>
-            <!--<div class="form-group">
-                <label for="reservaUsuario"><b>Id del usuario</b><br/>
-                </label>
-                <input type="text" value = {{usuarioDetail.id}} readonly="readonly" [(ngModel)]="reserva.usuario.id"> {{usuarioDetail.id}}             
-            </div>-->
             <div class="form-group">
                 <label for="reservaAbono"><b>¿Abono?</b></label>
                 <input type="checkbox" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono">              
             </div>
-            <!--<div class="form-group">
+            <div class="form-group">
                     <label for="reservaFuncion"><b>Función</b></label>
                     <select class="custom-select" name="reservaFuncion" id="reservaFuncion" [(ngModel)]="reserva.funciones"
                         #reservaFuncion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaFuncion.invalid }"
@@ -25,9 +16,9 @@
                         <option> Opcion de prueba</option>
                     </select>
                     <div class="invalid-feedback">
-                        <div>The book's editorial is missing</div>
+                        <div>Es necesario escoger una función</div>
                     </div>
-            </div>-->           
+            </div>           
             <div class="form-group">
                 <label for="reservaDescuento"><b>Descuento aplicado</b></label>
                 <input type="text" name="reservaDescuento" class="form-control" id="reservaDescuento" [(ngModel)]="reserva.descuento"

@@ -36,10 +36,6 @@ export class ReservaCreateComponent implements OnInit {
             this.create.emit();
             this.toastrService.success("La reserva fue creada", "Creacion de reserva");
             });
-      console.log(this.reserva.usuario);
-      console.log(this.reserva.abono); 
-      console.log(this.reserva.descuento);
-      console.log(this.reserva.precioTotal);
         return this.reserva;
    }
    

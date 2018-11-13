@@ -37,7 +37,7 @@ export class ReservaService {
     }
     
     createReserva(reserva): Observable<Reserva> 
-    {   console.log(API_URL + reservas);
+    { 
         return this.http.post<Reserva>(API_URL + reservas, reserva);
     }
 }

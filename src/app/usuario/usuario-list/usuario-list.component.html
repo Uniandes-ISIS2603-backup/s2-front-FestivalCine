@@ -2,7 +2,8 @@
              width="1600"
             height="200">
 <h2 align = "center"> <font face="impact" color="#66CCCC"> ¡Estos son nuestros usuarios! </font> </h2>
-<p> ¿Eres nuevo? ¡Únete! <button routerLink="/usuarios/add">Add new usuario</button></p>
+<div class="row justify-content-center align-self-center">
+<button type="button" class="btn btn-primary" routerLink="/usuarios/add">Nuevo usuario</button>
  
 <div class ="container-fluid">
     <div style="text-align:center;" class ="col-md-2">     
@@ -35,18 +36,19 @@
                 <tr align ="center" *ngFor = "let usuario of usuarios"
                     (click)="onSelected(usuario.id)">
                     <td style="cursor: pointer;">
-            <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}"> <font face="raro, courier"> {{usuario.id}} </font></dd>
-                    </td>
+                    <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}"> <font face="raro, courier"> {{usuario.id}} </font></dd>
+                    </td>                   
                     <td> <font face="raro, courier"> {{usuario.nombres}} </font></td>
                     <td> <font face="raro, courier">{{usuario.apellidos}}</font></td>
                     <td> <font face="raro, courier">{{usuario.email}}</font> </td>
                 </tr>
             </tbody>
         </table>
- 
+        
     </div>
+</div>
     <div class="col-8">
-            <div *ngIf="selectedUsuario">
+            <div *ngIf="selectedUsuario">              
                 <app-usuario-detail [usuarioDetail]="selectedUsuario"></app-usuario-detail>
             </div>
     </div>
