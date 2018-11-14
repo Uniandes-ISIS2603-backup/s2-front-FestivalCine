@@ -12,6 +12,7 @@ import { UsuarioDetailComponent } from './usuario-detail/usuario-detail.componen
 import { ReservaModule } from '../reserva/reserva.module';
 import { UsuarioCreateComponent } from './usuario-create/usuario-create.component';
 import { CalificacionModule } from '../calificacion/calificacion.module';
+import {UsuarioLoginComponent} from './usuario-login/usuario-login.component';
 
 @NgModule
 (
@@ -26,7 +27,7 @@ import { CalificacionModule } from '../calificacion/calificacion.module';
         ReservaModule,
         CalificacionModule
     ],
-    declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent],
+    declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent,UsuarioLoginComponent],
     providers: [UsuarioService],
     exports:[UsuarioListComponent]
   }

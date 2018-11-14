@@ -19,7 +19,7 @@ import {PeliculaDetailComponent} from '../app/pelicula/pelicula-detail/pelicula-
 import {PeliculaCreateComponent } from '../app/pelicula/pelicula-create/pelicula-create.component';
 import {BandaAnuncioListComponent} from '../app/bandaanuncio/bandaanuncio-list/bandaanuncio-list.component';
 import {BandaAnuncioDetailComponent} from '../app/bandaanuncio/bandaanuncio-detail/bandaanuncio-detail.component';
-
+import {UsuarioLoginComponent} from '../app/usuario/usuario-login/usuario-login.component';
 
 import{SalaListComponent} from '../app/sala/sala-list/sala-list.component';
 import{SalaDetailComponent} from '../app/sala/sala-detail/sala-detail.component';
@@ -113,6 +113,9 @@ const routes: Routes = [
             {
                 path: 'list',
                 component:UsuarioListComponent
+            }, {
+                path: 'login',
+                component:UsuarioLoginComponent
             },
             {
                 path: 'add',
