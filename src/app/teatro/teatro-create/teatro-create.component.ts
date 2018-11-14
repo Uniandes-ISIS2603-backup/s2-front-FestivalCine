@@ -6,7 +6,8 @@ import { Teatro } from '../teatro';
 @Component({
   selector: 'app-teatro-create',
   templateUrl: './teatro-create.component.html',
-  styleUrls: ['./teatro-create.component.css']
+  styleUrls: ['./teatro-create.component.css'],
+  providers: [TeatroService]
 })
 export class TeatroCreateComponent implements OnInit {
 
@@ -20,7 +21,8 @@ export class TeatroCreateComponent implements OnInit {
    createTeatro(): Teatro
     {
                this.teatroService.createTeatro(this.teatro)
-            .subscribe(() => {
+            .subscribe((teatro) => {
+                this.teatro = teatro;
                 this.create.emit();
                 this.toastrService.success("El teatro fue creado", "Creacion de teatro");
             }, err => {
@@ -33,6 +35,7 @@ export class TeatroCreateComponent implements OnInit {
         this.cancel.emit();
     }
   ngOnInit() {
+       console.log("create");
       this.teatro = new Teatro();
   }
 
