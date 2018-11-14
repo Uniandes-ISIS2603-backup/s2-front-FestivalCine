@@ -1,36 +1,28 @@
-
-<div class="container-fluid">
-    <div class="table-responsive">
-        <button type="button" class="btn btn-primary" routerLink="/peliculas/add">Nueva Pelicula</button>
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Director</th>
-                    <th>Creditos</th>
-                    <th>Pais</th>
-                    <th>Duracion</th>
-                    <th>Puntaje</th>
-                    
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let pelicula of peliculas">
-                    <td style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/peliculas/{{pelicula.id}}">
-                        {{pelicula.id}}</dd>
-                    </td> 
-                    <td>{{pelicula.nombre}}</td>
-                    <td>{{pelicula.director}}</td>
-                    <td>{{pelicula.creditos}}</td>
-                    <td>{{pelicula.pais}}</td>
-                    <td>{{pelicula.duracion}}</td>
+  <tr *ngFor = "let pelicula of peliculas">
+   
+  
+         <div class="container-fluid">
+   <div class="row">
+           <div class="row" style="background-color:white;"></div>
+            <div class="col" style="background-color:white;"></div>
+              <div class="card mb-4 shadow-sm">
+              <h5> <font face="raro, courier" color="#3399CC"> <b>{{pelicula.nombre}} </b></font></h5>               <img src="https://is1-ssl.mzstatic.com/image/thumb/Video/d7/5c/d9/mzl.lniondsx.jpg/230x0w.jpg"
+             width="500"
+            height="500"  >
+                <div class="card-body">
+                    <div class="container-fluid">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                                        
+                      <button type="button" class="btn btn-sm btn-outline-secondary " routerLink="/peliculas/{{pelicula.id}}">Mas Informacion !</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                      <p>                                                                         </p>
                   
-                    <td>{{pelicula.puntaje}}</td>
-                
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    </div>
+                     <p align= "right" class="text-center">Duracion: {{pelicula.duracion}}</p>
+                  </div>
+                </div>
+              </div>
+           <div class="row" style="background-color:white;"></div>
+            </div>
+             </div>

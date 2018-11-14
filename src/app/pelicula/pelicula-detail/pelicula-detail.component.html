@@ -2,11 +2,30 @@
     <div class="container-fluid">   
         <h2><font face="raro, courier" color="#3399CC"> <b> Pelicula: </b>  </font> <font face= "raro, courier">{{pelicula.nombre}}   </font></h2>
         
-        <img src="https://is1-ssl.mzstatic.com/image/thumb/Video/d7/5c/d9/mzl.lniondsx.jpg/230x0w.jpg"
+        
+           <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+               <img src="https://is1-ssl.mzstatic.com/image/thumb/Video/d7/5c/d9/mzl.lniondsx.jpg/230x0w.jpg"
              width="500"
             height="500">
-        
-        <h5> <font face="raro, courier" color="#3399CC"> <b>Informacion: </b></font></h5>
+                <div class="card-body">
+                  <h5> <font face="raro, courier" color="#3399CC"> <b>Informacion: </b></font></h5>
+                  <p class="card-text">Director: {{pelicula.director}}</p>
+                  <p class="card-text">Pais de Origen: {{pelicula.pais}}</p>
+                  <p class="card-text">Director: {{pelicula.director}}</p>
+                  <p class="card-text">Puntaje: {{pelicula.puntaje}}</p>
+                  <p class="card-text">Creditos: {{pelicula.creditos}}</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary"  routerLink="/peliculas/list">Volver a la lista de Peliculas</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/reservas/list">Reservar</button>
+                    </div>
+                    <small class="text-muted">Duracion 69 mins</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
         
         <br>
 
