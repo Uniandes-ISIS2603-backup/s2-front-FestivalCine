@@ -26,8 +26,8 @@ export class SalaService {
     * Returns the Observable object containing the list of salas retrieved from the API
     * @returns The list of salas in real time
     */
-    getSalas(): Observable<Sala[]> {
-        return this.http.get<Sala[]>(API_URL + salas);
+    getSalas(): Observable<SalaDetail[]> {
+        return this.http.get<SalaDetail[]>(API_URL + salas);
     }
     
     /**

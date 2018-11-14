@@ -22,31 +22,40 @@ export class FuncionListComponent implements OnInit {
    * La lista de funciones del festival de cine
    */
    @Input() funciones: Funcion[];
+   
    /**
     * The id of the funcion that the user wants to view
     */
    funcion_id: number;
+   
+  /**
+   * The función that the user views.
+   */
    selectedFuncion : Funcion;
    
-    /**
-    *  Shows or hides the funcion-create-component
+   /**
+    * Shows or hides the funcion-create-component
     */
    showCreate: boolean;
 
 
-onSelected(funcion_id: number):void {
-        this.showCreate = false;
-        this.funcion_id = funcion_id;
-  
-    this.getFuncionDetail();
-}   
+    onSelected(funcion_id: number):void {
+            this.showCreate = false;
+            this.funcion_id = funcion_id;
+
+        this.getFuncionDetail();
+    }   
    
-showHideCreate(): void {
-     if (this.selectedFuncion) {
-               this.selectedFuncion = undefined;
-               this.funcion_id = undefined;
-        }
-        this.showCreate = !this.showCreate;
+   /**
+    * Shows la funcion
+    */
+    
+    showHideCreate(): void {
+         if (this.selectedFuncion) {
+                   this.selectedFuncion = undefined;
+                   this.funcion_id = undefined;
+            }
+            this.showCreate = !this.showCreate;
     }
     
   /**
@@ -63,11 +72,15 @@ showHideCreate(): void {
             });
     }
    
-  ngOnInit() {
-      this.showCreate = false;
-      this.selectedFuncion = undefined;
-      this.funcion_id = undefined;
-      this.getFunciones();
-  }
+      /**
+     * This will initialize the component by retrieving the list of funciones from the service
+     * This method will be called when the component is created
+     */  
+    ngOnInit() {
+        this.showCreate = false;
+        this.selectedFuncion = undefined;
+        this.funcion_id = undefined;
+        this.getFunciones();
+    }
 
 }

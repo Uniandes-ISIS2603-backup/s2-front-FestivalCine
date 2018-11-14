@@ -6,17 +6,18 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
+                    <th>Teatro</th>
                     <th>Número Sala</th> 
-                    <th>Id Sala</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let sala of salas" >
                 <td style="cursor: pointer;"> 
                 <dd class="figure-caption" routerLink="/salas/{{sala.id}}">
-                        {{sala.numero}}</dd>
+                        {{sala.teatro.nombre}}</dd>
                 </td>
-                <td> {{sala.id}} </td>
+                <td>  {{sala.numero}} </td>
                 </tr>
             </tbody>
         </table>

@@ -37,7 +37,7 @@ export class SalaListComponent implements OnInit {
     salas: Sala[];
 
     /**
-     * Asks the service to update the list of salas
+     * Obtiene el servicio para actualizar la lista de salas
      */
     getSalas(): void {
         this.salaService.getSalas().subscribe(salas => this.salas = salas);

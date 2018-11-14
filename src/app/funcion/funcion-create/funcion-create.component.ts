@@ -118,6 +118,7 @@ export class FuncionCreateComponent implements OnInit {
         console.log(this.funcion);
         let dateB: Date = new Date(this.funcion.fecha.year, this.funcion.fecha.month-1, this.funcion.fecha.day);
         this.funcion.fecha = this.dp.transform(dateB, 'yyyy-MM-dd');
+        this.funcion.hora = this.funcion.hora;
         console.log(this.funcion)
         this.funcionService.createFuncion(this.funcion)
             .subscribe((funcion) => {
