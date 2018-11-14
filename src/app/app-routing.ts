@@ -97,13 +97,14 @@ const routes: Routes = [
                 component:TeatroListComponent
             },
             {
-                path:':id',
-                component:TeatroDetailComponent
-            },
-            {
                 path:'add',
                 component:TeatroCreateComponent
-            }  ]
+            },
+            {
+                path:':id',
+                component:TeatroDetailComponent
+            }
+  ]
     },
     {
         path: 'usuarios',
@@ -204,13 +205,14 @@ const routes: Routes = [
                 component:FestivalListComponent
             },
             {
-                path:':id',
-                component:FestivalDetailComponent
-            },
-            {
                 path:'add',
                 component:FestivalCreateComponent
-            }  
+            }, 
+            {
+                path:':id',
+                component:FestivalDetailComponent
+            }
+ 
     ]
     }
     

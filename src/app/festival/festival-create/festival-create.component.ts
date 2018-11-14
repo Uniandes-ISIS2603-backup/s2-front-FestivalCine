@@ -20,11 +20,7 @@ export class FestivalCreateComponent implements OnInit {
     
     createFestival(): Festival
     {
-//        let fechaIni: Date = new Date(this.festival.fechaInicio.day, this.festival.fechaInicio.month, this.festival.fechaInicio.year);
-//        this.festival.fechaInicio = this.dp.transform(fechaIni, 'dd-MM-yyyy');
-//        
-//        let fechaFinal: Date = new Date(this.festival.fechaFin.day, this.festival.fechaFin.month, this.festival.fechaFin.year);
-//        this.festival.fechaInicio = this.dp.transform(fechaFinal, 'dd-MM-yyyy');
+
                this.festivalService.createFestival(this.festival)
             .subscribe(() => {
                 this.create.emit();
