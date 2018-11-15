@@ -8,6 +8,8 @@ import { FestivalListComponent } from './festival-list/festival-list.component';
 import { FestivalDetailComponent } from './festival-detail/festival-detail.component';
 import {FestivalService} from './festival.service';
 import { FestivalCreateComponent } from './festival-create/festival-create.component';
+import {CriticoModule} from '../critico/critico.module';
+import {TeatroModule} from '../teatro/teatro.module';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { FestivalCreateComponent } from './festival-create/festival-create.compo
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+      CriticoModule,
+      TeatroModule
   ],
   declarations: [FestivalListComponent, FestivalDetailComponent, FestivalCreateComponent],
   providers: [FestivalService],

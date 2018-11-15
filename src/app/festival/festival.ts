@@ -3,6 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ import {Teatro} from '../teatro/teatro';
+ import {Critico} from '../critico/critico'; 
+ 
 export class Festival{
 /**
  * 
@@ -27,18 +30,27 @@ export class Festival{
    /**
     * 
     */
-    fechaInicio: string;
+    fechaInicio: any;
     
     /**
      * 
      */
-    fechaFin : string;
+    fechaFin : any;
     
     /**
      * 
      */
     ciudad : string;
     
+    /**
+     * 
+     */
+     criticos: Critico[];
+     
+    /**
+     * 
+     */
+     teatros: Teatro[]; 
     
         
     
