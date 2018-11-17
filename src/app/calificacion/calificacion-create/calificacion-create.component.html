@@ -1,3 +1,32 @@
-<p>
-  calificacion-create works!
-</p>
+<div>
+    <div class="col-6">
+        <form name="calificacion" (ngSub,it)="f.form.valid && createCalificacio()" #f="ngForm" novalidate>
+              <div class="form-group">
+                  <label for="calificacionPuntaje"><b>Puntaje</b></label>
+                  <input type="text" name="CalificacionPuntaje" class="form-control" id="calificacionPuntaje" [(ngModel)]="calificacion.puntaje" #calificacionPuntaje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacion.invalid }" required>
+                         <div class="invalid-feedback"><div> ¡Falta el puntaje de la calificación!</div></div>
+            </div>
+              <div class="form-group">
+                  <label for="calificacionComentario"><b>Comentario</b></label>
+                  <textarea type="text-area" name="calificacionComentario" class="form-control" id="calificacionComentario" [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionComentario.invalid }" required></textarea>
+                         <div class="invalid-feedback"><div> ¡Falta los apellidos del critico!</div></div>
+            </div>
+              <div class="form-group">
+                <label for="calificacionCritico"><b>Critico</b></label>
+                    <select class="custom-select" name="calificacionCritico" id="calificacionCritico" [(ngModel)]="calificacion.critico.id"
+                        #calificacionCritico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionCritico.invalid}" required >
+                        <option [value]="critico.id" *ngFor="let critico of criticos"> {{critico.nombres}} {{critico.apellidos}}</option>
+                    </select>
+                <div class="invalid-feedback">
+                        <div>Debes escoger un critico</div>
+                    </div>
+            </div>
+              <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary" (click)="createCalificacion()">Create</button>
+           
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" routerLink="/usuarios/{{usuario.id}}">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -36,8 +36,8 @@ export class ReservaService {
         return this.http.get<ReservaDetail>(API_URL + reservas + '/' + reservaId);
     }
     
-    createReserva(reserva): Observable<Reserva> 
+    createReserva(reservaDetail): Observable<ReservaDetail> 
     { 
-        return this.http.post<Reserva>(API_URL + reservas, reserva);
+        return this.http.post<ReservaDetail>(API_URL + reservas, reservaDetail);
     }
 }

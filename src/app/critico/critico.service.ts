@@ -37,4 +37,9 @@ export class CriticoService {
         return this.http.post<Critico>(API_URL + criticos, critico);
     }
     
+    updateCritico(critico): Observable<Critico>
+    {
+        return this.http.put<Critico>(API_URL + criticos + '/' + critico.id, critico);
+    }
+    
 }

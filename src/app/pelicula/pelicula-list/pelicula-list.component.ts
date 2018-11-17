@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pelicula } from '../pelicula';
 import { PeliculaService } from '../pelicula.service';
 
@@ -14,7 +14,7 @@ export class PeliculaListComponent implements OnInit {
 
   constructor(private peliculaService: PeliculaService) { }
   
- peliculas: Pelicula[];
+  @Input() peliculas: Pelicula[];
   
   getPeliculas(): void
   {

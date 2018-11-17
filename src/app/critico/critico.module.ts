@@ -12,6 +12,7 @@ import { CriticoCreateComponent } from './critico-create/critico-create.componen
 import {CalificacionModule} from '../calificacion/calificacion.module';
 import {FuncionModule} from '../funcion/funcion.module';
 import {PeliculaModule} from '../pelicula/pelicula.module';
+import { CriticoEditComponent } from './critico-edit/critico-edit.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import {PeliculaModule} from '../pelicula/pelicula.module';
       FuncionModule,
       PeliculaModule
   ],
-  declarations: [CriticoListComponent, CriticoDetailComponent, CriticoCreateComponent],
+  declarations: [CriticoListComponent, CriticoDetailComponent, CriticoCreateComponent, CriticoEditComponent],
   providers: [CriticoService],
     exports: [CriticoListComponent, CriticoDetailComponent]
 })

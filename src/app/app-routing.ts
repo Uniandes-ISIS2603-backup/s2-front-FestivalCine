@@ -35,6 +35,7 @@ import {TeatroDetailComponent} from '../app/teatro/teatro-detail/teatro-detail.c
 import {TeatroCreateComponent} from '../app/teatro/teatro-create/teatro-create.component';
 import {CriticoCreateComponent} from '../app/critico/critico-create/critico-create.component';
 import {CalificacionCreateComponent} from '../app/calificacion/calificacion-create/calificacion-create.component';
+import {CriticoEditComponent} from '../app/critico/critico-edit/critico-edit.component';
 
 const routes: Routes = [
     {
@@ -47,6 +48,10 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: CriticoCreateComponent
+            },
+            {
+                path: ':id/edit',
+                component: CriticoEditComponent
             },
             {
                 path: ':id',
@@ -128,6 +133,10 @@ const routes: Routes = [
                     {
                         path: 'reservas/add',
                         component: ReservaCreateComponent
+                    },
+                    {
+                        path: 'calificaciones/add',
+                        component: CalificacionCreateComponent
                     }
                 ],
                 component:UsuarioDetailComponent

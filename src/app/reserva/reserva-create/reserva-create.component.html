@@ -5,15 +5,15 @@
         <form name="reserva" (ngSubmit)="f.form.valid && createReserva()" #f="ngForm" novalidate>
             <div class="form-group">
                 <label for="reservaAbono"><b>¿Abono?</b></label>
-                <input type="checkbox" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono">              
+                <input type="checkbox" name="reservaAbono" class="form-control" id="reservaAbono" [(ngModel)]="reserva.abono">
+                
             </div>
             <div class="form-group">
-                    <label for="reservaFuncion"><b>Función</b></label>
+                <label for="reservaFuncion"><b>Función  </b></label><label *ngIf="checkBoxAbono()" required><b>1</b></label>
                     <select class="custom-select" name="reservaFuncion" id="reservaFuncion" [(ngModel)]="reserva.funciones"
                         #reservaFuncion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && reservaFuncion.invalid }"
                         required>
-                        <option [value]="funcion.id" *ngFor="let funcion of funciones">{{funcion.id}}</option>
-                        <option> Opcion de prueba</option>
+                        <option [value]="funciones.id" *ngFor="let funcion of funciones">id #{{funcion.id}}</option>
                     </select>
                     <div class="invalid-feedback">
                         <div>Es necesario escoger una función</div>

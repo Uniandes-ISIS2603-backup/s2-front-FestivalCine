@@ -45,7 +45,7 @@
                     <select class="custom-select" name="funcionSala" id="funcionSala" [(ngModel)]="funcion.sala.id"
                         #funcionSala="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionSala.invalid }"
                         required>
-                        <option [value]="sala.id" *ngFor="let sala of salas">{{sala.numero}}</option>
+                        <option [value]="sala.id" *ngFor="let sala of salas">{{sala.teatro.nombre}} sala: {{sala.numero}}</option>
                     </select>
                     <div class="invalid-feedback">
                         <div>Falta la sala de la función</div>
@@ -57,6 +57,9 @@
                         #funcionCritico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionCritico.invalid}"  >
                         <option [value]="critico.id" *ngFor="let critico of criticos"> {{critico.nombres}} {{critico.apellidos}}</option>
                     </select>
+                <div class="invalid-feedback">
+                        <div>Debes seleccionar un</div>
+                    </div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Create</button>

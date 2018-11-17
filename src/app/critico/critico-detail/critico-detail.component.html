@@ -2,7 +2,7 @@
 <div class="col-md-12">
         <div class="card text-center">
   <div class="card-header">
-   <h1>{{critico.nombres}} {{critico.apellidos}}</h1>
+      <h1>{{critico.nombres}} {{critico.apellidos}} <font size="5"><i class="fas fa-pen-square" style="cursor: pointer;" routerLink="/criticos/{{critico.id}}/edit"></i></font></h1>
   </div>
   <div class="card-body" >
       <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
@@ -64,7 +64,7 @@
       <div class="col-lg-4">
         <h1>Peliculas</h1> 
         <p>Peliculas que el critico tiene permitido criticar.</p>
-        <app-pelicula-list></app-pelicula-list>
+        <app-pelicula-list [peliculas]="critico.peliculas"></app-pelicula-list>
       </div>
       <div class="col-lg-4">
         <h1>Calificaciones</h1> 

@@ -1,3 +1,4 @@
+<div class="catsandstars" id="fondo" >
 <div>
     <div class="col-6">
         <form name="critico" (ngSubmit)="f.form.valid && createCritico()" #f="ngForm" novalidate>
@@ -42,7 +43,8 @@
                          <div class="invalid-feedback"><div> ¡Falta la contraseña del critico!</div></div>
             </div>
             <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary" routerLink="/criticos/list">Create</button>
+                <button type="submit" class="btn btn-primary" routerLink="/criticos/add">Create</button>
+                
                 <div class="divider"></div>
                 <button type="button" class="btn btn-danger" routerLink="/criticos/list">Cancel</button>
             </div>
@@ -50,6 +52,21 @@
               
     </div>
 </div>
+
+<div class="top-content">
+            <div class="container">
+                
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1>Free <strong>Bootstrap</strong> Wizard</h1>
+                        <div class="description">
+                       	    <p>
+                                This is a free responsive Bootstrap form wizard. 
+                                Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+                            </p>
+                        </div>
+                    </div>
+                </div>
 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
                     	<form role="form" action="" method="post" class="f1">
@@ -143,15 +160,20 @@
                                 </div>
                                 <div class="f1-buttons">
                                     <button type="button" class="btn btn-previous">Atras</button>
-                                    <button type="submit" class="btn btn-submit">Finalizar</button>
+                                    <button type="submit" class="btn btn-submit" routerLink="/criticos/list">Finalizar</button>
                                 </div>
                             </fieldset>
                     	
                     	</form>
                     </div>
-            <script src="jquery-1.11.1.min.js"></script>
-        <script src="jquery.backstretch.min.js"></script>
-        <script src="retina-1.1.0.min.js"></script>
-        <script src="scripts.js"></script>
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/retina-1.1.0.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
                 </div>
+            </div>
+</div>
+    </div>
+
 
