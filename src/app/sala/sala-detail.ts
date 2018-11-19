@@ -5,4 +5,5 @@ export class SalaDetail extends Sala{
     
     /** Las sillas de la sala **/
     sillas : Silla[];
+
 }

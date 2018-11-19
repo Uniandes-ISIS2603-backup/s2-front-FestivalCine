@@ -5,14 +5,19 @@
         <h2><b>Id del teatro: </b> <font face="raro, courier">{{teatro.id}}</font></h2>
         <font face="raro, courier"><b>Nombre: </b>{{teatro.nombre}} <br/> </font>
         <font face="raro, courier"><b>Dirección: </b> {{teatro.direccion}} <br/> </font>
-        <font face="raro, courier"><b> Numero de salas para el festival: </b> {{teatro.numSalasFest}}  <br/> </font>
-        <div class="row border margin">
-            <h5><font face="raro, courier"><b>Salas:</b> </font></h5>
-            
-        </div>
-        <div class="row border margin">
-            <h5><font face="raro, courier"><b>Funciones:</b> </font></h5>
-           
-        </div>
+
     </div>
 </div>
+
+ <div class="row" >
+      <div class="col-lg-4">
+        <h1>Salas</h1> 
+        <p>Teatros que hacen parte del festival.</p>
+       <app-sala-list></app-sala-list>
+      </div>
+      <div class="col-lg-4">
+        <h1>Funciones</h1> 
+        <p>Funciones que se presentan en el teatro</p>
+        <app-funcion-list  ></app-funcion-list>
+      </div>
+ </div>

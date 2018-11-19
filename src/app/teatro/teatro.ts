@@ -1,4 +1,7 @@
-export class Teatro{
+import { Funcion } from '../funcion/funcion';
+import { Sala } from '../sala/sala';
+
+    export class Teatro{
     
     /**
      *
@@ -14,6 +17,7 @@ export class Teatro{
      * 
      */
     numSalasFest: number;   
+
      
 }
 

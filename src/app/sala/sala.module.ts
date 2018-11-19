@@ -15,7 +15,8 @@ imports: [
     FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   declarations: [SalaListComponent, SalaDetailComponent, SalaCreateComponent],
   providers: [SalaService],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Teatro } from '../teatro';
 import { TeatroService } from '../teatro.service';
 
@@ -14,7 +14,7 @@ export class TeatroListComponent implements OnInit {
 
   constructor(private teatroService: TeatroService) { }
   
-  teatros: Teatro[];
+  @Input() teatros: Teatro[];
   
   getTeatros(): void
   {

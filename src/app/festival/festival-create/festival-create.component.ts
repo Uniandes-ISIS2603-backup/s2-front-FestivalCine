@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FestivalService } from '../festival.service';
 import { CriticoService} from '../../critico/critico.service';
 import { TeatroService} from '../../teatro/teatro.service'
+import {NgbTimeStruct} from '@ng-bootstrap/ng-bootstrap';
 
 import { Festival} from '../festival';
 import {Critico} from '../../critico/critico';

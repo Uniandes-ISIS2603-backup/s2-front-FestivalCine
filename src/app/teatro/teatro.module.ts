@@ -8,6 +8,8 @@ import { TeatroListComponent } from './teatro-list/teatro-list.component';
 import { TeatroDetailComponent } from './teatro-detail/teatro-detail.component';
 import { TeatroService } from './teatro.service';
 import { TeatroCreateComponent } from './teatro-create/teatro-create.component';
+import { SalaModule } from '../sala/sala.module';
+import { FuncionModule } from '../funcion/funcion.module';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { TeatroCreateComponent } from './teatro-create/teatro-create.component';
         FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FuncionModule,
+    SalaModule
   ],
   declarations: [TeatroListComponent, TeatroDetailComponent, TeatroCreateComponent],
   providers: [TeatroService],

@@ -40,18 +40,25 @@ w<div class="row">
             </div>
             <div class="form-group">
                 <label for="festivalFechaInicio"><b>Fecha de inicio del festival</b></label>
-                <input type="date" name="festivalFechaInicio" class="form-control" id="festivalFechaInicio" [(ngModel)]="festival.fechaInicio"
-                    #festivalFechaInicio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && festivalFechaInicio.invalid }" required>
+                <div [ngClass]="{ 'is-invalid': f.submitted && festivalFechaInicio.invalid }">
+                    <input class="form-control" id="festivalFechaInicio" name="festivalFechaInicio" [(ngModel)]="festival.fechaInicio"
+                        ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #festivalFechaInicio="ngModel" [ngClass]="{'is-invalid': f.submitted && (festivalFechaInicio.untouched || festivalFechaInicio.invalid) }"
+                        required>
+                        
                 <div class="invalid-feedback">
                     <div>¡Debe ingresar una fecha de inicio!</div>
+                </div>
                 </div>
             </div>
             <div class="form-group">
                 <label for="festivalFechaFin"><b>Fecha fin del festival</b></label>
-                <input type="date" name="festivalFechaFin" class="form-control" id="festivalFechaFin" [(ngModel)]="festival.fechaFin"
-                    #festivalFechaFin="ngModel" [ngClass]="{ 'is-invalid': f.submitted && festivalFechaFin.invalid }" required>
-                <div class="invalid-feedback">
-                    <div>¡Debe ingresar una fecha fin!</div>
+                <div [ngClass]="{ 'is-invalid': f.submitted && festivalFechaFin.invalid }">
+                    <input class="form-control" id="festivalFechaFin" name="festivalFechaFin" [(ngModel)]="festival.fechaFin"
+                        ngbDatepicker #s="ngbDatepicker" (click)="s.toggle()" #festivalFechaFin="ngModel" [ngClass]="{'is-invalid': f.submitted && (festivalFechaFin.untouched || festivalFechaFin.invalid) }"
+                        required> 
+                    <div class="invalid-feedback">
+                        <div>¡Debe ingresar una fecha de fin!</div>
+                    </div>
                 </div>
             </div> 
             <div class="row form-inline justify-content-center align-self-center">

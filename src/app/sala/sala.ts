@@ -3,7 +3,7 @@ export class Sala {
     /**
      * Id de la sala
      */ 
-     id: number
+     id: number;
      
      /**
      * Numero de la sala
@@ -13,5 +13,5 @@ export class Sala {
      /**
       * Teatro de la sala
       */
-      teatro: Teatro
+      teatro: Teatro;
 }

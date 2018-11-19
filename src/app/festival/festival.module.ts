@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppRoutingModule} from '../app-routing';
 import { FestivalListComponent } from './festival-list/festival-list.component';
 import { FestivalDetailComponent } from './festival-detail/festival-detail.component';
@@ -19,7 +20,8 @@ import {TeatroModule} from '../teatro/teatro.module';
     HttpClientModule,
     AppRoutingModule,
       CriticoModule,
-      TeatroModule
+      TeatroModule,
+      NgbModule
   ],
   declarations: [FestivalListComponent, FestivalDetailComponent, FestivalCreateComponent],
   providers: [FestivalService],
