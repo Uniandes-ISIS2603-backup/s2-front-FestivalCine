@@ -31,6 +31,8 @@ export class Critico {
     
     credencial: string;
     
+    password: string;
+    
     calificaciones: Calificacion[];
     
     funciones: Funcion[];

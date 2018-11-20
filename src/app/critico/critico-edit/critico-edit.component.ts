@@ -1,4 +1,5 @@
-import {Component, OnInit, Input, OnChanges, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, OnChanges, OnDestroy, Output, EventEmitter} from '@angular/core';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 
 import {DatePipe} from '@angular/common';
 import {CriticoService} from '../critico.service';
@@ -11,13 +12,24 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./critico-edit.component.css'],
   providers: [DatePipe]
 })
-export class CriticoEditComponent implements OnInit {
+export class CriticoEditComponent implements OnInit, OnDestroy {
 
   constructor(
   private criticoService: CriticoService,
-  private toastrService: ToastrService) { }
+  private toastrService: ToastrService,
+  private route: ActivatedRoute,
+  private router: Router) {
+      this.navigationSubscription = this.router.events.subscribe((e: any) =>
+      {
+          if (e instanceof NavigationEnd)
+          {
+              this.ngOnInit();
+          }
+      }); }
   
-  @Input() critico_id: number;
+  navigationSubscription;
+  
+  critico_id: number;
   
   @Input() critico: Critico;
   
@@ -28,8 +40,10 @@ export class CriticoEditComponent implements OnInit {
   editCritico(): void
   {
       this.criticoService.updateCritico(this.critico)
-          .subscribe(()=> 
+          .subscribe((critico)=> 
           {
+              this.critico.id = critico.id;
+                this.router.navigate(['/criticos/' + critico.id]);
               this.toastrService.success("La información del critico fue actualizada", "Critico edition")
       });
       this.update.emit();
@@ -53,8 +67,15 @@ getCritico():void
 }
 
   ngOnInit() {
+      this.critico_id = +this.route.snapshot.paramMap.get('id');
       this.critico = new Critico();
       this.getCritico();
   }
+  
+  ngOnDestroy() {
+        if (this.navigationSubscription) {
+            this.navigationSubscription.unsubscribe();
+        }
+    }
 
 }

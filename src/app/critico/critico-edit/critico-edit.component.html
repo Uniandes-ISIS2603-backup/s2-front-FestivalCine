@@ -1,69 +1,121 @@
 
 <div class="col-md-12">
+    <form name="critico" (ngSubmit)="f.form.valid && editCritico()" #f="ngForm" novalidate>
         <div class="card text-center">
   <div class="card-header">
-   <h1>{{critico.nombres}} {{critico.apellidos}}</h1>
+      <h1>Actualizar Información de {{critico.nombres}} {{critico.apellidos}} <font size="5"></font></h1>
   </div>
   <div class="card-body" >
       <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
              width="200"
             height="200"><br/><br/>
-      <b>{{critico.puntaje}}</b><br/>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <div class="stars-outer" >
-          <div class="stars-inner"></div>
-        </div>
-    <h4 class="card-title">Información</h4>
+   <h4 class="card-title">Información</h4>
     <div class="row">
-        <div class="col-lg-2"></div><div class="col-lg-2"></div>
-        <div class="col-lg-2">
+        <div class="col-lg-6">
+            <p  align="right"><b>Nombres: </b></p> 
+      </div>
+          <div class="col-lg-6">
+              
+              <input type="input" name="criticoNombres" value="{{critico.nombres}}" class="form-control" id="criticoNombres" [(ngModel)]="critico.nombres"
+                                   #criticoNombres="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoNombres.invalid }" required><span class="underline"></span>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener un nombre</div>
+                            </div>
+          </div>
+      </div>
+<div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Apellidos: </b></p> 
+      </div>
+        <div class="col-lg-6">
+              <input type="text" name="criticoApellidos" value="{{critico.apellidos}}"class="form-control" id="criticoApellidos" [(ngModel)]="critico.apellidos"
+                                   #criticoApellidos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoApellidos.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener un apellido</div>
+                            </div>
+          </div>
+    </div>   
+    <div class="row">
+        <div class="col-lg-6">
             <p  align="right"><b>Identificación: </b></p> 
       </div>
-        <div class="col-lg-2">
-            <p  align="left">{{critico.identificacion}}</p> 
-      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-6">
+             <input type="text" name="criticoIdentificacion" value="{{critico.identificacion}}" class="form-control" id="criticoIdentificacion" [(ngModel)]="critico.identificacion"
+                                   #criticoIdentificacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoIdentificacion.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener una identificación</div>
+                            </div>
+        </div>
     </div>
     <div class="row">
-        <div class="col-lg-2"></div><div class="col-lg-2"></div>
-        <div class="col-lg-2">
+        <div class="col-lg-6">
             <p  align="right"><b>Teléfono: </b></p>
       </div>
-        <div class="col-lg-2">
-            <p  align="left">{{critico.celular}}</p>
-      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-6">
+            <input type="text" name="criticoCelular" value="{{critico.celular}}" class="form-control" id="criticoCelular" [(ngModel)]="critico.celular"
+                                   #criticoCelular="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoCelular.invalid }">
+                                   
+      </div>
     </div>
     <div class="row">
-        <div class="col-lg-2"></div><div class="col-lg-2"></div>
-        <div class="col-lg-2">
+        <div class="col-lg-6">
             <p  align="right"><b>Email: </b></p> 
       </div>
-        <div class="col-lg-2">
-            <p  align="left">{{critico.email}}</p>
-      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-6">
+            <input type="text" name="criticoEmail" value="{{critico.email}}" class="form-control" id="criticoEmail" [(ngModel)]="critico.email"
+                                   #criticoEmail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoEmail.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener un correo</div>
+                            </div>
+      </div>
     </div>
     <div class="row">
-        <div class="col-lg-2"></div><div class="col-lg-2"></div>
-        <div class="col-lg-2">
+        <div class="col-lg-6">
             <p  align="right"><b>NickName: </b></p>
       </div>
-        <div class="col-lg-2">
-            <p  align="left">{{critico.nickName}}</p>
-      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
+        <div class="col-lg-6">
+            <input type="text" name="criticoNickName" value="{{critico.nickName}}" class="form-control" id="criticoNickName" [(ngModel)]="critico.nickName"
+                                   #criticoNickName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoNickName.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener un nickName</div>
+                            </div>
+      </div>
     </div> <div class="row">
-        <div class="col-lg-2"></div><div class="col-lg-2"></div>
-        <div class="col-lg-2">
+        <div class="col-lg-6">
             <p  align="right"><b>Credencial: </b></p>
       </div>
-        <div class="col-lg-2">
-            <p  align="left">{{critico.credencial}}</p>
-      </div><div class="col-lg-2"></div><div class="col-lg-2"></div>
-    </div><hr>
+        <div class="col-lg-6">
+            <input type="text" name="criticoCredencial" value="{{critico.credencial}}" class="form-control" id="criticoCredencial" [(ngModel)]="critico.credencial"
+                                   #criticoCredencial="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoCredencial.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener una credencial</div>
+                            </div>
+      </div>
+    </div>
+   <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Contraseña: </b></p>
+      </div>
+        <div class="col-lg-6">
+            <input type="text" name="criticoPassword" value="{{critico.password}}" class="form-control" id="criticoPassword" [(ngModel)]="critico.password"
+                                   #criticoPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoPassword.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener una contraseña</div>
+                            </div>
+      </div>
+    </div>
+    <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+            </div>
     <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>-->
   <div class="card-footer text-muted">
     Critico No. {{critico.id}}
   </div>
-</div>
 
 </div>
 
+</div>
+</form>
