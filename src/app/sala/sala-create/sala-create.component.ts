@@ -63,7 +63,8 @@ export class SalaCreateComponent implements OnInit {
     */
     createSala(): void {
         this.salaService.createSala(this.sala)
-            .subscribe(() => {
+            .subscribe((sala) => {
+                this.sala = sala;
                 this.create.emit();
                 this.toastrService.success("The sala was created", "Sala creation");
             }, err => {
