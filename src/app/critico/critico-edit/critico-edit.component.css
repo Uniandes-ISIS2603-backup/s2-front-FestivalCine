@@ -18,3 +18,18 @@ input {
     input:focus {
         min-width: 200px;
     }
+    
+    input[type=text]:focus{
+  outline: 2px solid orange;     /* oranges! yey */
+}
+
+input[type=text] {
+  border: none;        /* Remove default borders */
+  padding: 4px 8px;
+  border-radius: 12px; /* Sadly outline does not round! therefore...*/
+}
+input[type=text]:focus{
+  outline: none;      /* Remove default outline and use border or box-shadow */
+  box-shadow: 0 0 0 2px orange; /* Full freedom. (works also with border-radius) */
+}
+

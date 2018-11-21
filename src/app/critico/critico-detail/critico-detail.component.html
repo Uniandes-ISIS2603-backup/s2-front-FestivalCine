@@ -10,9 +10,14 @@
             height="200"><br/><br/>
       <b>{{critico.puntaje}}</b><br/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <div class="stars-outer" >
-          <div class="stars-inner"></div>
-        </div>
+      <ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>
+
+<ngb-rating  [starTemplate]="t" [readonly]="true" max="5" rate="{{critico.puntaje}}"></ngb-rating>
+
     <h4 class="card-title">Información</h4>
     <div class="row">
         <div class="col-lg-6">
@@ -64,13 +69,13 @@
       <div class="col-lg-4">
         <h1>Calificaciones</h1> 
         <p>Calificaciones del critico.</p>
-        <app-calificacion-list [calificaciones]= "critico.calificaciones"
+        <app-calificacion-list [calificaciones]= "critico.calificaciones" 
             ></app-calificacion-list>
       </div>
       <div class="col-lg-4">
         <h1>Funciones</h1> 
         <p>Funciones que vá a criticar.</p>
-        <app-funcion-list [funciones]="critico.funciones"></app-funcion-list>
+        <app-funcion-list [funciones]="critico.funciones"  [tipeList]='detail'></app-funcion-list>
       </div>
     </div>
   </div>

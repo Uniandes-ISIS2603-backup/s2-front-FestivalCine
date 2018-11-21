@@ -32,13 +32,7 @@ export class CriticoDetailComponent implements OnInit {
       this.critico_id = +this.route.snapshot.paramMap.get('id');
       this.critico = new Critico();
       this.getCritico();
+      console.log(this.critico.calificaciones);
   }
-  
-  getStars():void
-      {
-      var variable = this.critico.puntaje;
-      console.log(this.critico);
-      this.starRating = Math.floor((+this.critico.puntaje*100)/5);
-      } 
 
 }

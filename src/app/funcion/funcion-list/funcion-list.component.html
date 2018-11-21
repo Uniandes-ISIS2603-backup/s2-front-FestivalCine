@@ -1,10 +1,10 @@
 <img class= "center-block" src="https://i.pinimg.com/originals/2d/6b/c3/2d6bc3c655ab71af8a2564fac18878a2.jpg"
              width="1500"
-            height="300">
+            height="300" *ngIf="isList()" required>
 <div class="container-fluid">
     <div class="col">
             <div class="row justify-content-center align-self-center">
-               <button routerLink="/funciones/add"> Crear nueva funcion</button>
+               <button routerLink="/funciones/add"  *ngIf="isList()" required> Crear nueva funcion</button>
             </div>
         <table class="table table-striped">
             <thead class="thead-dark">

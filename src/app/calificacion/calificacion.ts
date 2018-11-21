@@ -13,5 +13,5 @@ export class Calificacion{
     
     critico: Critico;
     
-    pelicual: Pelicula;
+    pelicula: Pelicula;
 }

@@ -114,3 +114,19 @@ input:focus::-webkit-input-placeholder {
   transition: all 0.5s linear;
   width: 202px;
 }
+
+.star {
+      position: relative;
+      display: inline-block;
+      font-size: 3rem;
+      color: #d3d3d3;
+    }
+    .full {
+      color: red;
+    }
+    .half {
+      position: absolute;
+      display: inline-block;
+      overflow: hidden;
+      color: #f8ce0b;
+    }

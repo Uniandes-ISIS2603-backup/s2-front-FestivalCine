@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CalificacionListComponent implements OnInit {
 
-  constructor( private calificacionService: CalificacionService,  private route: ActivatedRoute) { }
+  constructor( private calificacionService: CalificacionService,  
+  private route: ActivatedRoute) { }
 
   @Input() calificaciones: Calificacion[];
   

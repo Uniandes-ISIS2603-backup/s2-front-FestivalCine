@@ -16,11 +16,12 @@
       </div>
           <div class="col-lg-6">
               
-              <input type="input" name="criticoNombres" value="{{critico.nombres}}" class="form-control" id="criticoNombres" [(ngModel)]="critico.nombres"
+              <input type="text" name="criticoNombres" value="{{critico.nombres}}" class="form-control" autofocus id="criticoNombres" [(ngModel)]="critico.nombres"
                                    #criticoNombres="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoNombres.invalid }" required><span class="underline"></span>
                                    <div class="invalid-feedback">
                                 <div>El critico debe tener un nombre</div>
                             </div>
+                     
           </div>
       </div>
 <div class="row">
@@ -107,7 +108,7 @@
     <div class="row form-inline justify-content-center align-self-center">
                 <button type="submit" class="btn btn-primary">Edit</button>
                 <div class="divider"></div>
-                <button type="button" class="btn btn-danger" (click)="cancelEdition()">Cancel</button>
+                <button type="button" class="btn btn-danger" routerLink="/criticos/{{critico.id}}">Cancel</button>
             </div>
     <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>-->

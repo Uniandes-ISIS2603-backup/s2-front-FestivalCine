@@ -1,4 +1,5 @@
-  <tr *ngFor = "let pelicula of peliculas">
+<div  *ngIf="isList()" required>  
+<tr *ngFor = "let pelicula of peliculas">
    
   
          <div class="container-fluid">
@@ -26,3 +27,29 @@
            <div class="row" style="background-color:white;"></div>
             </div>
              </div>
+         </div>
+</div>
+<div   *ngIf="isList() == false" required>
+          
+          <div class="row">
+              <div class="col">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nombre pelicula</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let pelicula of peliculas" >
+                <td style="cursor: pointer;"> 
+                 <dd class="figure-caption" routerLink="/peliculas/{{pelicula.id}}">
+                        {{pelicula.nombre}}</dd>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-9">
+        </div>
+    </div>
+  </div>
+</div>

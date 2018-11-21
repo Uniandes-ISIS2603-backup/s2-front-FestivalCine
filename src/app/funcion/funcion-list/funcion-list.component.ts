@@ -4,6 +4,8 @@ import { ToastrService } from 'ngx-toastr';
 import { Funcion } from '../funcion';
 import {FuncionService} from '../funcion.service';
 
+import { ActivatedRoute } from '@angular/router';
+
 
 
 @Component({
@@ -16,7 +18,8 @@ export class FuncionListComponent implements OnInit {
   /**
    * Contructor del componente
    */
-  constructor( private funcionService: FuncionService ) { }
+  constructor( private funcionService: FuncionService,  
+  private route: ActivatedRoute ) { }
 
   /**
    * La lista de funciones del festival de cine
@@ -28,6 +31,8 @@ export class FuncionListComponent implements OnInit {
     */
    funcion_id: number;
    
+   allFunciones:string  ='no';
+   
   /**
    * The función that the user views.
    */
@@ -36,11 +41,10 @@ export class FuncionListComponent implements OnInit {
    /**
     * Shows or hides the funcion-create-component
     */
-   showCreate: boolean;
+   @Input() tipeList:string = 'list';
 
 
     onSelected(funcion_id: number):void {
-            this.showCreate = false;
             this.funcion_id = funcion_id;
 
         this.getFuncionDetail();
@@ -55,7 +59,6 @@ export class FuncionListComponent implements OnInit {
                    this.selectedFuncion = undefined;
                    this.funcion_id = undefined;
             }
-            this.showCreate = !this.showCreate;
     }
     
   /**
@@ -77,10 +80,32 @@ export class FuncionListComponent implements OnInit {
      * This method will be called when the component is created
      */  
     ngOnInit() {
-        this.showCreate = false;
-        this.selectedFuncion = undefined;
-        this.funcion_id = undefined;
-        this.getFunciones();
+        this.route.queryParams.filter(params => params.allFunciones).subscribe(params => {
+        console.log(params); 
+
+        this.allFunciones = params.allFunciones;
+        console.log(this.allFunciones); 
+      });
+      if (this.allFunciones == 'yes')
+      {
+         console.log("allFunciones");
+      
+       this.getFunciones();
+       }
+       else
+       {
+       this.tipeList = 'detail';    
+       }
+       
+    }
+    
+    isList(): boolean
+    {
+        if (this.tipeList == 'detail')
+        {
+            return false;
+        }
+        return true;
     }
 
 }
