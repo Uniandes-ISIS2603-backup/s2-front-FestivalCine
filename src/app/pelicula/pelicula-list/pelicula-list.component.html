@@ -1,3 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2" *ngFor = "let pelicula of peliculas">
+             <figure class="figure" routerLink="/peliculas/{{pelicula.id}}" style="cursor: pointer;">
+                 <div class="figure-thumbnal border-0">
+                     <img class="img-fluid" src="https://is1-ssl.mzstatic.com/image/thumb/Video/d7/5c/d9/mzl.lniondsx.jpg/230x0w.jpg" alt="{{pelicula.nombre}}" />
+                 </div>
+                 <figcaption class="title-caption text-center">{{pelicula.nombre}}</figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+
 <div  *ngIf="isList()" required>  
 <tr *ngFor = "let pelicula of peliculas">
    
@@ -29,7 +42,7 @@
              </div>
          </div>
 </div>
-<div   *ngIf="isList() == false" required>
+<div *ngIf="isList() == false" required>
           
           <div class="row">
               <div class="col">

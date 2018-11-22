@@ -9,6 +9,7 @@
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Identificación</th>
+                    <th>Editar</th>
                     
                 </tr>
             </thead>
@@ -29,6 +30,9 @@
                     <td  style="cursor: pointer;">
                         <dd class="figure-caption" routerLink="/criticos/{{critico.id}}">
                         {{critico.identificacion}}</dd>
+                    </td>
+                     <td  style="cursor: pointer;">
+                        <dd class="figure-caption" routerLink="/criticos/{{critico.id}}/edit"><i class="fas fa-pen-square"></i></dd>
                     </td>
                 </tr>
             </tbody>

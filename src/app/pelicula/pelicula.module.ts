@@ -8,6 +8,7 @@ import { PeliculaListComponent } from './pelicula-list/pelicula-list.component';
 import { PeliculaDetailComponent } from './pelicula-detail/pelicula-detail.component';
 import { PeliculaService } from './pelicula.service';
 import { PeliculaCreateComponent } from './pelicula-create/pelicula-create.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { PeliculaCreateComponent } from './pelicula-create/pelicula-create.compo
         FormsModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   declarations: [PeliculaListComponent, PeliculaDetailComponent,PeliculaCreateComponent],
   providers: [PeliculaService],

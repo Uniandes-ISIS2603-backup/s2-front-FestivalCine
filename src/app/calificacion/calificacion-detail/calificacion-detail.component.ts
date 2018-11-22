@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import {CalificacionService} from '../calificacion.service';
 import {Calificacion} from '../calificacion';
+import {Usuario} from '../../usuario/usuario';
 
 @Component({
   selector: 'app-calificacion-detail',
@@ -19,10 +20,13 @@ export class CalificacionDetailComponent implements OnInit {
   
   calificacion_id: number;
   
+  usuario: Usuario;
+  
   getCalificacion(): void
   {
       this.calificacionService.getCalificacionDetail(this.calificacion_id)
           .subscribe(calificacion => {this.calificacion = calificacion});
+      this.usuario = this.calificacion.usuario;
   }
 
   ngOnInit() {

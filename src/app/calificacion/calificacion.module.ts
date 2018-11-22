@@ -9,9 +9,11 @@ import { CalificacionListComponent } from './calificacion-list/calificacion-list
 import { CalificacionService} from './calificacion.service';
 import { CalificacionDetailComponent } from './calificacion-detail/calificacion-detail.component';
 import { CalificacionCreateComponent } from './calificacion-create/calificacion-create.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
+  NgbModule,
     CommonModule,
     BrowserModule,
     AppRoutingModule,
