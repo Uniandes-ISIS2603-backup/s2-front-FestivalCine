@@ -58,12 +58,22 @@ export class FestivalCreateComponent implements OnInit {
         return this.festival; 
     }
     
+        getTeatros(): void {
+        this.teatroService.getTeatros()
+            .subscribe(teatros => {
+                this.teatros = teatros;
+            }, err => {
+                this.toastrService.error(err, 'Error');
+            });
+    }
+    
        cancelCreation(): void {
         this.cancel.emit();
     }
   ngOnInit() {
       this.festival = new Festival();
-
+      this.getTeatros();
+      
   }
 
 }

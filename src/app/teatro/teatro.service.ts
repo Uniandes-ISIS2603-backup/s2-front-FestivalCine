@@ -35,4 +35,9 @@ export class TeatroService {
     getTeatroDetail(teatroId): Observable<TeatroDetail> {
         return this.http.get<TeatroDetail>(API_URL +teatros + '/' + teatroId);
     }
+    
+    updateTeatro(teatro): Observable<Teatro>
+    {
+        return this.http.put<Teatro>(API_URL + teatros + '/' + teatro.id, teatro);
+    }
 }

@@ -36,7 +36,8 @@ import {TeatroCreateComponent} from '../app/teatro/teatro-create/teatro-create.c
 import {CriticoCreateComponent} from '../app/critico/critico-create/critico-create.component';
 import {CalificacionCreateComponent} from '../app/calificacion/calificacion-create/calificacion-create.component';
 import {CriticoEditComponent} from '../app/critico/critico-edit/critico-edit.component';
-
+import {FestivalEditComponent} from '../app/festival/festival-edit/festival-edit.component';
+import {TeatroEditComponent} from '../app/teatro/teatro-edit/teatro-edit.component';
 const routes: Routes = [
     {
          path: 'criticos',
@@ -104,6 +105,10 @@ const routes: Routes = [
             {
                 path:'add',
                 component:TeatroCreateComponent
+            },
+            {
+                path: ':id/edit',
+                component: TeatroEditComponent
             },
             {
                 path:':id',
@@ -219,9 +224,24 @@ const routes: Routes = [
             {
                 path:'add',
                 component:FestivalCreateComponent
+            },
+                        {
+                path: ':id/edit',
+                component: FestivalEditComponent
             }, 
             {
-                path:':id',
+                path: ':id',
+                children:
+                [
+                    {
+                        path: 'teatros/add',
+                        component: TeatroCreateComponent
+                    },
+                    {
+                        path: 'criticos/add',
+                        component: CriticoCreateComponent
+                    }
+                ],
                 component:FestivalDetailComponent
             }
  

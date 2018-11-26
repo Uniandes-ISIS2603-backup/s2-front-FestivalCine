@@ -2,7 +2,7 @@
     <div class="container-fluid"> 
         <br/>
         <br/>
-        <h2><font face="raro, courier"><b>Nombre: </b>{{festival.nombre}} <br/> </font></h2>
+        <h2><font face="raro, courier"><b>Nombre: </b>{{festival.nombre}} <br/> <i class="fas fa-pen-square" style="cursor: pointer;" routerLink="/festivales/{{festival.id}}/edit"></i></font></h2>
         <b>Id del festival: </b> <font face="raro, courier">{{festival.id}}<br/> </font>
         
         <font face="raro, courier"><b>Patrocinador: </b> {{festival.patrocinador}} <br/> </font>
@@ -16,10 +16,11 @@
 
  <div class="row" >
       <div class="col-lg-4">
-        <h1>Teatros</h1> 
-        <p>Teatros que hacen parte del festival.</p>
-       <app-teatro-list></app-teatro-list>
-      </div>
+                        <hr>
+        <dt> Teatros</dt>                      
+        <p class="h3 p-3">Teatros de este festival : </p>
+        <app-teatro-list [teatros]="festival.teatros"></app-teatro-list>
+                        <hr>
       <div class="col-lg-4">
         <h1>Criticos</h1> 
         <p>Criticos que van a participar en el festival.</p>

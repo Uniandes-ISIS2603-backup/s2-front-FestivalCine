@@ -3,6 +3,11 @@ import { Sala } from '../sala/sala';
 
     export class Teatro{
     
+        
+    /**
+     * 
+     */
+     id: number;    
     /**
      *
      */

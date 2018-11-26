@@ -10,6 +10,7 @@ import { TeatroService } from './teatro.service';
 import { TeatroCreateComponent } from './teatro-create/teatro-create.component';
 import { SalaModule } from '../sala/sala.module';
 import { FuncionModule } from '../funcion/funcion.module';
+import { TeatroEditComponent } from './teatro-edit/teatro-edit.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { FuncionModule } from '../funcion/funcion.module';
     FuncionModule,
     SalaModule
   ],
-  declarations: [TeatroListComponent, TeatroDetailComponent, TeatroCreateComponent],
+  declarations: [TeatroListComponent, TeatroDetailComponent, TeatroCreateComponent, TeatroEditComponent],
   providers: [TeatroService],
   exports:[TeatroListComponent]
 })

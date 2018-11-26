@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <br>
+        <form name="teatro" (ngSubmit)="f.form.valid &&editTeatro()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="teatroNombre"><b>Nombre del teatro</b></label>
+                <input type="text" name="teatroNombre" class="form-control" id="teatroNombre" [(ngModel)]="teatro.nombre"
+                    #teatroNombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && teatroNombre.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el nombre del teatro!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="teatroDireccion"><b>Dirección del teatro</b></label>
+                <input type="text" name="teatroDireccion" class="form-control" id="teatroDireccion" [(ngModel)]="teatro.direccion"
+                    #teatroDireccion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && teatroDireccion.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta la dirección!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="teatroNumSalas"><b>Numero de salas para el festival</b></label>
+                <input type="text" name="teatroNumSalas" class="form-control" id="teatroNumSalas" [(ngModel)]="teatro.numSalasFest"
+                    #teatroNumSalas="ngModel" [ngClass]="{ 'is-invalid': f.submitted && teatroNumSalas.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>¡Falta el numero de salas para el festival!</div>
+                </div>
+            </div>
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" routerLink="/teatros/list">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>

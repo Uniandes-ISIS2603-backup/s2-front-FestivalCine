@@ -11,6 +11,7 @@ import {FestivalService} from './festival.service';
 import { FestivalCreateComponent } from './festival-create/festival-create.component';
 import {CriticoModule} from '../critico/critico.module';
 import {TeatroModule} from '../teatro/teatro.module';
+import { FestivalEditComponent } from './festival-edit/festival-edit.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import {TeatroModule} from '../teatro/teatro.module';
       TeatroModule,
       NgbModule
   ],
-  declarations: [FestivalListComponent, FestivalDetailComponent, FestivalCreateComponent],
+  declarations: [FestivalListComponent, FestivalDetailComponent, FestivalCreateComponent, FestivalEditComponent],
   providers: [FestivalService],
   exports:[FestivalListComponent]
 })

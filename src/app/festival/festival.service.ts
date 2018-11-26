@@ -32,4 +32,9 @@ export class FestivalService{
      getFestivalDetail(festivalId): Observable<Festival> {
         return this.http.get<Festival>(API_URL + festivales + '/' + festivalId);
     }
+    
+    updateFestival(festival): Observable<Festival>
+    {
+        return this.http.put<Festival>(API_URL + festivales + '/' + festival.id, festival);
+    }
 }
