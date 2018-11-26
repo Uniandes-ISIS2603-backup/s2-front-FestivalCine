@@ -43,4 +43,9 @@ const usuarios = '/usuarios';
     createUsuario(usuario): Observable<Usuario> {
         return this.http.post<Usuario>(API_URL + usuarios, usuario);
     }
+    
+    updateUsuario(usuario): Observable<Usuario>
+    {
+        return this.http.put<Usuario>(API_URL + usuarios + '/' + usuario.id, usuario);
+    }
  }

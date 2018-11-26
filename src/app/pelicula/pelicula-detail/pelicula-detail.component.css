@@ -1,0 +1,191 @@
+#header[_ngcontent-c11] .img[_ngcontent-c11] {
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    padding-bottom: 400px;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-filter: brightness(70%);
+    filter: brightness(70%);
+}
+
+#header[_ngcontent-c11] {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background: #666;
+    color: #fff;
+    cursor: pointer;
+}
+
+#header[_ngcontent-c11] .img.gaussian[_ngcontent-c11] {
+    -webkit-filter: blur(35px) brightness(80%);
+    filter: blur(35px) brightness(80%);
+}
+
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+
+.svg-inline--fa.fa-w-14 {
+    width: 0.875em;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+#header[_ngcontent-c11] .play-circle[_ngcontent-c11] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+    line-height: 71px;
+    text-indent: 7px;
+    background: rgba(0,0,0,.2);
+    transition: background .25s;
+}
+
+#movie[_ngcontent-c11] .img-container[_ngcontent-c11] .img[_ngcontent-c11] {
+    width: 100%;
+    height: 0;
+    display: block;
+    padding-bottom: 144%;
+    background-color: #aaa;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: rgba(0,0,0,.8) 0 8px 16px -3px;
+    position: relative;
+    border-radius: 4px;
+}
+
+.star {
+      position: relative;
+      display: inline-block;
+      font-size: 3rem;
+      color: #d9edf7;
+    }
+    .full {
+      color: red;
+    }
+    .half {
+      position: absolute;
+      display: inline-block;
+      overflow: hidden;
+      color: #f8ce0b;
+    }
+    
+    #movie[_ngcontent-c11] h2[_ngcontent-c11] {
+    color: #fff;
+    font-size: 32px;
+    line-height: 33px;
+    height: 74px;
+    overflow: hidden;
+    margin-top: -8px;
+    padding: 8px 8px 0;
+    text-shadow: #000 0 0 15px;
+    font-family: 'Fjalla One',sans-serif;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+#movie[_ngcontent-c11] .info[_ngcontent-c11] {
+    padding: 0;
+    margin: 0;
+    color: #ffc90a;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#movie[_ngcontent-c11] h2[_ngcontent-c11] {
+    color: #fff;
+    font-size: 32px;
+    line-height: 33px;
+    height: 74px;
+    overflow: hidden;
+    margin-top: -8px;
+    padding: 8px 8px 0;
+    text-shadow: #000 0 0 15px;
+    font-family: 'Fjalla One',sans-serif;
+}
+
+#movie[_ngcontent-c11] .float-left[_ngcontent-c11] {
+    float: none!important;
+}
+
+#movie[_ngcontent-c11] .info[_ngcontent-c11] {
+    padding: 0;
+    margin: 0;
+    color: #ffc90a;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#movie[_ngcontent-c11] .info[_ngcontent-c11] {
+    width: 100%;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.float-left {
+    float: left!important;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#movie[_ngcontent-c11] .info[_ngcontent-c11] {
+    padding: 0;
+    margin: 0;
+    color: #ffc90a;
+    font-weight: 700;
+    font-size: 12px;
+}

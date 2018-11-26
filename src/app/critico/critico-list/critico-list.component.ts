@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Critico } from '../critico';
 import { CriticoService } from '../critico.service';
+import { Observable } from 'rxjs';
+
+import {Router} from '@angular/router/';
 
 @Component({
   selector: 'app-critico-list',
@@ -10,11 +13,14 @@ import { CriticoService } from '../critico.service';
 
 export class CriticoListComponent implements OnInit {
 
-  constructor( private criticoService: CriticoService) { }
+  constructor( private criticoService: CriticoService,
+  private router: Router) { }
   
   criticos: Critico[];
   critico_id: number;
   selectedCritico: Critico
+  model:any;
+  critico: Critico;
   
   onSelected(critico_id: number): void
   {
@@ -36,6 +42,19 @@ export class CriticoListComponent implements OnInit {
   }
   ngOnInit() {
       this.getCriticos();
+  }
+  
+  busqueda(): void
+  {
+      if(this.model != undefined && this.model.id != undefined)
+      {
+          this.critico = this.model;
+          this.model = undefined;
+      }
+      this.router.navigate(['/criticos/' + this.critico_id]);
+      this.model = undefined;
+      this.getCriticos();
+      this.critico = undefined;
   }
 
 }

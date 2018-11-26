@@ -1,13 +1,12 @@
-<div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-        <br>
-        <img class= "center-block" src="http://bepensahosting.com/cepeca%20chafa/media/bienvenido.png"
-             width="300"
-            height="100"><br/>
-        <br>
-        <form name="usuario" (ngSubmit)="f.form.valid && createUsuario()" #f="ngForm" novalidate>
-            <div class="form-group">
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-11 col-md-11 col-lg-8 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+              <img class="text-center" src="http://bepensahosting.com/cepeca%20chafa/media/bienvenido.png">
+            <form name="usuario" (ngSubmit)="f.form.valid && createUsuario()" #f="ngForm" novalidate>
+              <div class="form-group">
                 <label for="usuarioNombres"><b>Nombres</b></label>
                 <input type="text" name="usuarioNombres" class="form-control" id="usuarioNombres" [(ngModel)]="usuario.nombres"
                     #usuarioNombres="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioNombres.invalid }" required>
@@ -63,13 +62,17 @@
                     <div>¡Falta la contraseña del usuario!</div>
                 </div>
             </div>
-            
-            <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Create</button>
-                <div class="divider"></div>
-                <button type="button" class="btn btn-danger" routerLink="/usuarios/list">Cancel</button>
-            </div>
-        </form>
+                <p align="center">¿Ya te encuentras registrado? Inicia sesion <a href="/usuarios/login">aquí</a></p>
+                <p align="center">¿Deseas registrare como critico? Registrate <a href="/criticos/add">aquí</a></p>
+                  
+                  <hr class="my-4">
+              <button class="btn btn-lg btn-primary btn-block " type="submit">Registrarse</button>
+              <button type="button" class="btn btn-danger btn-primary btn-block " routerLink="/usuarios/list">Cancel</button>
+              
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-3"></div>
-</div>
+  </div>
+</body>

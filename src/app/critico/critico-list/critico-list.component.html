@@ -1,7 +1,13 @@
+<!--<form class="form-inline my-2 my-lg-0">
+                    <input id="typeahead-template" placeholder="Criticos" type="text" class="form-control" [(ngModel)]="model" [ngModelOptions]="{standalone: true}" [ngbTypeahead]="search" 
+                    (focus)="focus$.next($event.target.value)" (click)="click$.next($event.target.value)" #instance="ngbTypeahead"
+                    [resultTemplate]="rt"[inputFormatter]="formatter">
+                    
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="busqueda()">Buscar</button>
+              </form>-->
 <div class="container-fluid">
     <div class="col">
         <div class="row justify-content-center align-self-center">
-            <button type="button" class="btn btn-primary" routerLink="/criticos/add">Nuevo critico</button>
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -38,5 +44,5 @@
             </tbody>
         </table>
     </div>
-
+    </div>
 </div>

@@ -13,6 +13,7 @@ import { ReservaModule } from '../reserva/reserva.module';
 import { UsuarioCreateComponent } from './usuario-create/usuario-create.component';
 import { CalificacionModule } from '../calificacion/calificacion.module';
 import {UsuarioLoginComponent} from './usuario-login/usuario-login.component';
+import { UsuarioEditComponent } from './usuario-edit/usuario-edit.component';
 
 @NgModule
 (
@@ -27,7 +28,7 @@ import {UsuarioLoginComponent} from './usuario-login/usuario-login.component';
         ReservaModule,
         CalificacionModule
     ],
-    declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent,UsuarioLoginComponent],
+    declarations: [UsuarioListComponent, UsuarioDetailComponent, UsuarioCreateComponent,UsuarioLoginComponent, UsuarioEditComponent],
     providers: [UsuarioService],
     exports:[UsuarioListComponent]
   }

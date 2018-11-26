@@ -1,7 +1,12 @@
-<div class="catsandstars" id="fondo" >
-<div>
-    <div class="col-6">
-        <form name="critico" (ngSubmit)="f.form.valid && createCritico()" #f="ngForm" novalidate>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-9 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+              <p id="titulo-card" class="card-title text-center">¡Bienvenido <b id="critico">Critico</b>!</p>
+            <form name="critico" (ngSubmit)="f.form.valid && createCritico()" #f="ngForm" novalidate>
               <div class="form-group">
                   <label for="criticoNombres"><b>Nombres</b></label>
                   <input type="text" name="criticoNombres" class="form-control" id="criticoNombres" [(ngModel)]="critico.nombres" #criticoNombres="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoNombres.invalid }" required>
@@ -42,138 +47,16 @@
                   <input type="password" name="criticoPassword" class="form-control" id="criticoPassword" [(ngModel)]="critico.password" #criticoPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoPassword.invalid }" required>
                          <div class="invalid-feedback"><div> ¡Falta la contraseña del critico!</div></div>
             </div>
-            <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary" routerLink="/criticos/add">Create</button>
-                
-                <div class="divider"></div>
-                <button type="button" class="btn btn-danger" routerLink="/criticos/list">Cancel</button>
-            </div>
-        </form>
-              
+                   <p align="center">¿Ya te encuentras registrado? Inicia sesion <a href="/usuarios/login">aquí</a></p>
+                <p align="center">¿Deseas registrare como Usuario? Registrate <a href="/usuarios/add">aquí</a></p>
+                  
+                  <hr class="my-4">
+              <button class="btn btn-lg btn-primary btn-block " type="submit">Registrarse</button>
+              <button type="button" class="btn btn-danger btn-primary btn-block " routerLink="/criticos/list">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-
-<div class="top-content">
-            <div class="container">
-                
-                <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2 text">
-                        <h1>Free <strong>Bootstrap</strong> Wizard</h1>
-                        <div class="description">
-                       	    <p>
-                                This is a free responsive Bootstrap form wizard. 
-                                Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-<div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
-                    	<form role="form" action="" method="post" class="f1">
-
-                    		<h3>Registrate como crítico</h3>
-                    		<p>Ingresa la información necesaria</p>
-                    		<div class="f1-steps">
-                    			<div class="f1-progress">
-                    			    <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
-                    			</div>
-                    			<div class="f1-step active">
-                    				<div class="f1-step-icon"><i class="fa fa-user"></i></div>
-                    				<p>acerca</p>
-                    			</div>
-                    			<div class="f1-step">
-                    				<div class="f1-step-icon"><i class="fa fa-key"></i></div>
-                    				<p>cuenta</p>
-                    			</div>
-                    		    <div class="f1-step">
-                    				<div class="f1-step-icon"><i class="fas fa-paint-brush"></i></div>
-                    				<p>personaliza</p>
-                    			</div>
-                    		</div>
-                    		
-                    		<fieldset>
-                    		    <h4>Ingresa tu información personal:</h4>
-                    			<div class="form-group">
-                    			    <label class="sr-only" for="f1-first-name">Nombres</label>
-                                    <input type="text" name="f1-first-name" placeholder="Nombres..." class="f1-first-name form-control" id="f1-first-name">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-last-name">Apellidos</label>
-                                    <input type="text" name="f1-last-name" placeholder="Apellidos..." class="f1-last-name form-control" id="f1-last-name">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-about-yourself">Identificación</label>
-                                    <input name="f1-about-yourself" placeholder="Identificacion..." 
-                                    	                 class="f1-about-yourself form-control" id="f1-about-yourself">
-                                </div>
-                                    <div class="form-group">
-                                    <label class="sr-only" for="f1-email">Celular</label>
-                                    <input type="text" name="f1-email" placeholder="Celular..." class="f1-email form-control" id="f1-celular">
-                                </div>
-                                    <div class="form-group">
-                                    <label class="sr-only" for="f1-email">Credencial</label>
-                                    <input type="text" name="f1-email" placeholder="Credencial..." class="f1-email form-control" id="f1-credencial">
-                                </div>
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-next">Siguiente</button>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <h4>Ingresa tu información de contacto:</h4>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-email">Email</label>
-                                    <input type="text" name="f1-email" placeholder="Email..." class="f1-email form-control" id="f1-email">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-email">NickName</label>
-                                    <input type="text" name="f1-email" placeholder="NameName..." class="f1-email form-control" id="f1-nickName">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-password">Contraseña</label>
-                                    <input type="password" name="f1-password" placeholder="Contraseña..." class="f1-password form-control" id="f1-password">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-repeat-password">Reingrese la contraseña</label>
-                                    <input type="password" name="f1-repeat-password" placeholder="Ingrese contraseña..." 
-                                                        class="f1-repeat-password form-control" id="f1-repeat-password">
-                                </div>
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Atras</button>
-                                    <button type="button" class="btn btn-next">Siguiente</button>
-                                </div>
-                            </fieldset>
-
-                            <fieldset>
-                                <h4>Personaliza tu perfil:</h4>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-facebook">Selecciona</label>
-                                    <input type="text" name="f1-facebook" placeholder="Facebook..." class="f1-facebook form-control" id="f1-facebook">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-twitter">Twitter</label>
-                                    <input type="text" name="f1-twitter" placeholder="Twitter..." class="f1-twitter form-control" id="f1-twitter">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="f1-google-plus">Google plus</label>
-                                    <input type="text" name="f1-google-plus" placeholder="Google plus..." class="f1-google-plus form-control" id="f1-google-plus">
-                                </div>
-                                <div class="f1-buttons">
-                                    <button type="button" class="btn btn-previous">Atras</button>
-                                    <button type="submit" class="btn btn-submit" routerLink="/criticos/list">Finalizar</button>
-                                </div>
-                            </fieldset>
-                    	
-                    	</form>
-                    </div>
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/retina-1.1.0.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-                </div>
-            </div>
-</div>
-    </div>
-
-
+  </div>
+</body>

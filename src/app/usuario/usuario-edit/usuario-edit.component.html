@@ -1,0 +1,103 @@
+
+<div class="col-md-12">
+    <form name="usuari" (ngSubmit)="f.form.valid && editUsuario()" #f="ngForm" novalidate>
+        <div class="card text-center">
+  <div class="card-header">
+      <h1>Actualizar Información de {{usuario.nombres}} {{usuario.apellidos}} <font size="5"></font></h1>
+  </div>
+  <div class="card-body" >
+      <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
+             width="200"
+            height="200"><br/><br/>
+   <h4 class="card-title">Información</h4>
+    <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Nombres: </b></p> 
+      </div>
+          <div class="col-lg-6">
+              
+              <input type="text" name="usuarioNombres" value="{{usuario.nombres}}" class="form-control" autofocus id="usuarioNombres" [(ngModel)]="usuario.nombres"
+                                   #usuarioNombres="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioNombres.invalid }" required><span class="underline"></span>
+                                   <div class="invalid-feedback">
+                                <div>El usuario debe tener un nombre</div>
+                            </div>
+                     
+          </div>
+      </div>
+<div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Apellidos: </b></p> 
+      </div>
+        <div class="col-lg-6">
+              <input type="text" name="usuarioApellidos" value="{{usuario.apellidos}}"class="form-control" id="usuarioApellidos" [(ngModel)]="usuario.apellidos"
+                                   #usuarioApellidos="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioApellidos.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El usuario debe tener un apellido</div>
+                            </div>
+          </div>
+    </div>   
+    <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Identificación: </b></p> 
+      </div>
+        <div class="col-lg-6">
+             <input type="text" name="usuarioIdentificacion" value="{{usuario.identificacion}}" class="form-control" id="usuarioIdentificacion" [(ngModel)]="usuario.identificacion"
+                                   #usuarioIdentificacion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioIdentificacion.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El usuario debe tener una identificación</div>
+                            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Teléfono: </b></p>
+      </div>
+        <div class="col-lg-6">
+            <input type="text" name="usuarioCelular" value="{{usuario.celular}}" class="form-control" id="usuarioCelular" [(ngModel)]="usuario.celular"
+                                   #usuarioCelular="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioCelular.invalid }">
+                                   
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Email: </b></p> 
+      </div>
+        <div class="col-lg-6">
+            <input type="text" name="usuarioEmail" value="{{usuario.email}}" class="form-control" id="usuarioEmail" [(ngModel)]="usuario.email"
+                                   #usuarioEmail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioEmail.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El usuario debe tener un correo</div>
+                            </div>
+      </div>
+    </div>
+    
+        
+   <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Contraseña: </b></p>
+      </div>
+        <div class="col-lg-6">
+            <input type="text" name="usuarioPassword" value="{{usuario.password}}" class="form-control" id="usuarioPassword" [(ngModel)]="usuario.password"
+                                   #usuarioPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && usuarioPassword.invalid }" required>
+                                   <div class="invalid-feedback">
+                                <div>El usuario debe tener una contraseña</div>
+                            </div>
+      </div>
+    </div>
+   <br>
+    <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" routerLink="/usuarios/{{usuario.id}}">Cancel</button>
+            </div>
+   <br>
+    <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+  <div class="card-footer text-muted">
+    usuario No. {{usuario.id}}
+  </div>
+
+</div>
+
+</div>
+</form>
