@@ -18,8 +18,12 @@ export class FuncionListComponent implements OnInit {
   /**
    * Contructor del componente
    */
-  constructor( private funcionService: FuncionService,  
-  private route: ActivatedRoute ) { }
+  constructor( 
+  private funcionService: FuncionService,  
+  private route: ActivatedRoute,
+  private modalDialogService: ModalDialogService,
+  private toastrService: ToastrService
+   ) { }
 
   /**
    * La lista de funciones del festival de cine
@@ -38,6 +42,16 @@ export class FuncionListComponent implements OnInit {
    */
    selectedFuncion : Funcion;
    
+   showEdit: boolean;
+   
+   showCreate: boolean;
+   
+    /**
+     * Shows or hides the detail of a funcion
+     */
+    showView: boolean;
+
+   
    /**
     * Shows or hides the funcion-create-component
     */
@@ -45,22 +59,40 @@ export class FuncionListComponent implements OnInit {
 
 
     onSelected(funcion_id: number):void {
-            this.funcion_id = funcion_id;
-
+        this.showCreate = false;
+        this.showEdit = false;
+        this.showView = true;
+        this.funcion_id = funcion_id;
+        this.selectedFuncion = new Funcion();
         this.getFuncionDetail();
     }   
    
    /**
     * Shows la funcion
     */
-    
     showHideCreate(): void {
-         if (this.selectedFuncion) {
-                   this.selectedFuncion = undefined;
-                   this.funcion_id = undefined;
-            }
+        this.showView = false;
+        this.showEdit = false;
+        this.showCreate = !this.showCreate;
     }
     
+   /**
+    * Shows or hides the create component
+    */
+    showHideEdit(funcion_id: number): void {
+        if (!this.showEdit || (this.showEdit && funcion_id != this.selectedFuncion.id)) {
+            this.showView = false;
+            this.showCreate = false;
+            this.showEdit = true;
+            this.funcion_id = funcion_id;
+            this.selectedFuncion = new Funcion();
+            this.getFuncionDetail();
+        }
+        else {
+            this.showEdit = false;
+            this.showView = true;
+        }
+    }
   /**
    * Obtiene el servicio para actualizar la lista de funciones
    */
@@ -80,6 +112,11 @@ export class FuncionListComponent implements OnInit {
      * This method will be called when the component is created
      */  
     ngOnInit() {
+        this.selectedFuncion = undefined;
+        this.funcion_id = undefined;
+        this.showCreate = false;
+        this.showView = false;
+        this.showEdit = false;
         this.route.queryParams.filter(params => params.allFunciones).subscribe(params => {
         console.log(params); 
 

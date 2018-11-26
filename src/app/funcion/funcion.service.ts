@@ -45,5 +45,18 @@ export class FuncionService {
     createFuncion(funcion): Observable<Funcion> {
         return this.http.post<Funcion>(API_URL + funciones, funcion);
     }
+    
+        
+   /**
+    * Updates a funcion
+    * @param funcion The funcion
+    * @returns The confirmation that the funcion was updated
+    */
+    
+    updateFuncion(funcion): Observable<Funcion>
+    { 
+        return this.http.put<Funcion>(API_URL + funciones + '/' + funcion.id, funcion);
+    }
+    
 }
 

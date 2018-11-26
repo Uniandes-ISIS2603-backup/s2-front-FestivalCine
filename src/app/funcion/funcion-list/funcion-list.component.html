@@ -4,7 +4,8 @@
 <div class="container-fluid">
     <div class="col">
             <div class="row justify-content-center align-self-center">
-               <button routerLink="/funciones/add"  *ngIf="isList()" required> Crear nueva funcion</button>
+                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
+                    (click)="showHideCreate()" *ngIf="isList()" required > Crear una nueva función</button>
             </div>
         <table class="table table-striped">
             <thead class="thead-dark">
@@ -26,4 +27,13 @@
         <div class="col-9">
         </div>
     </div>
+            <div *ngIf="showView">
+                <app-funcion-detail [funcionDetail]="selectedFuncion"></app-funcion-detail>
+            </div>
+            <div *ngIf="showCreate">
+                <app-funcion-create (cancel)="showHideCreate()" (create)="ngOnInit()"></app-funcion-create>
+            </div>
+            <div *ngIf="showEdit">
+                <app-funcion-edit [funcion]="selectedFuncion" (cancel)="showHideEdit(selectedFuncion.id)" (update)="updateFuncion()" ></app-funcion-edit>
+            </div>
 </div>
