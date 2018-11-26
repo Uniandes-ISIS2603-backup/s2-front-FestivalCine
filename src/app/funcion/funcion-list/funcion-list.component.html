@@ -2,7 +2,8 @@
              width="1500"
             height="300" *ngIf="isList()" required>
 <div class="container-fluid">
-    <div class="col">
+    <div class="row">
+        <div class="col-md-4">
             <div class="row justify-content-center align-self-center">
                  <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
                     (click)="showHideCreate()" *ngIf="isList()" required > Crear una nueva función</button>
@@ -12,15 +13,18 @@
                 <tr>
                     <th>Id Funcion</th>
                     <th>Precio Base</th> 
+                    <th>Editar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor = "let funcion of funciones" >
-                <td style="cursor: pointer;"> 
-                 <dd class="figure-caption" routerLink="/funciones/{{funcion.id}}">
-                        {{funcion.id}}</dd>
+                 <td style="cursor: pointer;" (click)="onSelected(funcion.id)"> <dd>{{funcion.id}}</dd>
                 </td>
                 <td> {{funcion.precioBase|currency}}</td>
+                <!--<td *ngxPermissionsOnly="['ADMIN']">-->
+                <td>
+                    <button class="btn btn-primary" (click)="showHideEdit(funcion.id)"><span class="fa fa-pencil"></span></button>
+                </td>
                 </tr>
             </tbody>
         </table>
