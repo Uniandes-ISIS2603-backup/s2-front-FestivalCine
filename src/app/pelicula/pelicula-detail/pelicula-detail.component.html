@@ -1,5 +1,6 @@
 <section _ngcontent-c11 id="header">
-    <span _ngcontent-c11 class="img gaussian" style="background-image: url(https://is1-ssl.mzstatic.com/image/thumb/Video/d7/5c/d9/mzl.lniondsx.jpg/230x0w.jpg);"></span>
+
+  <iframe width="100%" height="490" src="https://www.youtube.com/embed/FX20kcp7j5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 <section _ngcontent-c11 class="pb-3" id="movie">
     <div _ngcontent-c11 class="container" style="margin-top: -120px;">
@@ -16,7 +17,7 @@
 
                     <ngb-rating class="d-inline-flex" role="slider" [starTemplate]="t" [readonly]="true" max="5" rate="{{pelicula.puntaje}}"></ngb-rating>
                     <p><b>Calificación:</b></p>
-                    <p>{{pelicula.puntaje}</p>
+                    <p>{{pelicula.puntaje}}</p>
                 </div>
             </div>
             <div _ngcontent-c11 class="col-xl-9 col-lg-8 col-md-7 col-sm-12">
@@ -30,7 +31,19 @@
                     </div>
                     <div class="col-xl-6">
                         <p> {{pelicula.creditos}}</p>
+                         <h5> <font face="raro, courier" color="#3399CC"> <b>Informacion: </b></font></h5>
+                  <p class="card-text">Director: {{pelicula.director}}</p>
+                  <p class="card-text">Pais de Origen: {{pelicula.pais}}</p>
+                  <p class="card-text">Director: {{pelicula.director}}</p>
+                  <p class="card-text">Creditos: {{pelicula.creditos}}</p>
+                  
+                  <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary"  routerLink="/peliculas/list">Volver a la lista de Peliculas</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/reservas/list">Reservar</button>
                     </div>
+                    </div>
+                    
+                   
                 </div>
             </div>
             <div>
@@ -39,37 +52,3 @@
         </div>
     </div>
 </section>
-
-<div class="col-md-12">
-    <div class="container-fluid">   
-        <h2><font face="raro, courier" color="#3399CC"> <b> Pelicula: </b>  </font> <font face= "raro, courier">{{pelicula.nombre}}   </font></h2>
-        
-        
-           <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-               <img src="https://is1-ssl.mzstatic.com/image/thumb/Video/d7/5c/d9/mzl.lniondsx.jpg/230x0w.jpg"
-             width="500"
-            height="500">
-                <div class="card-body">
-                  <h5> <font face="raro, courier" color="#3399CC"> <b>Informacion: </b></font></h5>
-                  <p class="card-text">Director: {{pelicula.director}}</p>
-                  <p class="card-text">Pais de Origen: {{pelicula.pais}}</p>
-                  <p class="card-text">Director: {{pelicula.director}}</p>
-                  <p class="card-text">Puntaje: {{pelicula.puntaje}}</p>
-                  <p class="card-text">Creditos: {{pelicula.creditos}}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary"  routerLink="/peliculas/list">Volver a la lista de Peliculas</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/reservas/list">Reservar</button>
-                    </div>
-                    <small class="text-muted">Duracion 69 mins</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-      
-        
-        <br>
-
-    </div>
-</div>
