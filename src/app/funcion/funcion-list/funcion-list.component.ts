@@ -5,6 +5,9 @@ import { Funcion } from '../funcion';
 import {FuncionService} from '../funcion.service';
 
 import { ActivatedRoute } from '@angular/router';
+import {Pelicula} from '../../pelicula/pelicula';
+import {Sala} from '../../sala/sala';
+import {Critico} from '../../critico/critico';
 
 
 
@@ -35,7 +38,7 @@ export class FuncionListComponent implements OnInit {
     * The id of the funcion that the user wants to view
     */
    funcion_id: number;
-   
+  
    allFunciones:string  ='no';
    
   /**
@@ -80,14 +83,20 @@ export class FuncionListComponent implements OnInit {
    /**
     * Shows or hides the edit component
     */
-    showHideEdit(funcion_id: number): void {
+    showHideEdit(funcion_id: number , fecha:Date, hora:number ,precioBase:number ,pelicula:Pelicula,sala:Sala ,critico:Critico): void {
         if (!this.showEdit || (this.showEdit && funcion_id != this.selectedFuncion.id)) {
             this.showView = false;
             this.showCreate = false;
             this.showEdit = true;
-            this.funcion_id = funcion_id;
             this.selectedFuncion = new Funcion();
-            this.getFuncionDetail();
+            this.selectedFuncion.id = funcion_id;
+            this.selectedFuncion.fecha = fecha;
+            this.selectedFuncion.hora = hora;
+            this.selectedFuncion.precioBase = precioBase;
+            this.selectedFuncion.pelicula = pelicula;
+            this.selectedFuncion.sala = sala;
+            this.selectedFuncion.critico = critico;
+            
         }
         else {
             this.showEdit = false;

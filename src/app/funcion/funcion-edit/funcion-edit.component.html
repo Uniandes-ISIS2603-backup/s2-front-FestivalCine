@@ -7,8 +7,8 @@
             <div class="form-group">
                 <label for="funcionFecha"><b>Fecha</b></label>
                 <div [ngClass]="{ 'is-invalid': f.submitted && funcionFecha.invalid }">
-                    <input class="form-control" id="authorBirthDate" name="authorBirthDate" dateFormat="YYYY-MM-dd"
-                       [(ngModel)]="funcion.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                    <input class="form-control" id="funcionFecha" name="funcionFecha" dateFormat="YYYY-MM-dd"
+                       [(ngModel)]= "funcion.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
                        #funcionFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && funcionFecha.invalid }"
                        required>
                        <div class="invalid-feedback">
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="funcionPrecioBase"><b>Precio Base</b></label>
-                <input type="text" name="funcionPrecioBase" class="form-control" id="funcionPrecioBase" [(ngModel)]="funcion.precioBase"
+                <input type="number" name="funcionPrecioBase" class="form-control" id="funcionPrecioBase" [(ngModel)]="funcion.precioBase"
                         #funcionPrecioBase="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionPrecioBase.invalid }" required>
                 <div class="invalid-feedback">
                     <div>Falta el precio base de la función</div>
@@ -58,7 +58,7 @@
                         <option [value]="critico.id" *ngFor="let critico of criticos"> {{critico.nombres}} {{critico.apellidos}}</option>
                     </select>
                 <div class="invalid-feedback">
-                        <div>Debes seleccionar un</div>
+                        <div>Debes seleccionar un crítico</div>
                     </div>
             </div>
         </form>

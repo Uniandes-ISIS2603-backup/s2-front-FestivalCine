@@ -30,7 +30,7 @@ export class FuncionEditComponent implements OnInit,OnChanges{
       private criticoService: CriticoService,
       private toastrService: ToastrService) { }
  
-     /**
+   /**
     * The author id as received from the parent component
     */
     @Input() funcion: Funcion;
@@ -133,15 +133,9 @@ export class FuncionEditComponent implements OnInit,OnChanges{
     }
     
     ngOnInit() {
-        this.funcion = new Funcion();
-        
-        this.funcion.pelicula = new Pelicula();
+
         this.getPeliculas();
-        
-        this.funcion.sala = new Sala();
         this.getSalas();
-        
-        this.funcion.critico = new Critico();
         this.getCriticos();
     }
   
