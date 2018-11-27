@@ -11,7 +11,7 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>Id Funcion</th>
+                    <th>Pelicula</th>
                     <th>Precio Base</th> 
                     <th>Editar</th>
                     <th>Eliminar</th>
@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                 <tr *ngFor = "let funcion of funciones" >
-                 <td style="cursor: pointer;" (click)="onSelected(funcion.id)"> <dd>{{funcion.id}}</dd>
+                 <td style="cursor: pointer;" (click)="onSelected(funcion.id)"> <dd>{{funcion.pelicula.nombre}}</dd>
                 </td>
                 <td> {{funcion.precioBase|currency}}</td>
                 <!--<td *ngxPermissionsOnly="['ADMIN']">-->
