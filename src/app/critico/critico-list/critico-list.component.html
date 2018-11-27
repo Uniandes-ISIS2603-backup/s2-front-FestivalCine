@@ -1,4 +1,7 @@
-<!--<form class="form-inline my-2 my-lg-0">
+<!--<ng-template #rt let-r="result" let-t="term">
+        <ngb-highlight [result]="r.nombre" [term]="t"></ngb-highlight>
+    </ng-template>
+<form class="form-inline my-2 my-lg-0">
                     <input id="typeahead-template" placeholder="Criticos" type="text" class="form-control" [(ngModel)]="model" [ngModelOptions]="{standalone: true}" [ngbTypeahead]="search" 
                     (focus)="focus$.next($event.target.value)" (click)="click$.next($event.target.value)" #instance="ngbTypeahead"
                     [resultTemplate]="rt"[inputFormatter]="formatter">
@@ -15,7 +18,7 @@
                     <th>Nombres</th>
                     <th>Apellidos</th>
                     <th>Identificación</th>
-                    <th>Editar</th>
+                    <th>Opciones</th>
                     
                 </tr>
             </thead>
@@ -38,7 +41,7 @@
                         {{critico.identificacion}}</dd>
                     </td>
                      <td  style="cursor: pointer;">
-                        <dd class="figure-caption" routerLink="/criticos/{{critico.id}}/edit"><i class="fas fa-pen-square"></i></dd>
+                         <button class="btn btn-primary" routerLink="/criticos/{{critico.id}}/edit"><span class="fa fa-pencil"></span></button>
                     </td>
                 </tr>
             </tbody>

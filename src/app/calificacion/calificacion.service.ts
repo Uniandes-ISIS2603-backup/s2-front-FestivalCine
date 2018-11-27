@@ -26,4 +26,14 @@ export class CalificacionService{
     {
         return this.http.post<Calificacion>(API_URL + calificaciones, calificacion);
     }
+    
+    updateCalificacion(calificacion): Observable<Calificacion>
+    {
+        return this.http.put<Calificacion>(API_URL + calificaciones + '/' + calificacion.id, calificacion);
+    }
+    
+    deleteCalificacion(calificacionId): Observable<Calificacion>
+    {
+        return this.http.delete<Calificacion>(API_URL + calificaciones + '/' + calificacionId);
+    }
 }

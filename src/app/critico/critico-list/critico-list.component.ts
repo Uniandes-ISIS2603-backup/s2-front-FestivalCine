@@ -1,9 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Critico } from '../critico';
 import { CriticoService } from '../critico.service';
-import { Observable } from 'rxjs';
+import {NgbTypeahead} from '@ng-bootstrap/ng-bootstrap/';
+import {Observable, Subject, merge} from 'rxjs';
+import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
 
 import {Router} from '@angular/router/';
+import {CriticoDetailComponent} from '../critico-detail/critico-detail.component';
 
 @Component({
   selector: 'app-critico-list',
@@ -21,6 +24,8 @@ export class CriticoListComponent implements OnInit {
   selectedCritico: Critico
   model:any;
   critico: Critico;
+  
+  criticoDetail: CriticoDetailComponent
   
   onSelected(critico_id: number): void
   {
@@ -43,6 +48,22 @@ export class CriticoListComponent implements OnInit {
   ngOnInit() {
       this.getCriticos();
   }
+  
+  @ViewChild('instance') instance: NgbTypeahead;
+    focus$ = new Subject<string>();
+    click$ = new Subject<string>();
+  
+  search = (text$: Observable<string>) => {
+    const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged());
+    const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance.isPopupOpen()));
+    const inputFocus$ = this.focus$;
+
+    return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
+        map(term => (term === '' ? this.criticos
+            : this.criticos.filter(critico => critico.nombres.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10))
+    );
+}
+formatter = (x: {nombre: string}) => x.nombre;
   
   busqueda(): void
   {

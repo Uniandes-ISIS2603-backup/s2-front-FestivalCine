@@ -42,4 +42,9 @@ export class CriticoService {
         return this.http.put<Critico>(API_URL + criticos + '/' + critico.id, critico);
     }
     
+    deleteCritico(criticoId): Observable<Critico>
+    {
+        return this.http.delete<Critico>(API_URL + criticos + '/' + criticoId);
+    }
+    
 }

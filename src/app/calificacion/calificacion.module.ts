@@ -10,6 +10,7 @@ import { CalificacionService} from './calificacion.service';
 import { CalificacionDetailComponent } from './calificacion-detail/calificacion-detail.component';
 import { CalificacionCreateComponent } from './calificacion-create/calificacion-create.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalificacionEditComponent } from './calificacion-edit/calificacion-edit.component';
 
 @NgModule({
   imports: [
@@ -20,8 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FormsModule
   ],
-  declarations: [CalificacionListComponent, CalificacionDetailComponent, CalificacionCreateComponent],
+  declarations: [CalificacionListComponent, CalificacionDetailComponent, CalificacionCreateComponent, CalificacionEditComponent],
   providers: [CalificacionService],
-  exports:[CalificacionListComponent]
+  exports:[CalificacionListComponent, CalificacionDetailComponent]
 })
 export class CalificacionModule { }

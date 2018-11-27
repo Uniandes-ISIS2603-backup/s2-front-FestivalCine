@@ -36,7 +36,7 @@
                 <tr align ="center" *ngFor = "let usuario of usuarios"
                     (click)="onSelected(usuario.id)">
                     <td style="cursor: pointer;">
-                    <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}"> <font face="raro, courier"> {{usuario.id}} </font></dd>
+                    <dd class="figure-caption" routerLink="/usuarios/{{usuario.id}}" [queryParams]="{isDetail: 'yes'}"> <font face="raro, courier"> {{usuario.id}} </font></dd>
                     </td>                   
                     <td> <font face="raro, courier"> {{usuario.nombres}} </font></td>
                     <td> <font face="raro, courier">{{usuario.apellidos}}</font></td>
