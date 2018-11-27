@@ -1,3 +1,77 @@
-<p>
-  funcion-edit works!
-</p>
+<div class="row">
+    <div class="col-12">
+        <br>
+        <h2 class="text-center">Editar una función</h2>
+        <br>
+        <form name="funcion" (ngSubmit)="f.form.valid && editFuncion()" #f="ngForm" novalidate>
+            <div class="form-group">
+                <label for="funcionFecha"><b>Fecha</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && funcionFecha.invalid }">
+                    <input class="form-control" id="authorBirthDate" name="authorBirthDate" dateFormat="YYYY-MM-dd"
+                       [(ngModel)]="funcion.fecha" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()"
+                       #funcionFecha="ngModel" [ngClass]="{'is-invalid': f.submitted && funcionFecha.invalid }"
+                       required>
+                       <div class="invalid-feedback">
+                        <div>Falta la fecha de la función</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionHora"><b>Hora</b></label>       
+                <ngb-timepicker name="funcionHora" id="funcionHora" [(ngModel)]="funcion.hora" [seconds]="false"
+                    [hourStep]="hourStep" [minuteStep]="minuteStep"></ngb-timepicker>
+            </div>
+            <div class="form-group">
+                <label for="funcionPrecioBase"><b>Precio Base</b></label>
+                <input type="text" name="funcionPrecioBase" class="form-control" id="funcionPrecioBase" [(ngModel)]="funcion.precioBase"
+                        #funcionPrecioBase="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionPrecioBase.invalid }" required>
+                <div class="invalid-feedback">
+                    <div>Falta el precio base de la función</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionPelicula"><b>Pelicula</b></label>
+                    <select class="custom-select" name="funcionPelicula" id="funcionPelicula" [(ngModel)]= "funcion.pelicula.id"
+                        #funcionPelicula="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionPelicula.invalid }"
+                        required>
+                        <option [value]="pelicula.id" *ngFor="let pelicula of peliculas">{{pelicula.nombre}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta la película de la función</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionSala"><b>Sala</b></label>
+                    <select class="custom-select" name="funcionSala" id="funcionSala" [(ngModel)]="funcion.sala.id"
+                        #funcionSala="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionSala.invalid }"
+                        required>
+                        <option [value]="sala.id" *ngFor="let sala of salas">{{sala.teatro.nombre}} sala: {{sala.numero}}</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        <div>Falta la sala de la función</div>
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="funcionCritico"><b>Critico</b></label>
+                    <select class="custom-select" name="funcionCritico" id="funcionCritico" [(ngModel)]="funcion.critico.id"
+                        #funcionCritico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && funcionCritico.invalid}"  >
+                        <option [value]="critico.id" *ngFor="let critico of criticos"> {{critico.nombres}} {{critico.apellidos}}</option>
+                    </select>
+                <div class="invalid-feedback">
+                        <div>Debes seleccionar un</div>
+                    </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="row form-inline justify-content-center align-self-center">
+            <i  style="padding-right: 1em;"class="fa fa-save " (click)="editFuncion()"></i>
+          
+            <i class="fa fa-ban" (click)="cancelEdition()"></i>
+        </div>
+    </div>
+</div>
+<br>
+<br>

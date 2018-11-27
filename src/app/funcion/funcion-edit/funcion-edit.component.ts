@@ -17,7 +17,8 @@ import {Critico} from '../../critico/critico';
 @Component({
   selector: 'app-funcion-edit',
   templateUrl: './funcion-edit.component.html',
-  styleUrls: ['./funcion-edit.component.css']
+  styleUrls: ['./funcion-edit.component.css'],
+  providers: [DatePipe]
 })
 export class FuncionEditComponent implements OnInit,OnChanges{
 
@@ -116,10 +117,10 @@ export class FuncionEditComponent implements OnInit,OnChanges{
         console.log(this.funcion)
         this.funcionService.updateFuncion(this.funcion)
             .subscribe(() => {
+                this.update.emit();
                 this.toastrService.success("La función fue actualizada", "Funcion edition");
                 
             });
-        this.update.emit();
     }
     
     

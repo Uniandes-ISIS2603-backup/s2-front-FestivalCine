@@ -77,7 +77,7 @@ export class FuncionListComponent implements OnInit {
     }
     
    /**
-    * Shows or hides the create component
+    * Shows or hides the edit component
     */
     showHideEdit(funcion_id: number): void {
         if (!this.showEdit || (this.showEdit && funcion_id != this.selectedFuncion.id)) {
@@ -106,7 +106,10 @@ export class FuncionListComponent implements OnInit {
                 this.selectedFuncion = selectedFuncion
             });
     }
-   
+    updateFuncion(): void {
+        this.showEdit = false;
+        this.showView = true;
+    }
       /**
      * This will initialize the component by retrieving the list of funciones from the service
      * This method will be called when the component is created

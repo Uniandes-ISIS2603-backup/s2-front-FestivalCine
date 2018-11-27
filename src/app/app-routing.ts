@@ -37,6 +37,7 @@ import {CriticoCreateComponent} from '../app/critico/critico-create/critico-crea
 import {CalificacionCreateComponent} from '../app/calificacion/calificacion-create/calificacion-create.component';
 import {CriticoEditComponent} from '../app/critico/critico-edit/critico-edit.component';
 import {UsuarioEditComponent} from '../app/usuario/usuario-edit/usuario-edit.component';
+import {FuncionEditComponent} from '../app/funcion/funcion-edit/funcion-edit.component';
 
 const routes: Routes = [
     {
@@ -91,7 +92,11 @@ const routes: Routes = [
             {
                 path: ':id',
                 component:FuncionDetailComponent
-            }        
+            },
+            {
+                path: ':id/edit',
+                component:FuncionEditComponent
+            }         
         ]
     },
 
