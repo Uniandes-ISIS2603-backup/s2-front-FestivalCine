@@ -109,7 +109,6 @@ export class FuncionEditComponent implements OnInit,OnChanges{
     * Updates the information of the author
     */
     editFuncion(): void {
-        
         console.log(this.funcion);
         let dateB: Date = new Date(this.funcion.fecha.year, this.funcion.fecha.month-1, this.funcion.fecha.day);
         this.funcion.fecha = this.dp.transform(dateB, 'yyyy-MM-dd');
@@ -133,7 +132,6 @@ export class FuncionEditComponent implements OnInit,OnChanges{
     }
     
     ngOnInit() {
-
         this.getPeliculas();
         this.getSalas();
         this.getCriticos();
