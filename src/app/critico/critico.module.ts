@@ -14,6 +14,7 @@ import {FuncionModule} from '../funcion/funcion.module';
 import {PeliculaModule} from '../pelicula/pelicula.module';
 import { CriticoEditComponent } from './critico-edit/critico-edit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbTypeahead} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [

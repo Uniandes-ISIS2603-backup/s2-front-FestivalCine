@@ -41,6 +41,7 @@ import {FuncionEditComponent} from '../app/funcion/funcion-edit/funcion-edit.com
 import {TeatroEditComponent} from '../app/teatro/teatro-edit/teatro-edit.component';
 import {SalaEditComponent} from '../app/sala/sala-edit/sala-edit.component';
 import {FestivalEditComponent} from '../app/festival/festival-edit/festival-edit.component';
+import {CalificacionEditComponent} from '../app/calificacion/calificacion-edit/calificacion-edit.component';
 
 const routes: Routes = [
     {
@@ -74,6 +75,10 @@ const routes: Routes = [
             {
                 path: 'add',
                 component: CalificacionCreateComponent
+            },
+            {
+                path: ':id/edit',
+                component: CalificacionEditComponent
             },
             {
                 path: ':id',

@@ -7,9 +7,7 @@
     <div class="col-sm-2">
         <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg"
              width="50"
-            height="50" class="rounded mx-auto d-block"><br/>
-      Gola
-     {{calificacion.usuario}}
+            height="50" class="rounded mx-auto d-block"><br/><button class="btn btn-primary" routerLink="/calificaciones/{{calificacion.id}}/edit"><span class="fa fa-pencil"></span></button><button class="btn btn-danger text-center" (click)="deleteCalificacion()"><span class="fa fa-trash"></span></button>
     </div>
     <div class="col-sm-7">
        <b>Comentario:</b><br/>
@@ -27,6 +25,5 @@
 <ngb-rating  [starTemplate]="t" [readonly]="true" max="5" rate="{{calificacion.puntaje}}"></ngb-rating>
       </div>
   </div>
-    <a href="#" class="btn btn-primary">Button</a>
   </div>
 </div>

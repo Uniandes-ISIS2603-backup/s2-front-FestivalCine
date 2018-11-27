@@ -2,7 +2,7 @@
 <div class="col-md-12">
         <div class="card text-center">
   <div class="card-header">
-      <h1>{{critico.nombres}} {{critico.apellidos}} <font size="5"><i class="fas fa-pen-square" style="cursor: pointer;" routerLink="/criticos/{{critico.id}}/edit"></i></font></h1>
+      <h1>{{critico.nombres}} {{critico.apellidos}} <button class="btn btn-primary" routerLink="/criticos/{{critico.id}}/edit"><span class="fa fa-pencil"></span></button><button class="btn btn-danger text-center" (click)="deleteCritico()"><span class="fa fa-trash"></span></button></h1>
   </div>
   <div class="card-body" >
       <img src="https://image.freepik.com/icones-gratis/forma-masculina-usuario-em-um-circulo-ios-7-simbolo-de-interface_318-35357.jpg" 

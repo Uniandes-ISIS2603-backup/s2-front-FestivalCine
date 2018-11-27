@@ -38,7 +38,7 @@
                   <p class="card-text">Creditos: {{pelicula.creditos}}</p>
                   
                   <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary"  routerLink="/peliculas/list">Volver a la lista de Peliculas</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary"  routerLink="/peliculas/list" [queryParams]="{allPeliculas: 'yes'}" >Volver a la lista de Peliculas</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/reservas/list">Reservar</button>
                     </div>
                     </div>

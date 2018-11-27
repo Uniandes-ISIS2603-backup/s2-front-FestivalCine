@@ -74,11 +74,8 @@ export class CalificacionCreateComponent implements OnInit {
       {
           this.usuario.id = +this.route.snapshot.parent.paramMap.get('id')
       });
-      console.log(this.usuario.id);
-      console.log(this.usuario)
       this.calificacion.usuario = this.usuario;
       this.calificacion.critico = new Critico();
-      console.log(this.calificacion.usuario);
       this.getCriticos();
       
   }
