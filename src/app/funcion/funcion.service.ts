@@ -58,5 +58,14 @@ export class FuncionService {
         return this.http.put<Funcion>(API_URL + funciones + '/' + funcion.id, funcion);
     }
     
+   /**
+    * Deletes una función
+    * @param funcionId 
+    * @returns The confirmation that the funcion was deleted
+    */
+    deleteFuncion(funcionId): Observable<boolean> {
+        return this.http.delete<boolean>(API_URL + funciones + '/' + funcionId);
+    }
+    
 }
 

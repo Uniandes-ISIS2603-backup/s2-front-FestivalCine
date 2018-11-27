@@ -19,10 +19,11 @@ export class FuncionListComponent implements OnInit {
    * Contructor del componente
    */
   constructor( 
-  private funcionService: FuncionService,  
-  private route: ActivatedRoute,
-  private modalDialogService: ModalDialogService,
-  private toastrService: ToastrService
+        private funcionService: FuncionService,  
+        private route: ActivatedRoute,
+        private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService
    ) { }
 
   /**
@@ -109,6 +110,33 @@ export class FuncionListComponent implements OnInit {
     updateFuncion(): void {
         this.showEdit = false;
         this.showView = true;
+    }
+    
+    /**
+    * Deletes una función
+    */
+    deleteFuncion(funcionId): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Borrar una función',
+            childComponent: SimpleModalComponent,
+            data: {text: '¿Está seguro que quiere borrar una función?'},
+            actionButtons: [
+                {
+                    text: 'Si',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.funcionService.deleteFuncion(funcionId).subscribe(() => {
+                            this.toastrService.error("La función fue borrada exitosamente", "Funcion deleted");
+                            this.ngOnInit();
+                        }, err => {
+                            this.toastrService.error(err, "Error");
+                        });
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
     }
       /**
      * This will initialize the component by retrieving the list of funciones from the service

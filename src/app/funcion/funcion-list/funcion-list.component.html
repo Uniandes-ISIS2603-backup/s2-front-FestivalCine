@@ -14,6 +14,7 @@
                     <th>Id Funcion</th>
                     <th>Precio Base</th> 
                     <th>Editar</th>
+                    <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +25,10 @@
                 <!--<td *ngxPermissionsOnly="['ADMIN']">-->
                 <td>
                     <button class="btn btn-primary" (click)="showHideEdit(funcion.id)"><span class="fa fa-pencil"></span></button>
+                </td>
+                <!--<td *ngxPermissionsOnly="['ADMIN']">-->
+                <td>
+                    <button class="btn btn-danger" (click)="deleteFuncion(funcion.id)"><span class="fa fa-trash"></span></button>
                 </td>
                 </tr>
             </tbody>
