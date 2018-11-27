@@ -40,4 +40,9 @@ export class TeatroService {
     {
         return this.http.put<Teatro>(API_URL + teatros + '/' + teatro.id, teatro);
     }
+    
+    deleteTeatro(teatroId): Observable<Teatro>
+    {
+        return this.http.delete<Teatro>(API_URL + teatros + '/' + teatroId);
+    }
 }

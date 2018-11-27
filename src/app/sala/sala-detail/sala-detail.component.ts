@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import { Component, OnInit, Input, ViewContainerRef  } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ToastrService} from 'ngx-toastr';
 import { SalaService } from '../sala.service';
 import { Sala } from '../sala';
 import {SalaDetail} from '../sala-detail';
@@ -20,7 +21,11 @@ export class SalaDetailComponent implements OnInit {
     */
     constructor(
         private salaService: SalaService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private router:Router,
+        private modalDialogService: ModalDialogService,
+        private viewRef: ViewContainerRef,
+        private toastrService: ToastrService
     ) { }
     
     
@@ -42,6 +47,35 @@ export class SalaDetailComponent implements OnInit {
             .subscribe(salaDetail => {
                 this.salaDetail = salaDetail
             });
+    }
+    
+    /**
+    * Deletes a sala
+    */
+    deleteSala(): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Eliminar una sala',
+            childComponent: SimpleModalComponent,
+            data: {text: '¿Está seguro que desea eliminar la sala?'},
+            actionButtons: [
+                {
+                    text: 'Si',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.salaService.deleteSala(this.sala_id).subscribe(() => {
+                            this.toastrService.success("La sala fue eliminada exitosamente", "Eliminar Sala");
+                            this.ngOnInit();
+                        }, err => {
+                            this.toastrService.error(err, "Error");
+                        });
+                        this.router.navigate(['/salas/list']);
+        
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
     }
 
     /**

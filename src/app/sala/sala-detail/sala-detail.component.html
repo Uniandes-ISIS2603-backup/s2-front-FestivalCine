@@ -2,6 +2,9 @@
     <div class="container-fluid">   
         <p class="h4 p-3">Las sillas de la sala número {{salaDetail.numero}} del teatro {{salaDetail.teatro.nombre}} son: </p>
         <br>
+        <i class="fas fa-pen-square" style="cursor: pointer;" routerLink="/salas/{{salaDetail.id}}/edit"></i>
+        <button type="button" class="btn btn-danger"  (click)="deleteSala()" >Eliminar </button>
+        <br>
         <div class="row border margin">
             <p class="h4 p-3">Sillas de la sala: </p>
             <!--<app-silla-list [sillas] = "salaDetail.sillas"></app-silla-list>-->

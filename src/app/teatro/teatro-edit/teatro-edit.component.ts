@@ -31,7 +31,7 @@ export class TeatroEditComponent implements OnInit, OnDestroy {
     */
     teatroId: number;
     
-      /**
+  /**
    * 
    */
    @Input() teatro: Teatro;
@@ -75,7 +75,7 @@ export class TeatroEditComponent implements OnInit, OnDestroy {
 
     /**
     * Emits the signal to tell the parent component that the
-    * user no longer wants to create an user
+    * user no longer wants to edit a teatro
     */
     cancelEdition(): void {
         console.log(this.teatro.nombre);
@@ -92,7 +92,7 @@ export class TeatroEditComponent implements OnInit, OnDestroy {
   }
   
    /**
-    * This function will be called when the user chooses another festival to edit
+    * This function will be called when the user chooses another teatro to edit
     */
     ngOnDestroy() {
         if (this.navigationSubscription) {

@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-
+import {Component, OnInit, ViewContainerRef } from '@angular/core';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
+import {ToastrService} from 'ngx-toastr';
 import { FestivalService } from '../festival.service';
 import { Festival} from '../festival';
-import {FestivalDetail} from '../festival-detail';
-
-
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-festival-detail',
@@ -15,7 +13,11 @@ import { ActivatedRoute } from '@angular/router';
 export class FestivalDetailComponent implements OnInit {
 
   constructor( private festivalService: FestivalService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router:Router,
+    private modalDialogService: ModalDialogService,
+    private viewRef: ViewContainerRef,
+    private toastrService: ToastrService) {
    
     
     }
@@ -26,6 +28,36 @@ export class FestivalDetailComponent implements OnInit {
     {
         this.festivalService.getFestivalDetail(this.festival_id).subscribe(festival => {this.festival = festival});
     }
+    
+ /**
+    * Deletes a festival
+    */
+    deleteFestival(): void {
+        this.modalDialogService.openDialog(this.viewRef, {
+            title: 'Eliminar un festival',
+            childComponent: SimpleModalComponent,
+            data: {text: '¿Está seguro que desea eliminar el festival?'},
+            actionButtons: [
+                {
+                    text: 'Si',
+                    buttonClass: 'btn btn-danger',
+                    onAction: () => {
+                        this.festivalService.deleteFestival(this.festival_id).subscribe(() => {
+                            this.toastrService.success("El festival fue eliminado exitosamente", "Eliminar Festival");
+                            this.ngOnInit();
+                        }, err => {
+                            this.toastrService.error(err, "Error");
+                        });
+                        this.router.navigate(['/festivales/list']);
+        
+                        return true;
+                    }
+                },
+                {text: 'No', onAction: () => true}
+            ]
+        });
+    }
+    
 
   ngOnInit() {
       this.route.params.subscribe(params => {

@@ -13,6 +13,7 @@ import {CriticoModule} from '../critico/critico.module';
 import {TeatroModule} from '../teatro/teatro.module';
 import { FestivalEditComponent } from './festival-edit/festival-edit.component';
 
+
 @NgModule({
   imports: [
     CommonModule,

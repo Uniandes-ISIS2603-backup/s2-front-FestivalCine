@@ -10,7 +10,8 @@
         <font face="raro, courier"><b>Fecha de inicio: </b> {{festival.fechaInicio | date:'dd/MM/yyyy'}} <br/> </font>
         <font face="raro, courier"><b>Fecha final: </b> {{festival.fechaFin | date:'dd/MM/yyyy'}} <br/> </font>
         <font face="raro, courier"><b>Ciudad: </b> {{festival.ciudad}} <br/> </font>
-
+        <button type="button" class="btn btn-danger"  (click)="deleteFestival()" >Eliminar </button>
+        
     </div>
 </div>
 
@@ -27,3 +28,4 @@
         <app-critico-list></app-critico-list>
       </div>
  </div>
+

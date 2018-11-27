@@ -46,4 +46,25 @@ export class SalaService {
     createSala(sala): Observable<Sala> {
         return this.http.post<Sala>(API_URL + salas, sala);
     }
+    
+    /**
+     * Updates the information of a sala
+     * @param sala The sala to update
+     * @returns The confirmation that the sala was updated
+     */
+    updateSala(sala): Observable<Sala>
+    {
+        return this.http.put<Sala>(API_URL + salas + '/' + sala.id, sala);
+    }
+    
+    /**
+     * Deletes a sala
+     * @param salaId the id of the sala to delete
+     * @returns The confirmation that the sala was deleted
+     */
+    deleteSala(salaId): Observable<Sala>
+    {
+        return this.http.delete<Sala>(API_URL + salas + '/' + salaId);
+    }     
+    
 }

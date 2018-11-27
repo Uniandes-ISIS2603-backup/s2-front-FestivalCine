@@ -37,4 +37,9 @@ export class FestivalService{
     {
         return this.http.put<Festival>(API_URL + festivales + '/' + festival.id, festival);
     }
+    
+    deleteFestival(festivalId): Observable<Festival>
+    {
+        return this.http.delete<Festival>(API_URL + festivales + '/' + festivalId);
+    }
 }

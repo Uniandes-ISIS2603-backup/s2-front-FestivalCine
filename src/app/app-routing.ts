@@ -38,6 +38,9 @@ import {CalificacionCreateComponent} from '../app/calificacion/calificacion-crea
 import {CriticoEditComponent} from '../app/critico/critico-edit/critico-edit.component';
 import {UsuarioEditComponent} from '../app/usuario/usuario-edit/usuario-edit.component';
 import {FuncionEditComponent} from '../app/funcion/funcion-edit/funcion-edit.component';
+import {TeatroEditComponent} from '../app/teatro/teatro-edit/teatro-edit.component';
+import {SalaEditComponent} from '../app/sala/sala-edit/sala-edit.component';
+import {FestivalEditComponent} from '../app/festival/festival-edit/festival-edit.component';
 
 const routes: Routes = [
     {
@@ -110,6 +113,10 @@ const routes: Routes = [
             {
                 path:'add',
                 component:TeatroCreateComponent
+            },
+            {
+                path: ':id/edit',
+                component: TeatroEditComponent
             },
             {
                 path:':id',
@@ -196,6 +203,10 @@ const routes: Routes = [
                 component: SalaCreateComponent
             },
             {
+                path: ':id/edit',
+                component: SalaEditComponent
+            },
+            {
                 path: ':id',
                 component:SalaDetailComponent
             }
@@ -228,6 +239,10 @@ const routes: Routes = [
             {
                 path:'add',
                 component:FestivalCreateComponent
+            },
+            {
+                path: ':id/edit',
+                component: FestivalEditComponent
             }, 
             {
                 path:':id',
