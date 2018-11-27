@@ -73,9 +73,10 @@ export class FuncionCreateComponent implements OnInit {
      */
     hourStep = 1;
     minuteStep = 30;
+    time: NgbTimeStruct = {hour: 13, minute:0 , second:0};
      
     /**
-    * Retrieves the list of peliculas in the FestivalFe
+    * Retrieves the list of peliculas in the Festival
     */
     getPeliculas(): void {
         this.peliculaService.getPeliculas()
@@ -118,7 +119,7 @@ export class FuncionCreateComponent implements OnInit {
         console.log(this.funcion);
         let dateB: Date = new Date(this.funcion.fecha.year, this.funcion.fecha.month-1, this.funcion.fecha.day);
         this.funcion.fecha = this.dp.transform(dateB, 'yyyy-MM-dd');
-        console.log('prueba');
+        this.funcion.hora = this.time.hour;
         console.log(this.funcion)
         this.funcionService.createFuncion(this.funcion)
             .subscribe((funcion) => {
