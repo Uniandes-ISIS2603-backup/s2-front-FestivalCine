@@ -27,14 +27,7 @@
             <p  align="left">{{critico.identificacion}}</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <p  align="right"><b>Teléfono: </b></p>
-      </div>
-        <div class="col-lg-6">
-            <p  align="left">{{critico.celular}}</p>
-      </div>
-    </div>
+    
     <div class="row">
         <div class="col-lg-6">
             <p  align="right"><b>Email: </b></p> 
@@ -44,13 +37,6 @@
       </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            <p  align="right"><b>NickName: </b></p>
-      </div>
-        <div class="col-lg-6">
-            <p  align="left">{{critico.nickName}}</p>
-      </div>
-    </div> <div class="row">
         <div class="col-lg-6">
             <p  align="right"><b>Credencial: </b></p>
       </div>
@@ -69,13 +55,12 @@
       <div class="col-lg-4">
         <h1>Calificaciones</h1> 
         <p>Calificaciones del critico.</p>
-        <app-calificacion-list [calificaciones]= "critico.calificaciones" 
-            ></app-calificacion-list>
+        <app-calificacion-list [calificaciones]= "critico.calificaciones" ></app-calificacion-list>
       </div>
       <div class="col-lg-4">
         <h1>Funciones</h1> 
         <p>Funciones que vá a criticar.</p>
-        <app-funcion-list [funciones]="critico.funciones"  [tipeList]='detail'></app-funcion-list>
+        <app-funcion-list [funciones]="critico.funciones"></app-funcion-list>
       </div>
     </div>
   </div>

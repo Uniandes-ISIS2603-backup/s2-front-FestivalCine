@@ -33,7 +33,9 @@ export class Pelicula{
      */
    puntaje: number;
    
-    
+   trailer:string;
+   
+    poster:string;
     
      
 }

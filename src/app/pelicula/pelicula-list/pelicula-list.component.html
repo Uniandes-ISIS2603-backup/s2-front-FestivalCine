@@ -90,14 +90,6 @@ a:hover {
 }
 
 
-
-.theDarkTower {
-  background: url("http://cdn.collider.com/wp-content/uploads/2017/03/the-dark-tower-poster.jpg");
-  background-size: cover;
-  background-position: 100% 100%;
-}
-
-
 .header-icon-container {
   position: relative;
 }
@@ -207,7 +199,11 @@ a:hover {
 
 	
 	<div class="movie-card"  *ngFor = "let pelicula of peliculas">
-		<div class="movie-header theDarkTower">
+		<div class="movie-header theDarkTower" style="
+  background: url({{pelicula.poster}});
+  background-size: cover;
+  background-position: 100% 100%;
+">
 			<div class="header-icon-container">
 				<a routerLink="/peliculas/{{pelicula.id}}">
 					<i class="material-icons header-icon"  ></i>
