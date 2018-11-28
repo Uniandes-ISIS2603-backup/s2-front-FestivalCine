@@ -1,33 +1,44 @@
-<div>
-    <div class="col-6">
-        <form name="calificacion" (ngSub,it)="f.form.valid && editCalificacio()" #f="ngForm" novalidate>
-              <div class="form-group">
-                  <label>Actualizar calificación</label>
-                  <label for="calificacionPuntaje"><b>Puntaje</b></label>
-                  <input type="text"  value="{{calificacion.puntaje}}" name="CalificacionPuntaje" class="form-control" id="calificacionPuntaje" [(ngModel)]="calificacion.puntaje" #calificacionPuntaje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacion.invalid }" required>
-                         <div class="invalid-feedback"><div> ¡Falta el puntaje de la calificación!</div></div>
-            </div>
-              <div class="form-group">
-                  <label for="calificacionComentario"><b>Comentario</b></label>
-                  <textarea type="text-area" name="calificacionComentario" class="form-control" id="calificacionComentario" [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionComentario.invalid }" required></textarea>
-                         <div class="invalid-feedback"><div> ¡Falta los apellidos del critico!</div></div>
-            </div>
-              <div class="form-group">
-                <label for="calificacionCritico"><b>Critico</b></label>
-                    <select class="custom-select" name="calificacionCritico" id="calificacionCritico" [(ngModel)]="calificacion.critico.id"
-                        #calificacionCritico="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionCritico.invalid}" required >
-                        <option [value]="critico.id" *ngFor="let critico of criticos"> {{critico.nombres}} {{critico.apellidos}}</option>
-                    </select>
-                <div class="invalid-feedback">
-                        <div>Debes escoger un critico</div>
-                    </div>
-            </div>
+
+<div class="col-md-12">
+    <form name="calificacion" (ngSubmit)="f.form.valid && editCalificacion()" #f="ngForm" novalidate>
+        <div class="card text-center">
+  <div class="card-header">
+      <h1>Actualizar Información de Calificacion <font size="5"></font></h1>
+  </div>
+  <div class="card-body" >
+    <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Puntaje: </b></p> 
+      </div>
+          <div class="col-lg-6">
               
-              <div class="row form-inline justify-content-center align-self-center">
-                <button type="submit" class="btn btn-primary">Editar</button>
+              <input type="text" name="calificacionPuntaje" value="{{calificacion.puntaje}}" class="form-control" autofocus id="calificacionPuntaje" [(ngModel)]="calificacion.puntaje"
+                                   #calificacionPuntaje="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionPuntaje.invalid }" required><span class="underline"></span>
+                                   <div class="invalid-feedback">
+                                <div>El critico debe tener un nombre</div>
+                            </div>
+                     
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+            <p  align="right"><b>Comentario: </b></p> 
+      </div>
+          <div class="col-lg-6">
+              
+              <textarea type="text-area" name="calificacionComentario" value="{{calificacion.comentario}}" class="form-control" id="calificacionComentario" [(ngModel)]="calificacion.comentario" #calificacionComentario="ngModel" [ngClass]="{ 'is-invalid': f.submitted && calificacionComentario.invalid }" required></textarea>
+                         <div class="invalid-feedback"><div> ¡Falta los apellidos del critico!</div></div>
+                     
+          </div>
+      </div>
+   <br>
+    <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary">Edit</button>
                 <div class="divider"></div>
-                <button type="button" class="btn btn-danger" routerLink="/calificaciones/{{calificacion.id}}">Cancel</button>
+                <button type="button" class="btn btn-danger" routerLink="/criticos/{{calificacion.id}}">Cancel</button>
             </div>
-        </form>
-    </div>
+   <br>
 </div>
+
+</div>
+</form>

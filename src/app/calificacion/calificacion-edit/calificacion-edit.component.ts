@@ -2,20 +2,22 @@ import {Component, OnInit, Input, OnChanges, OnDestroy, Output, EventEmitter} fr
 import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 import {ToastrService} from 'ngx-toastr';
 
+
+import {DatePipe} from '@angular/common';
 import {CalificacionService} from '../calificacion.service';
 import {Calificacion} from '../calificacion';
-import {Critico} from '../../critico/critico';
-import {CriticoService} from '../../critico/critico.service';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'app-calificacion-edit',
   templateUrl: './calificacion-edit.component.html',
-  styleUrls: ['./calificacion-edit.component.css']
+  styleUrls: ['./calificacion-edit.component.css'],
+  providers: [DatePipe]
 })
-export class CalificacionEditComponent implements OnInit {
+export class CalificacionEditComponent implements OnInit, OnDestroy {
 
   constructor(
-        private criticoService: CriticoService,
+  
         private calificacionService: CalificacionService,
         private toastrService: ToastrService,
         private route: ActivatedRoute,
@@ -34,25 +36,16 @@ export class CalificacionEditComponent implements OnInit {
   
   calificacion_id: number;
   
-  criticos: Critico[];
-  
   @Input() calificacion: Calificacion;
   
   @Output() cancel = new EventEmitter();
   
   @Output() update = new EventEmitter();
-
-  getCriticos(): void {
-        this.criticoService.getCriticos()
-            .subscribe(criticos => {
-                this.criticos =  criticos ;
-            }, err => {
-                this.toastrService.error(err, 'Error');
-            });
-    }
   
   editCalificacion(): void
   {
+      
+    
       this.calificacionService.updateCalificacion(this.calificacion)
           .subscribe((calificacion)=> 
           {
@@ -78,13 +71,11 @@ export class CalificacionEditComponent implements OnInit {
         }
     }
 
-  ngOnInit() {
-    this.getCriticos();
+  ngOnInit() 
+  {
     this.calificacion_id = +this.route.snapshot.paramMap.get('id');
     this.calificacion = new Calificacion();
-      this.calificacion.critico = new Critico();
     this.getCalificacion();
-      this.getCriticos();
   }
   
   getCalificacion():void
