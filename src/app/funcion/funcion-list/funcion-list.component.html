@@ -1,7 +1,7 @@
 <img class= "center-block" src="https://i.pinimg.com/originals/2d/6b/c3/2d6bc3c655ab71af8a2564fac18878a2.jpg"
              width="1500"
             height="300" *ngIf="isList()" required>
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="isList()" required>
     <div class="row">
         <div class="col-md-4">
             <div class="row justify-content-center align-self-center">
@@ -46,3 +46,28 @@
                 <app-funcion-edit [funcion]="selectedFuncion" (cancel)="showHideEdit(selectedFuncion.id)" (update)="updateFuncion()" ></app-funcion-edit>
             </div>
 </div>
+    
+    <div *ngIf="isList()==false" required>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th> id</th>
+                    <th>Precio Base</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let funcion of funciones" >
+                    <td>{{funcion.id}}</td>
+                <td> {{funcion.precioBase}}</td>
+                <!--<td *ngxPermissionsOnly="['ADMIN']">-->
+                <td>
+                    <button class="btn btn-primary" (click)="showHideEdit(funcion.id,funcion.fecha,funcion.hora,funcion.precioBase,funcion.pelicula,funcion.sala,funcion.critico)"><span class="fa fa-pencil"></span></button>
+                </td>
+                <!--<td *ngxPermissionsOnly="['ADMIN']">-->
+                <td>
+                    <button class="btn btn-danger" (click)="deleteFuncion(funcion.id)"><span class="fa fa-trash"></span></button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

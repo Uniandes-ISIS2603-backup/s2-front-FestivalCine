@@ -1,3 +1,4 @@
+<div>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -200,9 +201,9 @@ a:hover {
   }
 }
 </style></head><body>
-  <img class="mySlides" src="http://liminalitypages.com/bestadventuremovielist/images/AHeader.jpg" alt="custom_html_banner1" style="width:100%">
+  <img class="mySlides" src="http://liminalitypages.com/bestadventuremovielist/images/AHeader.jpg" alt="custom_html_banner1" style="width:100%"  *ngIf="isList()" required>
 
-<div class="container" >
+<div class="container">
 
 	
 	<div class="movie-card"  *ngFor = "let pelicula of peliculas">
@@ -232,4 +233,4 @@ a:hover {
 	
 </div><!--container-->
 
-</body></html>
+</body></html></div>

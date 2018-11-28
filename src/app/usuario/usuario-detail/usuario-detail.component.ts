@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router, ParamMap  } from '@angular/router';
+import { Component, Input, OnInit, ViewContainerRef } from '@angular/core';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
+import {ModalDialogService, SimpleModalComponent} from 'ngx-modal-dialog';
 
 import { UsuarioService } from '../usuario.service';
 import { Usuario} from '../usuario';
@@ -14,8 +16,11 @@ export class UsuarioDetailComponent implements OnInit {
 
   constructor(
     private usuarioService: UsuarioService,
-    private route: ActivatedRoute,
-     private router: Router) { }
+  private route: ActivatedRoute,
+  private modalDialogService: ModalDialogService,
+        private router: Router,
+  private viewRef: ViewContainerRef,
+        private toastrService: ToastrService) { }
 
 @Input() usuarioDetail: UsuarioDetail;
  
@@ -34,5 +39,31 @@ ngOnInit()
     this.usuarioDetail = new UsuarioDetail();
     this.getUsuarioDetail();
 }
+
+deleteUsuario(): void
+  {
+      this.modalDialogService.openDialog(this.viewRef, 
+      {
+          title:'Eliminar usuario',
+          childComponent: SimpleModalComponent,
+          data: {text: '¿Está seguro que desea eliminar el usuario?'},
+          actionButtons: [
+              {
+                  text: 'Si',
+                  buttonClass: 'btn btn-danger',
+                  onAction: () => {
+                      this.usuarioService.deleteUsuario(this.usuario_id).subscribe(usuario => {
+                          this.toastrService.success("El usuario se eliminó exitosamente", "Eliminar Usuario");
+                          this.router.navigate(['usuarios/list']);
+                      }, err => {
+                          this.toastrService.error("Pasó algo", "Error");
+                      });
+                      return true;
+                  }
+              },
+              {text: 'No', onAction: () => true}
+          ]
+      })
+  }
 
 }

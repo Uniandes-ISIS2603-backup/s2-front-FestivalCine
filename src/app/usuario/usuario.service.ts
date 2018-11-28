@@ -48,4 +48,9 @@ const usuarios = '/usuarios';
     {
         return this.http.put<Usuario>(API_URL + usuarios + '/' + usuario.id, usuario);
     }
+    
+    deleteUsuario(usuarioId): Observable<Usuario>
+    {
+        return this.http.delete<Usuario>(API_URL + usuarios + '/' + usuarioId);
+    }
  }

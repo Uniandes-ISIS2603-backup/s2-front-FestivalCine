@@ -40,4 +40,14 @@ export class ReservaService {
     { 
         return this.http.post<ReservaDetail>(API_URL + reservas, reservaDetail);
     }
+    
+    updateReserva(reserva): Observable<Reserva>
+    {
+        return this.http.put<Reserva>(API_URL + reserva + '/' + reserva.id, reserva);
+    }
+    
+    deleteReserva(reservaId): Observable<Reserva>
+    {
+        return this.http.delete<Reserva>(API_URL + reservas + '/' + reservaId);
+    }
 }

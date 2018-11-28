@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 
@@ -16,7 +17,8 @@ export class CriticoCreateComponent implements OnInit {
 
   constructor(
   private criticoService: CriticoService,
-  private toastrService: ToastrService) { }
+  private toastrService: ToastrService,
+  private router: Router) { }
   
   critico: Critico;
   
@@ -30,6 +32,7 @@ export class CriticoCreateComponent implements OnInit {
           .subscribe((critico) => {
               this.critico = critico;
               this.create.emit();
+              this.router.navigate(['/criticos/' + critico.id]);
               this.toastrService.success("El critico fue creado", "Creación de usuario");
       }, err => {
           this.toastrService.error(err, "Error");

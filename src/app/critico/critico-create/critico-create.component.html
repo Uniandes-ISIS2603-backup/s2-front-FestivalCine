@@ -1,11 +1,10 @@
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Concert+One" rel="stylesheet">
   <div class="container">
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-9 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-              <p id="titulo-card" class="card-title text-center">¡Bienvenido <b id="critico">Critico</b>!</p>
+              <h1 id="titulo-card" class="card-title text-center">¡Bienvenido <b id="critico">Critico</b>!</h1>
             <form name="critico" (ngSubmit)="f.form.valid && createCritico()" #f="ngForm" novalidate>
               <div class="form-group">
                   <label for="criticoNombres"><b>Nombres</b></label>
@@ -23,11 +22,6 @@
                          <div class="invalid-feedback"><div> ¡Falta la identificación del critico!</div></div>
             </div>
             <div class="form-group">
-                  <label for="criticoCelular"><b>Celular</b></label>
-                  <input type="text" name="criticoNombres" class="form-control" id="criticoCelular" [(ngModel)]="critico.celular" #criticoCelular="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoCelular.invalid }" required>
-                         <div class="invalid-feedback"><div> ¡Falta el celular del critico!</div></div>
-            </div>
-            <div class="form-group">
                   <label for="criticoEmail"><b>Email</b></label>
                   <input type="email" name="criticoEmail" class="form-control" id="criticoEmail" [(ngModel)]="critico.email" #criticoEmail="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoEmail.invalid }" required>
                          <div class="invalid-feedback"><div> ¡Falta el Email del critico!</div></div>
@@ -36,11 +30,6 @@
                   <label for="criticoCredencial"><b>Credencial</b></label>
                   <input type="text" name="criticoCredencial" class="form-control" id="criticoCredencial" [(ngModel)]="critico.credencial" #criticoCredencial="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoCredencial.invalid }" required>
                          <div class="invalid-feedback"><div> ¡Falta la credencial del critico!</div></div>
-            </div>
-            <div class="form-group">
-                  <label for="criticoNickName"><b>NickName</b></label>
-                  <input type="text" name="criticoNickName" class="form-control" id="criticoNickName" [(ngModel)]="critico.nickName" #criticoNickName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoNickName.invalid }" required>
-                         <div class="invalid-feedback"><div> ¡Falta el Usuario del critico!</div></div>
             </div>
             <div class="form-group">
                   <label for="criticoPassword"><b>Password</b></label>

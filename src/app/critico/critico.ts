@@ -21,11 +21,7 @@ export class Critico {
     
     identificacion: string;
     
-    celular: number;
-    
     email: string;
-    
-    nickName: string;
     
     puntaje: number;
     

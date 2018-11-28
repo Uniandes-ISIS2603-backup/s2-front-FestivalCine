@@ -50,16 +50,6 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-            <p  align="right"><b>Teléfono: </b></p>
-      </div>
-        <div class="col-lg-6">
-            <input type="text" name="criticoCelular" value="{{critico.celular}}" class="form-control" id="criticoCelular" [(ngModel)]="critico.celular"
-                                   #criticoCelular="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoCelular.invalid }">
-                                   
-      </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-6">
             <p  align="right"><b>Email: </b></p> 
       </div>
         <div class="col-lg-6">
@@ -71,17 +61,6 @@
       </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            <p  align="right"><b>NickName: </b></p>
-      </div>
-        <div class="col-lg-6">
-            <input type="text" name="criticoNickName" value="{{critico.nickName}}" class="form-control" id="criticoNickName" [(ngModel)]="critico.nickName"
-                                   #criticoNickName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && criticoNickName.invalid }" required>
-                                   <div class="invalid-feedback">
-                                <div>El critico debe tener un nickName</div>
-                            </div>
-      </div>
-    </div> <div class="row">
         <div class="col-lg-6">
             <p  align="right"><b>Credencial: </b></p>
       </div>
