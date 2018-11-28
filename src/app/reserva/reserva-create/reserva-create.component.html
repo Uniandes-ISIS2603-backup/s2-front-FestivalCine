@@ -2,14 +2,25 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-
+<script>
+ 
+    
+    </script>
+    <style>
+        #text_div{
+        display:none;
+    
+}
+    </style>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<br>
 <div class="content">
 <div class="container">
     	<div class="row">
 	
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb30 text-center">
-                        <h2>Tour & Travel Reservation Booking Form</h2>
+                        <h2>Reserva el mejor entretenimiento de tu vida!</h2>
                         </div>
                         </div>
 	<div class="row">
@@ -19,21 +30,40 @@
                             <form>
                                 <div class="row">
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                        <h4 class="tour-form-title">Your Travel Plan Detail</h4>
+                                        <h4 class="tour-form-title">Detalles de tu reserva:</h4>
+                                       <div><input type="checkbox" class="myCheckbox" name="abono" value="1">Soy Abonado<br></div>
+                                    <br>
+                                    <div>
+                                    </div>
+                                
+                                      
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                         <div class="form-group">
-                                            <label class="control-label required" for="select">Destination</label>
+                                            <label class="control-label required" for="select">Funciones</label>
                                             <div class="select">
                                                 <select id="select" name="select" class="form-control">
-                                                    <option value="">Where you want to go</option>
-                                                    <option value="">Singapore</option>
-                                                    <option value="">Thailand</option>
-                                                    <option value="">Vietnam</option>
+                                                   <option [value]="funcion.id" *ngFor="let funcion of funciones">{{funcion.pelicula.nombre}} . {{funcion.fecha}}</option>
                                                 </select>
+                                                
+                                                
                                             </div>
                                         </div>
                                     </div>
+                                     <div id="text_div" hidden>
+                                                    <select id="select2" name="select" class="form-control">
+                                                   <option [value]="funcion.id" *ngFor="let funcion of funciones">{{funcion.pelicula.nombre}} . {{funcion.fecha}}</option>
+                                                </select>
+                                                     
+                                                       <select id="select3" name="select" class="form-control">
+                                                   <option [value]="funcion.id" *ngFor="let funcion of funciones">{{funcion.pelicula.nombre}} . {{funcion.fecha}}</option>
+                                                </select>
+</div>
+                                    <div>
+                                        
+                                        
+                                    </div>
+                                    
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                         <div class="form-group">
                                             <label class="control-label" for="datepicker">Check in</label>
