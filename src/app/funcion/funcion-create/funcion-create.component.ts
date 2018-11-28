@@ -55,7 +55,7 @@ export class FuncionCreateComponent implements OnInit {
     */
     criticos: Critico[];
     
-    
+    fecha: string;
    /**
     * The output which tells the parent component
     * that the user no longer wants to create a funcion
@@ -117,8 +117,11 @@ export class FuncionCreateComponent implements OnInit {
     */
     createFuncion(): Funcion {
         console.log(this.funcion);
-        let dateB: Date = new Date(this.funcion.fecha.year, this.funcion.fecha.month-1, this.funcion.fecha.day);
-        this.funcion.fecha = this.dp.transform(dateB, 'yyyy-MM-dd');
+        let dateB: Date = new Date(this.funcion.fecha.year, this.funcion.fecha.month, this.funcion.fecha.day);
+        this.fecha=""+this.funcion.fecha.year+"-"+this.funcion.fecha.month+"-"+this.funcion.fecha.day+"T"+"00:00:00";
+        
+        console.log(this.fecha);
+        this.funcion.fecha =this.fecha;
         this.funcion.hora = this.time.hour;
         console.log(this.funcion)
         this.funcionService.createFuncion(this.funcion)
