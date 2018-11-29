@@ -19,7 +19,6 @@ body {
   font-size: 14px;
   color: black;
 }
-
 * {
   -webkit-transition: 300ms;
   transition: 300ms;
@@ -36,24 +35,19 @@ body[_ngcontent-c1] {
 .intro {
   text-align: center;
 }
-
 ul {
   list-style-type: none;
 }
-
 h1, h2, h3, h4, h5, p {
   font-weight: 400;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 a:hover {
   color: #6ABCEA;
 }
-
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,7 +62,6 @@ a:hover {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .movie-card {
   background: #ffffff;
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
@@ -78,7 +71,6 @@ a:hover {
   border-radius: 10px;
   display: inline-block;
 }
-
 .movie-header {
   padding: 0;
   margin: 0;
@@ -88,12 +80,14 @@ a:hover {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-
-
+.theDarkTower {
+  background: url("http://cdn.collider.com/wp-content/uploads/2017/03/the-dark-tower-poster.jpg");
+  background-size: cover;
+  background-position: 100% 100%;
+}
 .header-icon-container {
   position: relative;
 }
-
 .header-icon {
   width: 100%;
   height: 367px;
@@ -106,7 +100,6 @@ a:hover {
   text-shadow: 0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA;
   opacity: .85;
 }
-
 .header-icon:hover {
   background: rgba(0, 0, 0, 0.15);
   font-size: 74px;
@@ -115,29 +108,24 @@ a:hover {
   border-top-right-radius: 10px;
   opacity: 1;
 }
-
 .movie-card:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
 }
-
 .movie-content {
   padding: 18px 18px 24px 18px;
   margin: 0;
 }
-
 .movie-content-header, .movie-info {
   display: table;
   width: 100%;
 }
-
 .movie-title {
   font-size: 24px;
   margin: 0;
   display: table-cell;
 }
-
 .imax-logo {
   width: 50px;
   height: 15px;
@@ -148,37 +136,30 @@ a:hover {
   position: relative;
   margin-top: 5px;
 }
-
 .movie-info {
   margin-top: 1em;
 }
-
 .info-section {
   display: table-cell;
   text-transform: uppercase;
   text-align: center;
 }
-
 .info-section:first-of-type {
   text-align: left;
 }
-
 .info-section:last-of-type {
   text-align: right;
 }
-
 .info-section label {
   display: block;
   color: rgba(0, 0, 0, 0.5);
   margin-bottom: .5em;
   font-size: 9px;
 }
-
 .info-section span {
   font-weight: 700;
   font-size: 11px;
 }
-
 @media screen and (max-width: 500px) {
   .movie-card {
     width: 95%;
@@ -186,7 +167,6 @@ a:hover {
     margin: 1em;
     display: block;
   }
-
   .container {
     padding: 0;
     margin: 0;
@@ -199,11 +179,7 @@ a:hover {
 
 	
 	<div class="movie-card"  *ngFor = "let pelicula of peliculas">
-		<div class="movie-header theDarkTower" style="
-  background: url({{pelicula.poster}});
-  background-size: cover;
-  background-position: 100% 100%;
-">
+		<div class="movie-header theDarkTower">
 			<div class="header-icon-container">
 				<a routerLink="/peliculas/{{pelicula.id}}">
 					<i class="material-icons header-icon"  ></i>

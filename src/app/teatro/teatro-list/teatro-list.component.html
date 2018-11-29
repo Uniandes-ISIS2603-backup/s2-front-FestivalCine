@@ -1,23 +1,88 @@
-<div class="container-fluid">
-    <div class="table-responsive">
-        <button type="button" class="btn btn-primary" routerLink="/teatros/add">Nuevo teatro</button>
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Nombres</th>
-                    <th>Direccion</th>
-                    <th>Numero Salas Festival</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let teatro of teatros">
-                    <td style="cursor: pointer;">
-            <dd class="figure-caption" routerLink="/teatros/{{teatro.id}}">{{teatro.id}}</dd></td>
-                    <td>{{teatro.nombre}}</td>
-                    <td>{{teatro.direccion}}</td>
-                    <td>{{teatro.numSalasFest}}</td>
-                </tr>
-            </tbody>
-        </table>
+<head>
+    
+    
+    
+    <style>
+        .grid-center-content-vertical {
+    display: table-cell;
+    vertical-align: middle;
+}.title-seccion {
+    background: grey;
+    text-transform: uppercase;
+    padding: 0 15px;
+}
+        .container-max-width {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.theatre .theatre-detail {
+    width: 55%;
+    float: left;
+    padding: 14px;
+    position: relative;
+    /* display: table; */
+    transition: 0.2s;
+}
+.theatre .theatre-cover, .theatre .theatre-detail {
+    height: 190px;
+}
+.theatre .theatre-container {
+    width: 100%;
+    display: table;
+    border: 1px #c3c3c3 solid;
+}
+.theatre-cta {
+    background: #b5121c;
+
+    bottom: 0;
+    right: 0;
+    height: 30px;
+    /* width: 87px; */
+    width: 100%;
+    text-align: right;
+    padding: 5px;
+    padding-right: 20px;
+    z-index: 999;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    
+    * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+    </style>    
+</head>
+
+<div class="theatre-container"  align=" center">
+<div class="title-seccion subtitle grid-center-container"><div class="grid-center-content-vertical"><div class="container-max-width"><h1>TODOS NUESTROS TEATROS</h1></div></div></div>
+
+<table *ngFor = "let teatro of teatros">
+   
+    <br>
+  
+  
+    <th>
+        <div class="theatre-cta"></div>
+        <br>
+        <img src="https://cinemarkco.modyocdn.com/uploads/4d3950f3-1e47-4f2f-9c0d-bdb07c24c895/original/2414-Pacific-Mall.jpg" width="400" height="240">
+    </th>
+
+    <th>
+        <div class="theatre-cta"></div>
+        <br>
+    <div class="theatre-detail"><h4>{{teatro.nombre}}</h4>
+        <p><img src="https://cms-assets.tutsplus.com/uploads/users/523/posts/27441/preview_image/preview-image-small.png" width="75" height="50"><i class="icon-map-marker"></i>{{teatro.direccion}}</p>
+        
+        <img src="https://www.veterinariaintensiva.cl/wp-content/uploads/2017/03/Boton-Mas-Informacion-01.png" routerLink="/teatros/{{teatro.id}}"  >     
     </div>
+        
+       
+    </th>
+   
+</table>
+</div>
