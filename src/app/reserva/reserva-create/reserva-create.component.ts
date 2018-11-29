@@ -28,7 +28,7 @@ export class ReservaCreateComponent implements OnInit {
         private router: Router) { }
   
   reserva: ReservaDetail;
-  usuarios: Usuario[];
+  usuario: Usuario;
   funciones: Funcion[];
   funciones2: Funcion[];
   funcionAux: Funcion;

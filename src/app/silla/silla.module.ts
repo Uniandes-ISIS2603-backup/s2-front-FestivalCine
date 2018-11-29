@@ -6,6 +6,7 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from '../app-routing';
 import { SillaListComponent } from './silla-list/silla-list.component';
 import { SillaDetailComponent } from './silla-detail/silla-detail.component';
+import { SillaCreateComponent } from './silla-create/silla-create.component';
 import { SillaService } from './silla.service';
 
 
@@ -17,7 +18,7 @@ import { SillaService } from './silla.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  declarations: [SillaListComponent, SillaDetailComponent],
+  declarations: [SillaListComponent, SillaDetailComponent, SillaCreateComponent],
   providers: [SillaService],
   exports:[SillaListComponent]
 })

@@ -14,6 +14,7 @@ import {ReservaDetailComponent} from '../app/reserva/reserva-detail/reserva-deta
 import { ReservaCreateComponent } from '../app/reserva/reserva-create/reserva-create.component';
 import{SillaListComponent} from '../app/silla/silla-list/silla-list.component'
 import {SillaDetailComponent} from '../app/silla/silla-detail/silla-detail.component';
+import {SillaCreateComponent} from '../app/silla/silla-create/silla-create.component';
 import {PeliculaListComponent} from '../app/pelicula/pelicula-list/pelicula-list.component';
 import {PeliculaDetailComponent} from '../app/pelicula/pelicula-detail/pelicula-detail.component';
 import {PeliculaCreateComponent } from '../app/pelicula/pelicula-create/pelicula-create.component';
@@ -189,6 +190,9 @@ const routes: Routes = [
             {
                 path:'list',
                 component:SillaListComponent
+            }, {
+                path:'add',
+                component: SillaCreateComponent
             },
             {
                 path:':id',

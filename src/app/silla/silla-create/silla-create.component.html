@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="form-group">
+        <br>
+        <p>Disponible</p>
+           <select name="disponible">
+        <option value="0">No</option>
+        <option value="1">Si</option>
+    </select>
+        
+          <p>Tipo</p>
+           <select name="disponible">
+        <option value="0">General</option>
+        <option value="1">Elite</option>
+    </select>
+          
+              <p>Numero</p>
+          <input type="text" name="sillaNumero" class="form-control" id="sillaNumero" [(ngModel)]="silla.numero" #sillaNumero="ngModel" [ngClass]="{ 'is-invalid': f.submitted && sillaNumero.invalid }" required>
+                         </div>
+            
+            <div class="row form-inline justify-content-center align-self-center">
+                <button type="submit" class="btn btn-primary" >Create</button>
+                <div class="divider"></div>
+                <button type="button" class="btn btn-danger" routerLink="/usuarios/list">Cancel</button>
+            </div>
+       
+
+    <div class="col-3"></div>
+</div>
