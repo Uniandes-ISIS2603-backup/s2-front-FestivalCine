@@ -28,7 +28,7 @@ export class ReservaCreateComponent implements OnInit {
         private router: Router) { }
   
   reserva: ReservaDetail;
-  usuario: Usuario;
+  usuarios: Usuario[];
   funciones: Funcion[];
   funciones2: Funcion[];
   funcionAux: Funcion;
@@ -49,7 +49,9 @@ export class ReservaCreateComponent implements OnInit {
           this.toastrService.error(err, 'Error');
       })
   }
-  
+
+
+
   createReserva(): ReservaDetail 
    {      
         this.reservaService.createReserva(this.reserva).subscribe((reservaDetail) => {
@@ -79,22 +81,21 @@ export class ReservaCreateComponent implements OnInit {
                   this.usuario.id = +this.route.snapshot.parent.paramMap.get('id')});
                   console.log(this.usuario);
                   console.log('id: ' + +this.route.snapshot.parent.paramMap.get('id'));
-      this.funcionAux.id = +this.route.snapshot.parent.paramMap.get('id');
+     
       console.log(this.funcionAux);
       this.reserva.usuario = this.usuario;
-      this.reserva.funciones = this.funciones2;
+     
       console.log(this.reserva.funciones);
       this.reserva.abono= this.abono;
       this.getFunciones();
-     
+      this.checkBoxAbono();
   }
   
-  checkBoxAbono(): boolean
+  checkBoxAbono(): void
   {
-      var element = <HTMLInputElement> document.getElementById('reservaAbono');
-      var isChecked = element.checked;
-      this.abono = isChecked;
-      return isChecked;
+      var element = <HTMLInputElement> document.getElementById('desc');
+          element.innerHTML="<p> Descuento:  "+Math.floor(Math.random() * 6) + 1 +" %</p>";
+   
   }
 
 }
