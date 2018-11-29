@@ -23,6 +23,7 @@ import {SillaModule} from './silla/silla.module';
 import {SalaModule} from './sala/sala.module';
 import {FestivalModule} from './festival/festival.module';
 import {CalificacionModule} from './calificacion/calificacion.module';
+import {HomeModule} from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {CalificacionModule} from './calificacion/calificacion.module';
     PeliculaModule,
     SillaModule,
     SalaModule,
+    HomeModule,
     FestivalModule,
     CalificacionModule,
         ToastrModule.forRoot({

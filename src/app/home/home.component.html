@@ -1,0 +1,62 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images[0]" width="100%" height="100%" >
+    <div class="carousel-caption">
+      <h3 >La puerta a lo mejor del cine internacional</h3>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images[1]" width="100%" height="100%">
+    <div class="carousel-caption">
+     <h3>“La cámara se inventó para la acción y la violencia”</h3>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images[2]" width="100%" height="100%">
+    <div class="carousel-caption">
+      <h3>Expresiones del arte como nunca antes las había disfrutado </h3>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<div class="container-fluid bg-3 text-center"> 
+  <p> </p>
+  <h3>El Festival</h3><br>
+  <div class="row">
+    <div class="col-sm-6">
+      <h4>Qué encontrarás</h4>
+      <ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images2[0]" width="100%" height="100%" >
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images2[1]" width="100%" height="100%">
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images2[2]" width="100%" height="100%">
+  </ng-template>
+</ngb-carousel>
+      <div class="relative">
+      <p class="absolute-text" font="15px arial, sans-serif"> Nuevas películas de cineastas independientes nacionales e internacionales. Presentamos un conjunto de películas que fomentan el arte y la cultura. </p>
+      </div>
+     </div>
+      
+    <div class="col-sm-6"> 
+<h4>A quién encontrarás</h4>
+      <ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img [src]="images3[0]" width="100%" height="100%" >
+  </ng-template>
+  <ng-template ngbSlide>
+      <img [src]="images3[1]" width="100%" height="100%">
+  </ng-template>
+  <ng-template ngbSlide>
+    <img [src]="images3[2]" width="100%" height="100%">
+  </ng-template>
+</ngb-carousel>
+      <div class="relative">
+      <p class="absolute-text" font="15px arial, sans-serif"> Los mejores y más reconocidos críticos de cine estarán compartiendo su conocimiento con todos los amantes de este arte. </p>
+      </div>
+     </div>
+     </div>   
+  </div>
+ 

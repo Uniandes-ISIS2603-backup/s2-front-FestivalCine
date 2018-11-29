@@ -42,7 +42,7 @@ import {TeatroEditComponent} from '../app/teatro/teatro-edit/teatro-edit.compone
 import {SalaEditComponent} from '../app/sala/sala-edit/sala-edit.component';
 import {FestivalEditComponent} from '../app/festival/festival-edit/festival-edit.component';
 import {CalificacionEditComponent} from '../app/calificacion/calificacion-edit/calificacion-edit.component';
-
+import {HomeComponent} from '../app/home/home.component';
 const routes: Routes = [
     {
          path: 'criticos',
@@ -255,9 +255,16 @@ const routes: Routes = [
             }
  
     ]
-    }
-    
- 
+    },
+    {
+        path:'home',
+        component: HomeComponent
+    },
+    {
+        path: '**',
+        redirectTo: 'home'
+    }  
+         
 ];
 @NgModule({
     imports: [
